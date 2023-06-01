@@ -31,5 +31,6 @@
     "postcss": "^8.4.24",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
-  }
+  },
+  "packageManager": "yarn@3.5.1"
 }
