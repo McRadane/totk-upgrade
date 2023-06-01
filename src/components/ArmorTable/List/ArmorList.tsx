@@ -1,12 +1,13 @@
-import { armors } from "../../../data";
+import { FC } from "react";
 import { RowList } from "./RowList";
+import { IArmorsProps } from "../types";
 
-export const ArmorList = () => {
+export const ArmorList: FC<IArmorsProps> = ({ armors }) => {
   return (
-    <ul className={`list-group list-group-flush`}>
+    <div className="cards-list">
       {armors.map((armor) => (
         <RowList key={armor.name} armor={armor} />
       ))}
-    </ul>
+    </div>
   );
 };

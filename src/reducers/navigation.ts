@@ -4,11 +4,13 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 export interface NavigationState {
   page: number;
   hideNoCost: boolean;
+  hideArmors: boolean;
 }
 
 const initialState: NavigationState = {
   page: 1,
   hideNoCost: true,
+  hideArmors: true,
 };
 
 export const navigationSlice = createSlice({
@@ -21,9 +23,12 @@ export const navigationSlice = createSlice({
     setHideNoCost: (state, action: PayloadAction<boolean>) => {
       state.hideNoCost = action.payload;
     },
+    setHideArmors: (state, action: PayloadAction<boolean>) => {
+      state.hideArmors = action.payload;
+    },
   },
 });
 
-export const { setHideNoCost, setPage } = navigationSlice.actions;
+export const { setHideNoCost, setPage, setHideArmors } = navigationSlice.actions;
 
 export default navigationSlice.reducer;

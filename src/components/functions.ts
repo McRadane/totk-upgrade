@@ -106,7 +106,7 @@ export const getActiveStatus = (armor: IArmor) => (rank: number) => {
 
 import { useEffect, useState } from "react";
 
-function useMediaQuery(query: string): boolean {
+export const useMediaQuery = (query: string): boolean => {
   const getMatches = (query: string): boolean => {
     // Prevents SSR issues
     if (typeof window !== "undefined") {
@@ -145,6 +145,4 @@ function useMediaQuery(query: string): boolean {
   }, [query]);
 
   return matches;
-}
-
-export default useMediaQuery;
+};

@@ -4,6 +4,7 @@ import { useArmorStatus } from "../../../reducers/armors";
 import { Status } from "../Status";
 import { MaterialList } from "./../MaterialList";
 import { getActiveStatus } from "../../functions";
+import { StatusPrimary } from "./StatusPrimary";
 
 export interface IRowProps {
   armor: IDataArmor;
@@ -20,6 +21,11 @@ export const RowTable: FC<IRowProps> = ({ armor }) => {
     <tr>
       <th scope="row">{armor.name}</th>
       <td>{armor.set}</td>
+      <td>
+        <div className="status-button">
+          <StatusPrimary armor={armor} />
+        </div>
+      </td>
       <td>
         <Status armor={armor} />
       </td>

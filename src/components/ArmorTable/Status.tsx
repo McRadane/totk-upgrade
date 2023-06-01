@@ -36,28 +36,29 @@ export const Status: FC<IStatusProps> = ({ armor }) => {
   return (
     <div className="status">
       <div className="status-owned">
-        <label htmlFor={`owned-${slug}`} className="form-label">
+        <label htmlFor={`slider-owned-${slug}`} className="form-label">
           Owned
         </label>
         <input
           type="range"
           className="form-range"
-          id={`owned-${slug}`}
+          id={`slider-owned-${slug}`}
           min="0"
           max="4"
           value={status.ownedLevel}
           onChange={onChangeOwnedLevel}
+          disabled={!status.owned}
         />
         <span>{status.ownedLevel === 0 ? "-" : status.ownedLevel}</span>
       </div>
       <div className="status-wanted">
-        <label htmlFor={`wanted-${slug}`} className="form-label">
+        <label htmlFor={`slider-wanted-${slug}`} className="form-label">
           Wanted
         </label>
         <input
           type="range"
           className="form-range"
-          id={`wanted-${slug}`}
+          id={`slider-wanted-${slug}`}
           min="0"
           max="4"
           value={status.wanted}
