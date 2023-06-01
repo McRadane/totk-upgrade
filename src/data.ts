@@ -307,12 +307,12 @@ export const armors: IDataArmor[] = [
     name: "Desert Voe Headband",
     rank1: [["White Chuchu Jelly", 3]],
     rank2: [
-      ["White Chu Jelly", 5],
+      ["White Chuchu Jelly", 5],
       ["Cool Safflina", 3],
     ],
     rank3: [
       ["Ice Keese Wing", 5],
-      ["Ice-Breath Lizal Tail", 3],
+      ["Ice-Breath Lizalfos Tail", 3],
       ["Chillshroom", 5],
     ],
     rank4: [
@@ -326,12 +326,12 @@ export const armors: IDataArmor[] = [
     name: "Desert Voe Spaulder",
     rank1: [["White Chuchu Jelly", 3]],
     rank2: [
-      ["White Chu Jelly", 5],
+      ["White Chuchu Jelly", 5],
       ["Cool Safflina", 3],
     ],
     rank3: [
       ["Ice Keese Wing", 5],
-      ["Ice-Breath Lizal Tail", 3],
+      ["Ice-Breath Lizalfos Tail", 3],
       ["Chillshroom", 5],
     ],
     rank4: [
@@ -345,12 +345,12 @@ export const armors: IDataArmor[] = [
     name: "Desert Voe Trousers",
     rank1: [["White Chuchu Jelly", 3]],
     rank2: [
-      ["White Chu Jelly", 5],
+      ["White Chuchu Jelly", 5],
       ["Cool Safflina", 3],
     ],
     rank3: [
       ["Ice Keese Wing", 5],
-      ["Ice-Breath Lizal Tail", 3],
+      ["Ice-Breath Lizalfos Tail", 3],
       ["Chillshroom", 5],
     ],
     rank4: [
@@ -647,13 +647,13 @@ export const armors: IDataArmor[] = [
   {
     set: "Glide",
     name: "Glide Mask",
-    rank1: [["Keese Wing ", 3]],
+    rank1: [["Keese Wing", 3]],
     rank2: [
       ["Aerocuda Eyeball", 6],
-      ["Keese Wings", 5],
+      ["Keese Wing", 5],
     ],
     rank3: [
-      ["Aerocuda Eyes", 8],
+      ["Aerocuda Eyeball", 8],
       ["Aerocuda Wing", 6],
     ],
     rank4: [
@@ -665,13 +665,13 @@ export const armors: IDataArmor[] = [
   {
     set: "Glide",
     name: "Glide Shirt",
-    rank1: [["Keese Wing ", 3]],
+    rank1: [["Keese Wing", 3]],
     rank2: [
       ["Aerocuda Eyeball", 6],
-      ["Keese Wings", 5],
+      ["Keese Wing", 5],
     ],
     rank3: [
-      ["Aerocuda Eyes", 8],
+      ["Aerocuda Eyeball", 8],
       ["Aerocuda Wing", 6],
     ],
     rank4: [
@@ -683,13 +683,13 @@ export const armors: IDataArmor[] = [
   {
     set: "Glide",
     name: "Glide Tights",
-    rank1: [["Keese Wing ", 3]],
+    rank1: [["Keese Wing", 3]],
     rank2: [
       ["Aerocuda Eyeball", 6],
-      ["Keese Wings", 5],
+      ["Keese Wing", 5],
     ],
     rank3: [
-      ["Aerocuda Eyes", 8],
+      ["Aerocuda Eyeball", 8],
       ["Aerocuda Wing", 6],
     ],
     rank4: [
@@ -824,7 +824,7 @@ export const armors: IDataArmor[] = [
       ["Bright Caps", 5],
     ],
     rank3: [
-      ["Giant Brightbloom Seeds", 15],
+      ["Giant Brightbloom Seed", 15],
       ["Glowing Cave Fish", 5],
       ["Deep Firefly", 10],
     ],
@@ -843,7 +843,7 @@ export const armors: IDataArmor[] = [
       ["Bright Caps", 5],
     ],
     rank3: [
-      ["Giant Brightbloom Seeds", 15],
+      ["Giant Brightbloom Seed", 15],
       ["Glowing Cave Fish", 5],
       ["Deep Firefly", 10],
     ],
@@ -862,7 +862,7 @@ export const armors: IDataArmor[] = [
       ["Bright Caps", 5],
     ],
     rank3: [
-      ["Giant Brightbloom Seeds", 15],
+      ["Giant Brightbloom Seed", 15],
       ["Glowing Cave Fish", 5],
       ["Deep Firefly", 10],
     ],
@@ -1774,18 +1774,18 @@ export const armors: IDataArmor[] = [
     ],
     rank2: [
       ["Silent Princess", 3],
-      ["Light Dragon Claw", 2],
-      ["Sundelions", 10],
+      ["Light Dragon's Claw", 2],
+      ["Sundelion", 10],
     ],
     rank3: [
       ["Silent Princess", 5],
-      ["Light Dragon Fang", 2],
-      ["Sundelions", 15],
+      ["Light Dragon's Fang", 2],
+      ["Sundelion", 15],
     ],
     rank4: [
       ["Silent Princess", 10],
-      ["Light Dragon Horn", 2],
-      ["Sundelions", 20],
+      ["Light Dragon's Horn", 2],
+      ["Sundelion", 20],
     ],
   },
   {
