@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { calculateListItems } from "../functions";
-import { IRootState } from "../../configureStore";
 import { useCallback, useMemo } from "react";
+
+import { calculateListItems } from "../functions";
+import type { IRootState } from "../../configureStore";
 import { setHideNoCost } from "../../reducers/navigation";
 
 export const CostsTable = () => {
@@ -11,14 +12,19 @@ export const CostsTable = () => {
   );
   const dispatch = useDispatch();
 
-  const costs = useMemo(() => {
+  const { costs, filterLocked } = useMemo(() => {
     const costsMemo = calculateListItems(armorsState);
 
+    const resultsFiltered = costsMemo.filter((cost) => cost[1] !== 0);
+
     if (hideNoCost) {
-      return costsMemo.filter((cost) => cost[1] !== 0);
+      
+      if (resultsFiltered.length > 0) {
+        return { costs: resultsFiltered, filterLocked: false };
+      }
     }
 
-    return costsMemo;
+    return { costs: costsMemo, filterLocked: resultsFiltered.length === 0 };
   }, [armorsState, hideNoCost]);
 
   const onChangeHideNoCost = useCallback(
@@ -39,9 +45,10 @@ export const CostsTable = () => {
             id="flexSwitchHideNoCost"
             checked={hideNoCost}
             onChange={onChangeHideNoCost}
+            disabled={filterLocked && !hideNoCost}
           />
           <label className="form-check-label" htmlFor="flexSwitchHideNoCost">
-            Hide materials without cost
+            Filter materials
           </label>
         </div>
       </div>

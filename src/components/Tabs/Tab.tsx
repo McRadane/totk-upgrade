@@ -1,6 +1,7 @@
-import { FC, useCallback } from "react";
-import { IRootState } from "../../configureStore";
+import { type FC, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
+import type { IRootState } from "../../configureStore";
 import { setPage } from "../../reducers/navigation";
 
 export interface ITabProps {
