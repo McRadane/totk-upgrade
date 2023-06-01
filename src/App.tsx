@@ -14,6 +14,17 @@ function App() {
         ]}
       />
       <ScrollToTop />
+      <div
+        className="text-center p-4"
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
+      >
+        <a
+          className="text-reset fw-bold"
+          href="https://github.com/McRadane/totk-upgrade"
+        >
+          Project's GitHub repository
+        </a>
+      </div>
     </>
   );
 }
