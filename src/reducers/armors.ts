@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { armors } from "../data";
 import { useSelector } from "react-redux";
-import { IRootState } from "../configureStore";
+
+import { armors } from "../data";
+import type { IRootState } from "../configureStore";
 
 export interface IArmor {
   name: string;

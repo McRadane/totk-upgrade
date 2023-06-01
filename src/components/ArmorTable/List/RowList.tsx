@@ -1,9 +1,11 @@
-import { FC, useMemo } from "react";
-import { IDataArmor } from "../../../data";
+import { type FC, useMemo } from "react";
+
+import { type IDataArmor } from "../../../data";
 import { useArmorStatus } from "../../../reducers/armors";
 import { Status } from "../Status";
 import { MaterialList } from "../MaterialList";
 import { getActiveStatus } from "../../functions";
+
 import { StatusPrimary } from "./StatusPrimary";
 
 export interface IRowProps {

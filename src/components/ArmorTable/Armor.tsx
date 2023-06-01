@@ -1,10 +1,12 @@
 import { useSelector } from "react-redux";
+import { useMemo, useState } from "react";
+
 import { useMediaQuery } from "../functions";
+import { type IRootState } from "../../configureStore";
+
 import { ArmorList } from "./List/ArmorList";
 import { ArmorTable } from "./Table/ArmorTable";
-import { useMemo, useState } from "react";
 import { filterArmors } from "./functions";
-import { IRootState } from "../../configureStore";
 import { Filter } from "./Filter";
 
 export const Armor = () => {

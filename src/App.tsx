@@ -1,10 +1,8 @@
-// import "./assets/styles.scss";
-import "./assets/app.scss";
 import { Tabs } from "./components/Tabs/Tabs";
 import { CostsTable } from "./components/CostsTable/CostsTable";
 import { Armor } from "./components/ArmorTable/Armor";
-
 import { ScrollToTop } from "./components/ScrollToTop";
+import "./assets/app.scss";
 
 function App() {
   return (

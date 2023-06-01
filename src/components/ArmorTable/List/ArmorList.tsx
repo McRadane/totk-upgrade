@@ -1,6 +1,8 @@
-import { FC } from "react";
+import { type FC } from "react";
+
+import { type IArmorsProps } from "../types";
+
 import { RowList } from "./RowList";
-import { IArmorsProps } from "../types";
 
 export const ArmorList: FC<IArmorsProps> = ({ armors }) => {
   return (

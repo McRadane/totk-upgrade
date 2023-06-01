@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { IRootState } from "../../configureStore";
-import { FC, useCallback, useState } from "react";
-import { setHideArmors } from "../../reducers/navigation";
+import { type FC, useCallback, useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
+
+import { type IRootState } from "../../configureStore";
+import { setHideArmors } from "../../reducers/navigation";
+
 
 export interface IFilterProps {
   updateTextFilter: (text: string) => void;

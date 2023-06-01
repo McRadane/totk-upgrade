@@ -1,6 +1,7 @@
-import { FC, useCallback, useMemo } from "react";
-import { IDataArmor } from "../../../data";
+import { type FC, useCallback, useMemo } from "react";
 import { useDispatch } from "react-redux";
+
+import { type IDataArmor } from "../../../data";
 import {
   setHidden,
   setOwned,

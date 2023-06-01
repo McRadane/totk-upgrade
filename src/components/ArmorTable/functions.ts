@@ -1,5 +1,5 @@
 import { armors } from "../../data";
-import { IArmor } from "../../reducers/armors";
+import { type IArmor } from "../../reducers/armors";
 
 export interface IFiltersOptions {
   text?: string;

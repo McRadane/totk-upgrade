@@ -1,6 +1,8 @@
-import { FC } from "react";
+import type { FC } from "react";
+
+import type { IArmorsProps } from "../types";
+
 import { RowTable } from "./RowTable";
-import { IArmorsProps } from "../types";
 
 export const ArmorTable: FC<IArmorsProps> = ({ armors }) => {
   return (

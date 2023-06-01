@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
+
 import { armors } from "../data";
-import { IArmor } from "../reducers/armors";
+import { type IArmor } from "../reducers/armors";
 
 export const calculateListItems = (
   armorsState: IArmor[]
@@ -103,8 +105,6 @@ export const getActiveStatus = (armor: IArmor) => (rank: number) => {
 
   return true;
 };
-
-import { useEffect, useState } from "react";
 
 export const useMediaQuery = (query: string): boolean => {
   const getMatches = (query: string): boolean => {
