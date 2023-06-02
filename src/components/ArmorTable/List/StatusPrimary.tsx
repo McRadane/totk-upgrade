@@ -31,7 +31,6 @@ export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
     },
     [armor.name, dispatch]
   );
-//<button type="button" className="btn btn-primary btn-sm btn-rounded "><i className="fas fa-camera-retro"></i></button>
   return (
     <>
       <div className="form-check form-switch">

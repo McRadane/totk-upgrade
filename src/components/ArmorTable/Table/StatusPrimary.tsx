@@ -1,5 +1,7 @@
 import { type FC, useCallback } from "react";
 import { useDispatch } from "react-redux";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 
 import { type IDataArmor } from "../../../data";
 import {
@@ -33,7 +35,7 @@ export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
         }`}
         onClick={onChangeOwned}
       >
-        <i className="fas fa-check"></i>
+        <FontAwesomeIcon icon={faCheck} />
       </button>
       <button
         type="button"
@@ -42,7 +44,7 @@ export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
         }`}
         onClick={onChangeHidden}
       >
-        <i className="fas fa-eye-slash"></i>
+        <FontAwesomeIcon icon={faEyeSlash} />
       </button>
     </>
   );

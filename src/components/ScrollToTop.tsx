@@ -1,3 +1,5 @@
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect, useCallback } from "react";
 
 export const ScrollToTop = () => {
@@ -22,10 +24,7 @@ export const ScrollToTop = () => {
   return (
     <div className="top-to-btm">
       {showTopBtn && (
-        <i
-          className="icon-position icon-style fas fa-arrow-up fa-2x"
-          onClick={goToTop}
-        />
+        <FontAwesomeIcon icon={faArrowUp}  className="icon-position icon-style fa-2x" onClick={goToTop} />
       )}
     </div>
   );

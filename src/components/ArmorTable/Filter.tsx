@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { type FC, useCallback, useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { type IRootState } from "../../configureStore";
 import { setHideArmors } from "../../reducers/navigation";
-
 
 export interface IFilterProps {
   updateTextFilter: (text: string) => void;
@@ -67,7 +68,7 @@ export const Filter: FC<IFilterProps> = ({ updateTextFilter }) => {
             </label>
           </div>
           <button type="button" className="btn btn-primary">
-            <i className="fas fa-search"></i>
+            <FontAwesomeIcon icon={faSearch} />
           </button>
         </div>
       </div>
