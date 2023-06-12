@@ -2,7 +2,7 @@ import { type PayloadAction , createSlice } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
 
 import type { IRootState } from "../configureStore";
-import { armors } from "../data";
+import { armorsStatic } from "../data";
 
 export interface IArmor {
   hidden: boolean;
@@ -17,9 +17,9 @@ export interface ArmorState {
 }
 
 const initialState: ArmorState = {
-  armors: armors.map((armor) => ({
+  armors: armorsStatic.map((armor) => ({
     hidden: false,
-    name: armor.name,
+    name: armor,
     owned: false,
     ownedLevel: 0,
     wanted: 0,

@@ -1,14 +1,11 @@
-import { faCheck, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { type FC, useCallback } from "react";
+import { useIntl } from "react-intl";
 import { useDispatch } from "react-redux";
 
 import { type IDataArmor } from "../../../data";
-import {
-  setHidden,
-  setOwned,
-  useArmorStatus,
-} from "../../../reducers/armors";
+import { setHidden, setOwned, useArmorStatus } from "../../../reducers/armors";
 
 export interface IStatusProps {
   armor: IDataArmor;
@@ -17,6 +14,8 @@ export interface IStatusProps {
 export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
   const status = useArmorStatus(armor.name);
   const dispatch = useDispatch();
+
+  const intl = useIntl();
 
   const onChangeOwned = useCallback(() => {
     dispatch(setOwned([armor.name, !status.owned]));
@@ -29,20 +28,26 @@ export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
   return (
     <>
       <button
+        aria-label={intl.formatMessage({
+          defaultMessage: "Toggle owned status",
+          id: "toggleOwnedStatus",
+        })}
         className={`btn btn-outline-primary btn-sm btn-floating ${
           status.owned ? "active" : ""
         }`}
-        aria-label="Toggle owned status"
         onClick={onChangeOwned}
         type="button"
       >
         <FontAwesomeIcon icon={faCheck} />
       </button>
       <button
+        aria-label={intl.formatMessage({
+          defaultMessage: "Toggle hidden status",
+          id: "toggleHiddenStatus",
+        })}
         className={`btn btn-outline-primary btn-sm btn-floating ${
           status.hidden ? "active" : ""
         }`}
-        aria-label="Toggle hidden status"
         onClick={onChangeHidden}
         type="button"
       >

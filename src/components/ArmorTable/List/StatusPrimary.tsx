@@ -1,12 +1,9 @@
 import { type FC, useCallback, useMemo } from "react";
+import { FormattedMessage } from "react-intl";
 import { useDispatch } from "react-redux";
 
 import { type IDataArmor } from "../../../data";
-import {
-  setHidden,
-  setOwned,
-  useArmorStatus,
-} from "../../../reducers/armors";
+import { setHidden, setOwned, useArmorStatus } from "../../../reducers/armors";
 
 export interface IStatusProps {
   armor: IDataArmor;
@@ -34,9 +31,8 @@ export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
   return (
     <>
       <div className="form-check form-switch">
-      
         <label className="form-check-label" htmlFor={`toggle-owned-${slug}`}>
-          Owned ?
+          <FormattedMessage id="ownedQuestion" defaultMessage="Owned ?" />
         </label>
         <input
           id={`toggle-owned-${slug}`}
@@ -49,7 +45,7 @@ export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
       </div>
       <div className="form-check form-switch">
         <label className="form-check-label" htmlFor={`toggle-hidden-${slug}`}>
-          Hidden ?
+          <FormattedMessage id="hiddenQuestion" defaultMessage="Hidden ?" />
         </label>
         <input
           id={`toggle-hidden-${slug}`}

@@ -1,0 +1,14 @@
+{
+  "footerVersion": {
+    "defaultMessage": "{name} v{version} par McRadane"
+  },
+  "linkGitHub": {
+    "defaultMessage": "Dépôt GitHub du projet"
+  },
+  "menuArmor": {
+    "defaultMessage": "Armures"
+  },
+  "menuCosts": {
+    "defaultMessage": "Coûts"
+  }
+}

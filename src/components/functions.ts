@@ -1,12 +1,27 @@
 import { useEffect, useState } from "react";
+import type { IntlShape } from "react-intl";
 
-import { armors } from "../data";
+import { getArmors, getMaterials } from "../data";
 import { type IArmor } from "../reducers/armors";
 
+export interface ICalculatedItems {
+  all: number;
+  id: string;
+  name: string;
+  selection: number;
+}
+
 export const calculateListItems = (
-  armorsState: IArmor[]
-): [string, number, number][] => {
-  const items: Record<string, { all: number; selection: number }> = {};
+  armorsState: IArmor[],
+  intl: IntlShape
+): ICalculatedItems[] => {
+  const items: Record<
+    string,
+    { all: number; name: string; selection: number }
+  > = {};
+
+  const armors = getArmors(intl);
+  const materials = getMaterials(intl);
 
   armors.forEach((armorData) => {
     const armor = armorsState.find((a) => a.name === armorData.name) as IArmor;
@@ -67,31 +82,36 @@ export const calculateListItems = (
         }
       }
 
-      materialsSelection.forEach(([name, count]) => {
-        if (!items[name]) {
-          items[name] = { all: 0, selection: 0 };
+      materialsSelection.forEach(([id, count]) => {
+        if (!items[id]) {
+          const name =
+            materials.find((material) => material.id === id)?.name ?? id;
+          items[id] = { all: 0, name, selection: 0 };
         }
 
-        items[name].selection += count;
+        items[id].selection += count;
       });
 
-      materialsAll.forEach(([name, count]) => {
-        if (!items[name]) {
-          items[name] = { all: 0, selection: 0 };
+      materialsAll.forEach(([id, count]) => {
+        if (!items[id]) {
+          const name =
+            materials.find((material) => material.id === id)?.name ?? id;
+          items[id] = { all: 0, name, selection: 0 };
         }
 
-        items[name].all += count;
+        items[id].all += count;
       });
     }
   });
 
-  const array: [string, number, number][] = Object.keys(items).map((name) => [
-    name,
-    items[name].selection ?? 0,
-    items[name].all ?? 0,
-  ]);
+  const array: ICalculatedItems[] = Object.keys(items).map((id) => ({
+    all: items[id].all ?? 0,
+    id: id,
+    name: id,
+    selection: items[id].selection ?? 0,
+  }));
 
-  return array.sort((a, b) => a[0].localeCompare(b[0]));
+  return array.sort((a, b) => a.name.localeCompare(b.name));
 };
 
 export const getActiveStatus = (armor: IArmor) => (rank: number) => {

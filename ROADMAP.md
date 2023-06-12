@@ -9,6 +9,4 @@
 
 # Other fixes
 - Add bfcache to tabs navigation (https://developer.chrome.com/docs/lighthouse/performance/bf-cache/?utm_source=lighthouse&utm_medium=devtools)
-- Splash screen (https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/?utm_source=lighthouse&utm_medium=devtools)
-- Maskable icon in manifest (https://developer.chrome.com/docs/lighthouse/pwa/maskable-icon-audit/?utm_source=lighthouse&utm_medium=devtools)
 - Ensure elements are big enough in mobile, and there is no overlapping (https://developer.chrome.com/docs/lighthouse/seo/tap-targets/?utm_source=lighthouse&utm_medium=devtools)

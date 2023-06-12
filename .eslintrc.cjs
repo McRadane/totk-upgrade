@@ -6,7 +6,9 @@ module.exports = {
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:perfectionist/recommended-natural",
+    "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:react/jsx-runtime"
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -14,7 +16,7 @@ module.exports = {
     sourceType: "module",
     project: "./tsconfig.json",
   },
-  plugins: ["react-refresh"],
+  plugins: ["react-refresh", "formatjs"],
   rules: {
     "react-refresh/only-export-components": "warn",
     "@typescript-eslint/consistent-type-imports": [
@@ -24,6 +26,8 @@ module.exports = {
     "@typescript-eslint/consistent-type-exports": "warn",
     "import/first": "warn",
     "import/newline-after-import": "warn",
+    "formatjs/enforce-default-message": ["error", "literal"],
+    "formatjs/enforce-id": "warn",
     "import/no-absolute-path": "warn",
     "import/no-amd": "warn",
     "import/no-anonymous-default-export": "warn",
@@ -69,5 +73,13 @@ module.exports = {
     ],
     "import/unambiguous": "warn",
     "no-console": "warn",
+    "react/jsx-no-bind": "warn",
+    'react/jsx-no-literals': 'warn',
+    'react/no-array-index-key': 'warn',
   },
+  settings: {
+    react: {
+      version: "18.0",
+    }
+  }
 };

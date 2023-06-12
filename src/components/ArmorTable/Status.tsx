@@ -1,4 +1,5 @@
 import { type FC, useCallback, useMemo } from "react";
+import { FormattedMessage } from "react-intl";
 import { useDispatch } from "react-redux";
 
 import { type IDataArmor } from "../../data";
@@ -38,7 +39,7 @@ export const Status: FC<IStatusProps> = ({ armor }) => {
     <div className="status">
       <div className="status-owned">
         <label className="form-label" htmlFor={`slider-owned-${slug}`}>
-          Owned
+          <FormattedMessage id="statusOwned" defaultMessage="Owned" />
         </label>
         <input
           id={`slider-owned-${slug}`}
@@ -54,7 +55,7 @@ export const Status: FC<IStatusProps> = ({ armor }) => {
       </div>
       <div className="status-wanted">
         <label className="form-label" htmlFor={`slider-wanted-${slug}`}>
-          Wanted
+          <FormattedMessage id="statusWanted" defaultMessage="Wanted" />
         </label>
         <input
           id={`slider-wanted-${slug}`}

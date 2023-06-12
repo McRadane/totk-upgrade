@@ -1,6 +1,7 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { type FC, useCallback, useState } from "react";
+import { FormattedMessage, useIntl } from "react-intl";
 import { useDispatch, useSelector } from "react-redux";
 import { useDebouncedCallback } from "use-debounce";
 
@@ -17,6 +18,7 @@ export const Filter: FC<IFilterProps> = ({ updateTextFilter }) => {
   );
   const [textFilter, setTextFilter] = useState("");
   const dispatch = useDispatch();
+  const intl = useIntl();
 
   const onChangeHideArmors = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,7 +52,10 @@ export const Filter: FC<IFilterProps> = ({ updateTextFilter }) => {
             type="checkbox"
           />
           <label className="form-check-label" htmlFor="flexSwitchHideArmors">
-            Filter armors
+            <FormattedMessage
+              id="filterArmors"
+              defaultMessage="Filter armors"
+            />
           </label>
         </div>
 
@@ -64,10 +69,17 @@ export const Filter: FC<IFilterProps> = ({ updateTextFilter }) => {
               value={textFilter}
             />
             <label className="form-label" htmlFor="searchFilter">
-              Search
+              <FormattedMessage id="searchArmors" defaultMessage="Search" />
             </label>
           </div>
-          <button aria-label="Start search" className="btn btn-primary" type="button">
+          <button
+            aria-label={intl.formatMessage({
+              defaultMessage: "Start Search",
+              id: "startSearch",
+            })}
+            className="btn btn-primary"
+            type="button"
+          >
             <FontAwesomeIcon icon={faSearch} />
           </button>
         </div>

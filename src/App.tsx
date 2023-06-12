@@ -1,3 +1,5 @@
+import { FormattedMessage, useIntl } from "react-intl";
+
 import { Armor } from "./components/ArmorTable/Armor";
 import { CostsTable } from "./components/CostsTable/CostsTable";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -6,12 +8,21 @@ import { Tabs } from "./components/Tabs/Tabs";
 import "./assets/app.scss";
 
 function App() {
+  const intl = useIntl();
   return (
     <>
       <Tabs
         tabs={[
-          { id: 1, page: Armor, title: "Armors" },
-          { id: 2, page: CostsTable, title: "Costs" },
+          {
+            id: 1,
+            page: Armor,
+            title: intl.formatMessage({ defaultMessage: "Armor", id: 'menuArmor' }),
+          },
+          {
+            id: 2,
+            page: CostsTable,
+            title: intl.formatMessage({ defaultMessage: "Costs", id: 'menuCosts' }),
+          },
         ]}
       />
       <ScrollToTop />
@@ -24,15 +35,25 @@ function App() {
         className="p-4"
       >
         <span>
-          {import.meta.env.VITE_SITE_NAME} v{APP_VERSION} by McRadane
+          <FormattedMessage
+            id="footerVersion"
+            values={{
+              name: import.meta.env.VITE_SITE_NAME,
+              version: APP_VERSION,
+            }}
+            defaultMessage="{name} v{version} by McRadane"
+          />
         </span>
         <a
           className="text-reset fw-bold"
           href="https://github.com/McRadane/totk-upgrade"
-          rel="noopener"
+          rel="noopener noreferrer"
           target="_blank"
         >
-          Project's GitHub repository
+          <FormattedMessage
+            id="linkGitHub"
+            defaultMessage="Project's GitHub repository"
+          />
         </a>
       </footer>
     </>

@@ -1,13 +1,16 @@
-import { armors } from "../../data";
+
+import { type IDataArmor } from "../../data";
 import { type IArmor } from "../../reducers/armors";
 
 export interface IFiltersOptions {
+  armors: IDataArmor[];
   armorsState: IArmor[];
   hidden?: boolean;
   text?: string;
 }
 
 export const filterArmors = ({
+  armors,
   armorsState,
   hidden,
   text,

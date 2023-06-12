@@ -1,4 +1,5 @@
 import { type FC, useMemo } from "react";
+import { FormattedMessage } from "react-intl";
 
 import { type IDataArmor } from "../../../data";
 import { useArmorStatus } from "../../../reducers/armors";
@@ -25,18 +26,22 @@ export const RowList: FC<IRowProps> = ({ armor }) => {
         <table className="table table-sm">
           <tbody>
             <tr>
-              <th scope="col">Name</th>
+              <th scope="col">
+                <FormattedMessage id="armorName" defaultMessage="Name" />
+              </th>
               <th scope="col">{armor.name}</th>
             </tr>
 
             <tr>
-              <td>Set</td>
+              <td>
+                <FormattedMessage id="armorSet" defaultMessage="Set" />
+              </td>
               <td>{armor.set}</td>
             </tr>
 
             <tr>
               <td>
-                Status
+                <FormattedMessage id="status" defaultMessage="Status" />
                 <StatusPrimary armor={armor} />
               </td>
               <td>
@@ -46,9 +51,17 @@ export const RowList: FC<IRowProps> = ({ armor }) => {
 
             <tr>
               <td>
-                1 Star Cost
+                <FormattedMessage
+                  id="starCost"
+                  defaultMessage="{num} Star Cost"
+                  values={{ num: 1 }}
+                />
                 <br />
-                (10 Rupees)
+                <FormattedMessage
+                  id="rupeesAmountParentheses"
+                  defaultMessage="({num} Rupees)"
+                  values={{ num: 10 }}
+                />
               </td>
               <td>
                 <MaterialList
@@ -60,9 +73,17 @@ export const RowList: FC<IRowProps> = ({ armor }) => {
 
             <tr>
               <td>
-                2 Star Cost
+                <FormattedMessage
+                  id="starCost"
+                  defaultMessage="{num} Star Cost"
+                  values={{ num: 2 }}
+                />
                 <br />
-                (50 Rupees)
+                <FormattedMessage
+                  id="rupeesAmountParentheses"
+                  defaultMessage="({num} Rupees)"
+                  values={{ num: 50 }}
+                />
               </td>
               <td>
                 <MaterialList
@@ -74,9 +95,17 @@ export const RowList: FC<IRowProps> = ({ armor }) => {
 
             <tr>
               <td>
-                3 Star Cost
+                <FormattedMessage
+                  id="starCost"
+                  defaultMessage="{num} Star Cost"
+                  values={{ num: 3 }}
+                />
                 <br />
-                (200 Rupees)
+                <FormattedMessage
+                  id="rupeesAmountParentheses"
+                  defaultMessage="({num} Rupees)"
+                  values={{ num: 200 }}
+                />
               </td>
               <td>
                 <MaterialList
@@ -88,9 +117,17 @@ export const RowList: FC<IRowProps> = ({ armor }) => {
 
             <tr>
               <td>
-                4 Star Cost
+                <FormattedMessage
+                  id="starCost"
+                  defaultMessage="{num} Star Cost"
+                  values={{ num: 4 }}
+                />
                 <br />
-                (500 Rupees)
+                <FormattedMessage
+                  id="rupeesAmountParentheses"
+                  defaultMessage="({num} Rupees)"
+                  values={{ num: 500 }}
+                />
               </td>
               <td>
                 <MaterialList

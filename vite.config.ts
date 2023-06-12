@@ -9,13 +9,12 @@ export default defineConfig(({ mode }) => {
 
   const postcssPlugins = [];
 
-  if(mode === 'production') {
-    postcssPlugins.push(purgecss({
-      content: [
-        "./index.html",
-        "./src/**/*.tsx"
-      ],
-    }));
+  if (mode === "production") {
+    postcssPlugins.push(
+      purgecss({
+        content: ["./index.html", "./src/**/*.tsx"],
+      })
+    );
   }
 
   postcssPlugins.push(autoprefixer);
@@ -27,9 +26,20 @@ export default defineConfig(({ mode }) => {
       },
     },
     plugins: [
-      react(),
+      react({
+        babel: {
+          plugins: [
+            [
+              "formatjs",
+              {
+                idInterpolationPattern: "[sha512:contenthash:base64:6]",
+                ast: true,
+              },
+            ],
+          ],
+        },
+      }),
       VitePWA({
-        injectRegister: false,
         includeAssets: [
           "favicon.ico",
           "apple-touch-icon.png",
@@ -59,6 +69,17 @@ export default defineConfig(({ mode }) => {
               sizes: "384x384",
               type: "image/png",
             },
+            {
+              src: env.VITE_BASE + "android-chrome-512x512.png",
+              sizes: "512x512",
+              type: "image/png",
+            },
+            {
+              src: env.VITE_BASE + "maskable_icon.png",
+              sizes: "512x512",
+              type: "image/png",
+              purpose: "any maskable",
+            },
           ],
         },
       }),
@@ -66,6 +87,6 @@ export default defineConfig(({ mode }) => {
     base: env.VITE_BASE,
     define: {
       APP_VERSION: JSON.stringify(process.env.npm_package_version),
-    }
+    },
   };
 });

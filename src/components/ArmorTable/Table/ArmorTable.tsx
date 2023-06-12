@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { FormattedMessage } from "react-intl";
 
 import type { IArmorsProps } from "../types";
 
@@ -10,18 +11,68 @@ export const ArmorTable: FC<IArmorsProps> = ({ armors }) => {
       <table className="table table-sm">
         <thead>
           <tr>
-            <th scope="col">Armor Piece</th>
-            <th scope="col">Set</th>
-            <th colSpan={2} scope="col">Status</th>
-            <th scope="col">1 Star Cost (10 Rupees)</th>
-            <th scope="col">2 Star Cost (50 Rupees)</th>
-            <th scope="col">3 Star Cost (200 Rupees)</th>
-            <th scope="col">4 Star Cost (500 Rupees)</th>
+            <th scope="col">
+              <FormattedMessage id="armorPiece" defaultMessage="Armor Piece" />
+            </th>
+            <th scope="col">
+              <FormattedMessage id="armorSet" defaultMessage="Set" />
+            </th>
+            <th colSpan={2} scope="col">
+              <FormattedMessage id="status" defaultMessage="Status" />
+            </th>
+            <th scope="col">
+              <FormattedMessage
+                id="starCost"
+                defaultMessage="{num} Star Cost"
+                values={{ num: 1 }}
+              />{" "}
+              <FormattedMessage
+                id="rupeesAmountParentheses"
+                defaultMessage="({num} Rupees)"
+                values={{ num: 10 }}
+              />
+            </th>
+            <th scope="col">
+              <FormattedMessage
+                id="starCost"
+                defaultMessage="{num} Star Cost"
+                values={{ num: 2 }}
+              />{" "}
+              <FormattedMessage
+                id="rupeesAmountParentheses"
+                defaultMessage="({num} Rupees)"
+                values={{ num: 50 }}
+              />
+            </th>
+            <th scope="col">
+              <FormattedMessage
+                id="starCost"
+                defaultMessage="{num} Star Cost"
+                values={{ num: 3 }}
+              />{" "}
+              <FormattedMessage
+                id="rupeesAmountParentheses"
+                defaultMessage="({num} Rupees)"
+                values={{ num: 200 }}
+              />
+            </th>
+            <th scope="col">
+              <FormattedMessage
+                id="starCost"
+                defaultMessage="{num} Star Cost"
+                values={{ num: 4 }}
+              />{" "}
+              <FormattedMessage
+                id="rupeesAmountParentheses"
+                defaultMessage="({num} Rupees)"
+                values={{ num: 500 }}
+              />
+            </th>
           </tr>
         </thead>
         <tbody>
           {armors.map((armor) => (
-            <RowTable armor={armor} key={armor.name} />
+            <RowTable armor={armor} key={armor.id} />
           ))}
         </tbody>
       </table>

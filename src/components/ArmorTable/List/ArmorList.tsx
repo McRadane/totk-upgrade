@@ -8,7 +8,7 @@ export const ArmorList: FC<IArmorsProps> = ({ armors }) => {
   return (
     <div className="cards-list">
       {armors.map((armor) => (
-        <RowList armor={armor} key={armor.name} />
+        <RowList armor={armor} key={armor.id} />
       ))}
     </div>
   );
