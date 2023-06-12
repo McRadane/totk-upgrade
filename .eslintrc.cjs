@@ -5,6 +5,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
+    "plugin:perfectionist/recommended-natural",
     "plugin:react-hooks/recommended",
   ],
   parser: "@typescript-eslint/parser",
@@ -28,6 +29,7 @@ module.exports = {
     "import/no-anonymous-default-export": "warn",
     "import/no-commonjs": "warn",
     "import/no-deprecated": "warn",
+    "import/no-duplicates": ["warn", { "prefer-inline": true }],
     "import/no-dynamic-require": "warn",
     "import/no-mutable-exports": "warn",
     "import/no-nodejs-modules": "warn",
@@ -35,6 +37,12 @@ module.exports = {
     "import/no-unresolved": "warn",
     "import/no-useless-path-segments": "warn",
     "import/order": [
+      "off",
+      {
+        warnOnUnassignedImports: true,
+      },
+    ],
+    "perfectionist/sort-imports": [
       "warn",
       {
         groups: [
@@ -42,12 +50,24 @@ module.exports = {
           "internal",
           "parent",
           ["sibling", "index"],
+          "style",
           "object",
+          "side-effect",
         ],
         "newlines-between": "always",
-        "warnOnUnassignedImports": true,
+        "read-tsconfig": true,
       },
     ],
+    'perfectionist/sort-jsx-props': [
+      'warn',
+      {
+        'always-on-top': ['id', 'name', 'control'],
+        callback: 'ignore',
+        multiline: 'first',
+        shorthand: 'last'
+      }
+    ],
     "import/unambiguous": "warn",
+    "no-console": "warn",
   },
 };

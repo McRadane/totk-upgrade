@@ -12,7 +12,7 @@ export const ArmorTable: FC<IArmorsProps> = ({ armors }) => {
           <tr>
             <th scope="col">Armor Piece</th>
             <th scope="col">Set</th>
-            <th scope="col" colSpan={2}>Status</th>
+            <th colSpan={2} scope="col">Status</th>
             <th scope="col">1 Star Cost (10 Rupees)</th>
             <th scope="col">2 Star Cost (50 Rupees)</th>
             <th scope="col">3 Star Cost (200 Rupees)</th>
@@ -21,7 +21,7 @@ export const ArmorTable: FC<IArmorsProps> = ({ armors }) => {
         </thead>
         <tbody>
           {armors.map((armor) => (
-            <RowTable key={armor.name} armor={armor} />
+            <RowTable armor={armor} key={armor.name} />
           ))}
         </tbody>
       </table>

@@ -1,16 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+import { type PayloadAction , createSlice } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
 
-import { armors } from "../data";
 import type { IRootState } from "../configureStore";
+import { armors } from "../data";
 
 export interface IArmor {
+  hidden: boolean;
   name: string;
   owned: boolean;
-  hidden: boolean;
-  wanted: 0 | 1 | 2 | 3 | 4;
   ownedLevel: 0 | 1 | 2 | 3 | 4;
+  wanted: 0 | 1 | 2 | 3 | 4;
 }
 
 export interface ArmorState {
@@ -19,25 +18,22 @@ export interface ArmorState {
 
 const initialState: ArmorState = {
   armors: armors.map((armor) => ({
+    hidden: false,
     name: armor.name,
     owned: false,
-    hidden: false,
-    wanted: 0,
     ownedLevel: 0,
+    wanted: 0,
   })),
 };
 
 export const armorSlice = createSlice({
-  name: "armor",
   initialState,
+  name: "armor",
   reducers: {
-    setWanted: (state, action: PayloadAction<[string, 0 | 1 | 2 | 3 | 4]>) => {
+    setHidden: (state, action: PayloadAction<[string, boolean]>) => {
       state.armors = state.armors.map((armor) => {
         if (armor.name === action.payload[0]) {
-          armor.wanted = action.payload[1];
-          if (armor.wanted < armor.ownedLevel) {
-            armor.wanted = armor.ownedLevel;
-          }
+          armor.hidden = action.payload[1];
         }
         return armor;
       });
@@ -67,10 +63,13 @@ export const armorSlice = createSlice({
         return armor;
       });
     },
-    setHidden: (state, action: PayloadAction<[string, boolean]>) => {
+    setWanted: (state, action: PayloadAction<[string, 0 | 1 | 2 | 3 | 4]>) => {
       state.armors = state.armors.map((armor) => {
         if (armor.name === action.payload[0]) {
-          armor.hidden = action.payload[1];
+          armor.wanted = action.payload[1];
+          if (armor.wanted < armor.ownedLevel) {
+            armor.wanted = armor.ownedLevel;
+          }
         }
         return armor;
       });
@@ -79,7 +78,7 @@ export const armorSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setWanted, setOwnedLevel, setHidden, setOwned } = armorSlice.actions;
+export const { setHidden, setOwned, setOwnedLevel, setWanted } = armorSlice.actions;
 
 export const useArmorStatus = (name: string) =>
   useSelector((state: IRootState) =>

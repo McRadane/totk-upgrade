@@ -1,13 +1,13 @@
-import { useSelector } from "react-redux";
 import { useMemo, useState } from "react";
+import { useSelector } from "react-redux";
 
-import { useMediaQuery } from "../functions";
 import { type IRootState } from "../../configureStore";
+import { useMediaQuery } from "../functions";
 
+import { Filter } from "./Filter";
 import { ArmorList } from "./List/ArmorList";
 import { ArmorTable } from "./Table/ArmorTable";
 import { filterArmors } from "./functions";
-import { Filter } from "./Filter";
 
 export const Armor = () => {
   const small = useMediaQuery("(max-width: 900px)");

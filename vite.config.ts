@@ -2,29 +2,34 @@ import { defineConfig, loadEnv } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 import react from "@vitejs/plugin-react";
 import purgecss from "@fullhuman/postcss-purgecss";
+import autoprefixer from "autoprefixer";
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
 
-  console.log({ mode, env });
+  const postcssPlugins = [];
+
+  if(mode === 'production') {
+    postcssPlugins.push(purgecss({
+      content: [
+        "./index.html",
+        "./src/**/*.tsx"
+      ],
+    }));
+  }
+
+  postcssPlugins.push(autoprefixer);
 
   return {
     css: {
       postcss: {
-        plugins: [
-          mode === 'production' ? purgecss({
-            content: [
-              "./index.html",
-              "./src/**/*.tsx",
-              "./node_modules/mdb-ui-kit/js/mdb.min.js",
-            ],
-          }) : undefined,
-        ],
+        plugins: postcssPlugins,
       },
     },
     plugins: [
       react(),
       VitePWA({
+        injectRegister: false,
         includeAssets: [
           "favicon.ico",
           "apple-touch-icon.png",
@@ -59,5 +64,8 @@ export default defineConfig(({ mode }) => {
       }),
     ],
     base: env.VITE_BASE,
+    define: {
+      APP_VERSION: JSON.stringify(process.env.npm_package_version),
+    }
   };
 });

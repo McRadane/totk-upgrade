@@ -5,7 +5,7 @@ import type { IRootState } from "../../configureStore";
 import { setPage } from "../../reducers/navigation";
 
 export interface ITabProps {
-  tab: { id: number; title: string; page: () => JSX.Element };
+  tab: { id: number; page: () => JSX.Element; title: string };
 }
 
 export const Tab: FC<ITabProps> = ({ tab }) => {
@@ -19,8 +19,8 @@ export const Tab: FC<ITabProps> = ({ tab }) => {
   return (
     <li className="nav-item">
       <a
-        className={`nav-link ${tab.id === activePage ? "active" : ""}`}
         aria-current={tab.id === activePage ? "page" : undefined}
+        className={`nav-link ${tab.id === activePage ? "active" : ""}`}
         href="#"
         onClick={setActivePage}
       >

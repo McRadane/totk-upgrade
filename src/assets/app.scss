@@ -1,4 +1,4 @@
-@import 'mdb-ui-kit/src/scss/mdb.free.scss';
+@import "mdb-ui-kit/src/scss/mdb.free.scss";
 
 #root {
   max-width: 1280px;
@@ -6,6 +6,22 @@
   padding: 2rem;
   text-align: center;
   min-height: 100vh;
+
+  --color-black: #000;
+  --color-grey-100: #ccc;
+  --color-grey-200: #888;
+  --color-grey-300: #555;
+  --color-grey-400: #222;
+  --color-white: #fff;
+  --color-ivory: #faf7dc;
+  --color-ocher: #cbb687;
+  --color-light-ocher: #e5dcb7;
+  --color-mid-ocher: #b99f65;
+  --color-dark-ocher: #756950;
+  --color-light-green: #49d59c;
+  --color-green: #1f5d50;
+  --color-dark-green: #18473d;
+  --color-brown: #2c2422;
 }
 
 .no-active {

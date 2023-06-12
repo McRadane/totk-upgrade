@@ -1,34 +1,33 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+import { type PayloadAction , createSlice } from "@reduxjs/toolkit";
 
 export interface NavigationState {
-  page: number;
-  hideNoCost: boolean;
   hideArmors: boolean;
+  hideNoCost: boolean;
+  page: number;
 }
 
 const initialState: NavigationState = {
-  page: 1,
-  hideNoCost: true,
   hideArmors: true,
+  hideNoCost: true,
+  page: 1,
 };
 
 export const navigationSlice = createSlice({
-  name: "navigation",
   initialState,
+  name: "navigation",
   reducers: {
-    setPage: (state, action: PayloadAction<number>) => {
-      state.page = action.payload;
+    setHideArmors: (state, action: PayloadAction<boolean>) => {
+      state.hideArmors = action.payload;
     },
     setHideNoCost: (state, action: PayloadAction<boolean>) => {
       state.hideNoCost = action.payload;
     },
-    setHideArmors: (state, action: PayloadAction<boolean>) => {
-      state.hideArmors = action.payload;
+    setPage: (state, action: PayloadAction<number>) => {
+      state.page = action.payload;
     },
   },
 });
 
-export const { setHideNoCost, setPage, setHideArmors } = navigationSlice.actions;
+export const { setHideArmors, setHideNoCost, setPage } = navigationSlice.actions;
 
 export default navigationSlice.reducer;

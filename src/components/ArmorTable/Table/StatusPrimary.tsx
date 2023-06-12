@@ -1,7 +1,7 @@
+import { faCheck, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { type FC, useCallback } from "react";
 import { useDispatch } from "react-redux";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 
 import { type IDataArmor } from "../../../data";
 import {
@@ -29,20 +29,22 @@ export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
   return (
     <>
       <button
-        type="button"
         className={`btn btn-outline-primary btn-sm btn-floating ${
           status.owned ? "active" : ""
         }`}
+        aria-label="Toggle owned status"
         onClick={onChangeOwned}
+        type="button"
       >
         <FontAwesomeIcon icon={faCheck} />
       </button>
       <button
-        type="button"
         className={`btn btn-outline-primary btn-sm btn-floating ${
           status.hidden ? "active" : ""
         }`}
+        aria-label="Toggle hidden status"
         onClick={onChangeHidden}
+        type="button"
       >
         <FontAwesomeIcon icon={faEyeSlash} />
       </button>

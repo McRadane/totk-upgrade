@@ -6,7 +6,7 @@ import { type IArmor } from "../reducers/armors";
 export const calculateListItems = (
   armorsState: IArmor[]
 ): [string, number, number][] => {
-  const items: Record<string, { selection: number; all: number }> = {};
+  const items: Record<string, { all: number; selection: number }> = {};
 
   armors.forEach((armorData) => {
     const armor = armorsState.find((a) => a.name === armorData.name) as IArmor;
@@ -69,7 +69,7 @@ export const calculateListItems = (
 
       materialsSelection.forEach(([name, count]) => {
         if (!items[name]) {
-          items[name] = { selection: 0, all: 0 };
+          items[name] = { all: 0, selection: 0 };
         }
 
         items[name].selection += count;
@@ -77,7 +77,7 @@ export const calculateListItems = (
 
       materialsAll.forEach(([name, count]) => {
         if (!items[name]) {
-          items[name] = { selection: 0, all: 0 };
+          items[name] = { all: 0, selection: 0 };
         }
 
         items[name].all += count;

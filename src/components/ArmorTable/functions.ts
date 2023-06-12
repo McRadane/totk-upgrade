@@ -2,15 +2,15 @@ import { armors } from "../../data";
 import { type IArmor } from "../../reducers/armors";
 
 export interface IFiltersOptions {
-  text?: string;
-  hidden?: boolean;
   armorsState: IArmor[];
+  hidden?: boolean;
+  text?: string;
 }
 
 export const filterArmors = ({
-  text,
-  hidden,
   armorsState,
+  hidden,
+  text,
 }: IFiltersOptions) => {
   if (!text && !hidden) {
     return armors;

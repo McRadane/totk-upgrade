@@ -1,19 +1,19 @@
 import { type Middleware, configureStore } from "@reduxjs/toolkit";
+import { createLogger } from "redux-logger";
 import {
-  persistStore,
-  persistReducer,
   FLUSH,
+  type MigrationManifest,
   PAUSE,
   PERSIST,
   PURGE,
+  type PersistConfig,
   REGISTER,
   REHYDRATE,
   createMigrate,
-  type PersistConfig,
-  type MigrationManifest,
+  persistReducer,
+  persistStore,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import { createLogger } from "redux-logger";
 
 import rootReducer, { type MergedState } from "./reducers";
 
@@ -23,8 +23,8 @@ const migrations: MigrationManifest = {
     const { armors } = (state as MergedState).armors;
     const newArmors = armors.map((armor) => ({
       ...armor,
-      owned: armor.owned !== undefined ? armor.owned : armor.ownedLevel > 0,
       hidden: armor.hidden !== undefined ? armor.hidden : false,
+      owned: armor.owned !== undefined ? armor.owned : armor.ownedLevel > 0,
     }));
     return {
       ...state,
@@ -36,7 +36,7 @@ const migrations: MigrationManifest = {
 const middlewares: Middleware[] = [];
 
 const logger = createLogger({
-  predicate: (_getState, action) => ![FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER].includes(action.type),
+  predicate: (_getState, action) => ![FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE].includes(action.type),
 });
 
 if (process.env.NODE_ENV === `development`) {
@@ -45,21 +45,21 @@ if (process.env.NODE_ENV === `development`) {
 
 const persistConfig: PersistConfig<MergedState> = {
   key: "root",
-  version: 2,
-  storage,
   migrate: createMigrate(migrations, { debug: true }),
+  storage,
+  version: 2,
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
-  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }).concat(...middlewares),
+  reducer: persistedReducer,
 });
 const persistor = persistStore(store);
 
@@ -68,4 +68,4 @@ export type IRootState = ReturnType<typeof store.getState>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type IAppDispatch = typeof store.dispatch;
 
-export { store, persistor };
+export { persistor, store };

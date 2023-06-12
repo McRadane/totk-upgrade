@@ -1,9 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
 import { useCallback, useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import { calculateListItems } from "../functions";
 import type { IRootState } from "../../configureStore";
 import { setHideNoCost } from "../../reducers/navigation";
+import { calculateListItems } from "../functions";
 
 export const CostsTable = () => {
   const armorsState = useSelector((state: IRootState) => state.armors.armors);
@@ -39,13 +39,13 @@ export const CostsTable = () => {
       <div className="container text-start">
         <div className="form-check form-switch">
           <input
-            className="form-check-input"
-            type="checkbox"
-            role="switch"
             id="flexSwitchHideNoCost"
             checked={hideNoCost}
-            onChange={onChangeHideNoCost}
+            className="form-check-input"
             disabled={filterLocked && !hideNoCost}
+            onChange={onChangeHideNoCost}
+            role="switch"
+            type="checkbox"
           />
           <label className="form-check-label" htmlFor="flexSwitchHideNoCost">
             Filter materials

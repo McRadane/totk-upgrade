@@ -1,15 +1,14 @@
 export interface IDataArmor{
-    set?: string;
     name: string;
     rank1?: [string, number][];
     rank2?: [string, number][];
     rank3?: [string, number][];
     rank4?: [string, number][];
+    set?: string;
 }
 
 export const armors: IDataArmor[] = [
   {
-    set: "Awakening",
     name: "Mask of Awakening",
     rank1: [
       ["Luminous Stone", 10],
@@ -27,9 +26,9 @@ export const armors: IDataArmor[] = [
       ["Luminous Stone", 30],
       ["Star Fragment", 1],
     ],
+    set: "Awakening",
   },
   {
-    set: "Awakening",
     name: "Trousers of Awakening",
     rank1: [
       ["Luminous Stone", 10],
@@ -47,9 +46,9 @@ export const armors: IDataArmor[] = [
       ["Luminous Stone", 30],
       ["Star Fragment", 1],
     ],
+    set: "Awakening",
   },
   {
-    set: "Awakening",
     name: "Tunic of Awakening",
     rank1: [
       ["Luminous Stone", 10],
@@ -67,9 +66,9 @@ export const armors: IDataArmor[] = [
       ["Luminous Stone", 30],
       ["Star Fragment", 1],
     ],
+    set: "Awakening",
   },
   {
-    set: "Barbarian",
     name: "Barbarian Armor",
     rank1: [["Mighty Thistle", 3]],
     rank2: [
@@ -87,9 +86,9 @@ export const armors: IDataArmor[] = [
       ["White-Maned Lynel Mace Horn", 3],
       ["Bladed Rhino Beetle", 3],
     ],
+    set: "Barbarian",
   },
   {
-    set: "Barbarian",
     name: "Barbarian Helm",
     rank1: [["Mighty Thistle", 3]],
     rank2: [
@@ -107,9 +106,9 @@ export const armors: IDataArmor[] = [
       ["White-Maned Lynel Mace Horn", 3],
       ["Bladed Rhino Beetle", 3],
     ],
+    set: "Barbarian",
   },
   {
-    set: "Barbarian",
     name: "Barbarian Leg Wraps",
     rank1: [["Mighty Thistle", 3]],
     rank2: [
@@ -127,9 +126,9 @@ export const armors: IDataArmor[] = [
       ["White-Maned Lynel Mace Horn", 3],
       ["Bladed Rhino Beetle", 3],
     ],
+    set: "Barbarian",
   },
   {
-    set: "Charged",
     name: "Charged Headdress",
     rank1: [["Shock Fruit", 3]],
     rank2: [
@@ -146,9 +145,9 @@ export const armors: IDataArmor[] = [
       ["Voltfin Trout", 10],
       ["Large Zonai Charge", 5],
     ],
+    set: "Charged",
   },
   {
-    set: "Charged",
     name: "Charged Shirt",
     rank1: [["Shock Fruit", 3]],
     rank2: [
@@ -165,9 +164,9 @@ export const armors: IDataArmor[] = [
       ["Voltfin Trout", 10],
       ["Large Zonai Charge", 5],
     ],
+    set: "Charged",
   },
   {
-    set: "Charged",
     name: "Charged Trousers",
     rank1: [["Shock Fruit", 3]],
     rank2: [
@@ -184,9 +183,9 @@ export const armors: IDataArmor[] = [
       ["Voltfin Trout", 10],
       ["Large Zonai Charge", 5],
     ],
+    set: "Charged",
   },
   {
-    set: "Climbing Gear",
     name: "Climber's Bandana",
     rank1: [
       ["Keese Wing", 3],
@@ -204,9 +203,9 @@ export const armors: IDataArmor[] = [
       ["Fire Keese Wing", 10],
       ["Swift Violet", 20],
     ],
+    set: "Climbing Gear",
   },
   {
-    set: "Climbing Gear",
     name: "Climbing Boots",
     rank1: [
       ["Keese Wing", 3],
@@ -224,9 +223,9 @@ export const armors: IDataArmor[] = [
       ["Fire Keese Wing", 10],
       ["Swift Violet", 20],
     ],
+    set: "Climbing Gear",
   },
   {
-    set: "Climbing Gear",
     name: "Climbing Gear",
     rank1: [
       ["Keese Wing", 3],
@@ -244,9 +243,9 @@ export const armors: IDataArmor[] = [
       ["Fire Keese Wing", 10],
       ["Swift Violet", 20],
     ],
+    set: "Climbing Gear",
   },
   {
-    set: "Depths",
     name: "Gaiters of the Depths",
     rank1: [["Deep Firefly", 3]],
     rank2: [
@@ -263,9 +262,9 @@ export const armors: IDataArmor[] = [
       ["Large Zonaite", 10],
       ["Frox Guts", 3],
     ],
+    set: "Depths",
   },
   {
-    set: "Depths",
     name: "Hood of the Depths",
     rank1: [["Deep Firefly", 3]],
     rank2: [
@@ -282,9 +281,9 @@ export const armors: IDataArmor[] = [
       ["Large Zonaite", 10],
       ["Frox Guts", 3],
     ],
+    set: "Depths",
   },
   {
-    set: "Depths",
     name: "Tunic of the Depths",
     rank1: [["Deep Firefly", 3]],
     rank2: [
@@ -301,9 +300,9 @@ export const armors: IDataArmor[] = [
       ["Large Zonaite", 10],
       ["Frox Guts", 3],
     ],
+    set: "Depths",
   },
   {
-    set: "Desert Voe",
     name: "Desert Voe Headband",
     rank1: [["White Chuchu Jelly", 3]],
     rank2: [
@@ -320,9 +319,9 @@ export const armors: IDataArmor[] = [
       ["Ice-Breath Lizalfos Tail", 10],
       ["Sapphire", 5],
     ],
+    set: "Desert Voe",
   },
   {
-    set: "Desert Voe",
     name: "Desert Voe Spaulder",
     rank1: [["White Chuchu Jelly", 3]],
     rank2: [
@@ -339,9 +338,9 @@ export const armors: IDataArmor[] = [
       ["Ice-Breath Lizalfos Tail", 10],
       ["Sapphire", 5],
     ],
+    set: "Desert Voe",
   },
   {
-    set: "Desert Voe",
     name: "Desert Voe Trousers",
     rank1: [["White Chuchu Jelly", 3]],
     rank2: [
@@ -358,9 +357,9 @@ export const armors: IDataArmor[] = [
       ["Ice-Breath Lizalfos Tail", 10],
       ["Sapphire", 5],
     ],
+    set: "Desert Voe",
   },
   {
-    set: "Ember",
     name: "Ember Headdress",
     rank1: [["Fire Fruit", 3]],
     rank2: [
@@ -377,9 +376,9 @@ export const armors: IDataArmor[] = [
       ["Sizzlefin Trout", 10],
       ["Large Zonai Charge", 10],
     ],
+    set: "Ember",
   },
   {
-    set: "Ember",
     name: "Ember Shirt",
     rank1: [["Fire Fruit", 3]],
     rank2: [
@@ -396,9 +395,9 @@ export const armors: IDataArmor[] = [
       ["Sizzlefin Trout", 10],
       ["Large Zonai Charge", 10],
     ],
+    set: "Ember",
   },
   {
-    set: "Ember",
     name: "Ember Trousers",
     rank1: [["Fire Fruit", 3]],
     rank2: [
@@ -415,9 +414,9 @@ export const armors: IDataArmor[] = [
       ["Sizzlefin Trout", 10],
       ["Large Zonai Charge", 10],
     ],
+    set: "Ember",
   },
   {
-    set: "Fierce Deity",
     name: "Fierce Deity Armor",
     rank1: [
       ["Hinox Toenail", 5],
@@ -435,9 +434,9 @@ export const armors: IDataArmor[] = [
       ["Lynel Guts", 2],
       ["Naydra's Horn", 1],
     ],
+    set: "Fierce Deity",
   },
   {
-    set: "Fierce Deity",
     name: "Fierce Deity Boots",
     rank1: [
       ["Hinox Toenail", 5],
@@ -455,9 +454,9 @@ export const armors: IDataArmor[] = [
       ["Lynel Guts", 2],
       ["Farosh's Horn", 1],
     ],
+    set: "Fierce Deity",
   },
   {
-    set: "Fierce Deity",
     name: "Fierce Deity Mask",
     rank1: [
       ["Hinox Toenail", 5],
@@ -475,9 +474,9 @@ export const armors: IDataArmor[] = [
       ["Lynel Guts", 2],
       ["Dinraal's Horn", 1],
     ],
+    set: "Fierce Deity",
   },
   {
-    set: "Flamebreaker",
     name: "Flamebreaker Armor",
     rank1: [["Moblin Horn", 3]],
     rank2: [
@@ -494,9 +493,9 @@ export const armors: IDataArmor[] = [
       ["Smotherwing Butterfly", 5],
       ["Flint", 30],
     ],
+    set: "Flamebreaker",
   },
   {
-    set: "Flamebreaker",
     name: "Flamebreaker Boots",
     rank1: [["Moblin Horn", 3]],
     rank2: [
@@ -513,9 +512,9 @@ export const armors: IDataArmor[] = [
       ["Smotherwing Butterfly", 5],
       ["Flint", 30],
     ],
+    set: "Flamebreaker",
   },
   {
-    set: "Flamebreaker",
     name: "Flamebreaker Helm",
     rank1: [["Moblin Horn", 3]],
     rank2: [
@@ -532,9 +531,9 @@ export const armors: IDataArmor[] = [
       ["Smotherwing Butterfly", 5],
       ["Flint", 30],
     ],
+    set: "Flamebreaker",
   },
   {
-    set: "Froggy",
     name: "Froggy Hood",
     rank1: [["Sticky Lizard", 3]],
     rank2: [
@@ -550,9 +549,9 @@ export const armors: IDataArmor[] = [
       ["Horriblin Guts", 10],
       ["Opal", 10],
     ],
+    set: "Froggy",
   },
   {
-    set: "Froggy",
     name: "Froggy Leggings",
     rank1: [["Sticky Lizard", 3]],
     rank2: [
@@ -568,9 +567,9 @@ export const armors: IDataArmor[] = [
       ["Horriblin Guts", 10],
       ["Opal", 10],
     ],
+    set: "Froggy",
   },
   {
-    set: "Froggy",
     name: "Froggy Sleeve",
     rank1: [["Sticky Lizard", 3]],
     rank2: [
@@ -586,9 +585,9 @@ export const armors: IDataArmor[] = [
       ["Horriblin Guts", 10],
       ["Opal", 10],
     ],
+    set: "Froggy",
   },
   {
-    set: "Frostbite",
     name: "Frostbite Headdress",
     rank1: [["Ice Fruit", 3]],
     rank2: [
@@ -605,9 +604,9 @@ export const armors: IDataArmor[] = [
       ["Chillfin Trout", 10],
       ["Large Zonai Charge", 10],
     ],
+    set: "Frostbite",
   },
   {
-    set: "Frostbite",
     name: "Frostbite Shirt",
     rank1: [["Ice Fruit", 3]],
     rank2: [
@@ -624,9 +623,9 @@ export const armors: IDataArmor[] = [
       ["Chillfin Trout", 10],
       ["Large Zonai Charge", 10],
     ],
+    set: "Frostbite",
   },
   {
-    set: "Frostbite",
     name: "Frostbite Trousers",
     rank1: [["Ice Fruit", 3]],
     rank2: [
@@ -643,9 +642,9 @@ export const armors: IDataArmor[] = [
       ["Chillfin Trout", 10],
       ["Large Zonai Charge", 10],
     ],
+    set: "Frostbite",
   },
   {
-    set: "Glide",
     name: "Glide Mask",
     rank1: [["Keese Wing", 3]],
     rank2: [
@@ -661,9 +660,9 @@ export const armors: IDataArmor[] = [
       ["Aerocuda Wing", 10],
       ["Gibdo Wing", 8],
     ],
+    set: "Glide",
   },
   {
-    set: "Glide",
     name: "Glide Shirt",
     rank1: [["Keese Wing", 3]],
     rank2: [
@@ -679,9 +678,9 @@ export const armors: IDataArmor[] = [
       ["Aerocuda Wing", 10],
       ["Gibdo Wing", 8],
     ],
+    set: "Glide",
   },
   {
-    set: "Glide",
     name: "Glide Tights",
     rank1: [["Keese Wing", 3]],
     rank2: [
@@ -697,9 +696,9 @@ export const armors: IDataArmor[] = [
       ["Aerocuda Wing", 10],
       ["Gibdo Wing", 8],
     ],
+    set: "Glide",
   },
   {
-    set: "Hero",
     name: "Cap of the Hero",
     rank1: [
       ["Ruby", 1],
@@ -717,9 +716,9 @@ export const armors: IDataArmor[] = [
       ["Ruby", 10],
       ["Star Fragment", 1],
     ],
+    set: "Hero",
   },
   {
-    set: "Hero",
     name: "Trousers of the Hero",
     rank1: [
       ["Ruby", 1],
@@ -737,9 +736,9 @@ export const armors: IDataArmor[] = [
       ["Ruby", 10],
       ["Star Fragment", 1],
     ],
+    set: "Hero",
   },
   {
-    set: "Hero",
     name: "Tunic of the Hero",
     rank1: [
       ["Ruby", 1],
@@ -757,9 +756,9 @@ export const armors: IDataArmor[] = [
       ["Ruby", 10],
       ["Star Fragment", 1],
     ],
+    set: "Hero",
   },
   {
-    set: "Hylian",
     name: "Hylian Hood",
     rank1: [["Bokoblin Horn", 5]],
     rank2: [
@@ -776,9 +775,9 @@ export const armors: IDataArmor[] = [
       ["Bokoblin Guts", 5],
       ["Amber", 30],
     ],
+    set: "Hylian",
   },
   {
-    set: "Hylian",
     name: "Hylian Trousers",
     rank1: [["Bokoblin Horn", 5]],
     rank2: [
@@ -795,9 +794,9 @@ export const armors: IDataArmor[] = [
       ["Bokoblin Guts", 5],
       ["Amber", 30],
     ],
+    set: "Hylian",
   },
   {
-    set: "Hylian",
     name: "Hylian Tunic",
     rank1: [["Bokoblin Horn", 5]],
     rank2: [
@@ -814,9 +813,9 @@ export const armors: IDataArmor[] = [
       ["Bokoblin Guts", 5],
       ["Amber", 30],
     ],
+    set: "Hylian",
   },
   {
-    set: "Miner's",
     name: "Miner's Mask",
     rank1: [["Brightbloom Seeds", 10]],
     rank2: [
@@ -833,9 +832,9 @@ export const armors: IDataArmor[] = [
       ["Diamond", 3],
       ["Large Zonaite", 10],
     ],
+    set: "Miner's",
   },
   {
-    set: "Miner's",
     name: "Miner's Top",
     rank1: [["Brightbloom Seeds", 10]],
     rank2: [
@@ -852,9 +851,9 @@ export const armors: IDataArmor[] = [
       ["Diamond", 3],
       ["Large Zonaite", 10],
     ],
+    set: "Miner's",
   },
   {
-    set: "Miner's",
     name: "Miner's Trousers",
     rank1: [["Brightbloom Seeds", 10]],
     rank2: [
@@ -871,9 +870,9 @@ export const armors: IDataArmor[] = [
       ["Diamond", 3],
       ["Large Zonaite", 10],
     ],
+    set: "Miner's",
   },
   {
-    set: "Radiant",
     name: "Radiant Mask",
     rank1: [
       ["Luminous Stone", 10],
@@ -893,9 +892,9 @@ export const armors: IDataArmor[] = [
       ["Lynel Guts", 3],
       ["Molduga Jaw", 3],
     ],
+    set: "Radiant",
   },
   {
-    set: "Radiant",
     name: "Radiant Shirt",
     rank1: [
       ["Luminous Stone", 10],
@@ -915,9 +914,9 @@ export const armors: IDataArmor[] = [
       ["Lynel Guts", 3],
       ["Molduga Jaw", 3],
     ],
+    set: "Radiant",
   },
   {
-    set: "Radiant",
     name: "Radiant Tights",
     rank1: [
       ["Luminous Stone", 10],
@@ -937,9 +936,9 @@ export const armors: IDataArmor[] = [
       ["Lynel Guts", 3],
       ["Molduga Jaw", 3],
     ],
+    set: "Radiant",
   },
   {
-    set: "Royal Guard",
     name: "Royal Guard Boots",
     rank1: [
       ["Boss Bokoblin Horn", 3],
@@ -958,9 +957,9 @@ export const armors: IDataArmor[] = [
       ["Molduga Guts", 3],
       ["Gleeok Guts", 3],
     ],
+    set: "Royal Guard",
   },
   {
-    set: "Royal Guard",
     name: "Royal Guard Cap",
     rank1: [
       ["Boss Bokoblin Horn", 3],
@@ -979,9 +978,9 @@ export const armors: IDataArmor[] = [
       ["Molduga Guts", 3],
       ["Gleeok Guts", 3],
     ],
+    set: "Royal Guard",
   },
   {
-    set: "Royal Guard",
     name: "Royal Guard Uniform",
     rank1: [
       ["Boss Bokoblin Horn", 3],
@@ -1000,9 +999,9 @@ export const armors: IDataArmor[] = [
       ["Molduga Guts", 3],
       ["Gleeok Guts", 3],
     ],
+    set: "Royal Guard",
   },
   {
-    set: "Rubber",
     name: "Rubber Armor",
     rank1: [
       ["Electric Lizalfos Horn", 1],
@@ -1022,9 +1021,9 @@ export const armors: IDataArmor[] = [
       ["Topaz", 5],
       ["Electric Lizalfos Tail", 8],
     ],
+    set: "Rubber",
   },
   {
-    set: "Rubber",
     name: "Rubber Helm",
     rank1: [
       ["Electric Lizalfos Horn", 1],
@@ -1044,9 +1043,9 @@ export const armors: IDataArmor[] = [
       ["Topaz", 5],
       ["Electric Lizalfos Tail", 8],
     ],
+    set: "Rubber",
   },
   {
-    set: "Rubber",
     name: "Rubber Tights",
     rank1: [
       ["Electric Lizalfos Horn", 1],
@@ -1066,9 +1065,9 @@ export const armors: IDataArmor[] = [
       ["Topaz", 5],
       ["Electric Lizalfos Tail", 8],
     ],
+    set: "Rubber",
   },
   {
-    set: "Sky",
     name: "Cap of the Sky",
     rank1: [
       ["Sapphire", 1],
@@ -1086,9 +1085,9 @@ export const armors: IDataArmor[] = [
       ["Sapphire", 10],
       ["Star Fragment", 1],
     ],
+    set: "Sky",
   },
   {
-    set: "Sky",
     name: "Tunic of the Sky",
     rank1: [
       ["Sapphire", 1],
@@ -1106,9 +1105,9 @@ export const armors: IDataArmor[] = [
       ["Sapphire", 10],
       ["Star Fragment", 1],
     ],
+    set: "Sky",
   },
   {
-    set: "Sky",
     name: "Trousers of the Sky",
     rank1: [
       ["Sapphire", 1],
@@ -1126,9 +1125,9 @@ export const armors: IDataArmor[] = [
       ["Sapphire", 10],
       ["Star Fragment", 1],
     ],
+    set: "Sky",
   },
   {
-    set: "Snowquill",
     name: "Snowquill Headdress",
     rank1: [["Red Chuchu Jelly", 3]],
     rank2: [
@@ -1145,9 +1144,9 @@ export const armors: IDataArmor[] = [
       ["Fire-Breath Lizalfos Tail", 10],
       ["Ruby", 5],
     ],
+    set: "Snowquill",
   },
   {
-    set: "Snowquill",
     name: "Snowquill Trousers",
     rank1: [["Red Chuchu Jelly", 3]],
     rank2: [
@@ -1164,9 +1163,9 @@ export const armors: IDataArmor[] = [
       ["Fire-Breath Lizalfos Tail", 10],
       ["Ruby", 5],
     ],
+    set: "Snowquill",
   },
   {
-    set: "Snowquill",
     name: "Snowquill Tunic",
     rank1: [["Red Chuchu Jelly", 3]],
     rank2: [
@@ -1183,9 +1182,9 @@ export const armors: IDataArmor[] = [
       ["Fire-Breath Lizalfos Tail", 10],
       ["Ruby", 5],
     ],
+    set: "Snowquill",
   },
   {
-    set: "Soldier's",
     name: "Soldier's Armor",
     rank1: [
       ["Chuchu Jelly", 5],
@@ -1205,9 +1204,9 @@ export const armors: IDataArmor[] = [
       ["Lynel Hoof", 5],
       ["Lynel Guts", 5],
     ],
+    set: "Soldier's",
   },
   {
-    set: "Soldier's",
     name: "Soldier's Greaves",
     rank1: [
       ["Chuchu Jelly", 5],
@@ -1227,9 +1226,9 @@ export const armors: IDataArmor[] = [
       ["Lynel Hoof", 5],
       ["Lynel Guts", 5],
     ],
+    set: "Soldier's",
   },
   {
-    set: "Soldier's",
     name: "Soldier's Helm",
     rank1: [
       ["Chuchu Jelly", 5],
@@ -1249,9 +1248,9 @@ export const armors: IDataArmor[] = [
       ["Lynel Hoof", 5],
       ["Lynel Guts", 5],
     ],
+    set: "Soldier's",
   },
   {
-    set: "Stealth",
     name: "Stealth Chest Guard",
     rank1: [["Blue Nightshade", 3]],
     rank2: [
@@ -1268,9 +1267,9 @@ export const armors: IDataArmor[] = [
       ["Silent Princess", 5],
       ["Sundelion", 10],
     ],
+    set: "Stealth",
   },
   {
-    set: "Stealth",
     name: "Stealth Mask",
     rank1: [["Blue Nightshade", 3]],
     rank2: [
@@ -1287,9 +1286,9 @@ export const armors: IDataArmor[] = [
       ["Silent Princess", 5],
       ["Sundelion", 10],
     ],
+    set: "Stealth",
   },
   {
-    set: "Stealth",
     name: "Stealth Tights",
     rank1: [["Blue Nightshade", 3]],
     rank2: [
@@ -1306,9 +1305,9 @@ export const armors: IDataArmor[] = [
       ["Silent Princess", 5],
       ["Sundelion", 10],
     ],
+    set: "Stealth",
   },
   {
-    set: "Time",
     name: "Cap of Time",
     rank1: [
       ["Amber", 10],
@@ -1326,9 +1325,9 @@ export const armors: IDataArmor[] = [
       ["Amber", 40],
       ["Star Fragment", 1],
     ],
+    set: "Time",
   },
   {
-    set: "Time",
     name: "Trousers of Time",
     rank1: [
       ["Amber", 10],
@@ -1346,9 +1345,9 @@ export const armors: IDataArmor[] = [
       ["Amber", 40],
       ["Star Fragment", 1],
     ],
+    set: "Time",
   },
   {
-    set: "Time",
     name: "Tunic of Time",
     rank1: [
       ["Amber", 10],
@@ -1366,9 +1365,9 @@ export const armors: IDataArmor[] = [
       ["Amber", 40],
       ["Star Fragment", 1],
     ],
+    set: "Time",
   },
   {
-    set: "Twilight",
     name: "Cap of Twilight",
     rank1: [
       ["Topaz", 1],
@@ -1386,9 +1385,9 @@ export const armors: IDataArmor[] = [
       ["Topaz", 10],
       ["Star Fragment", 1],
     ],
+    set: "Twilight",
   },
   {
-    set: "Twilight",
     name: "Trousers of Twilight",
     rank1: [
       ["Topaz", 1],
@@ -1406,9 +1405,9 @@ export const armors: IDataArmor[] = [
       ["Topaz", 10],
       ["Star Fragment", 1],
     ],
+    set: "Twilight",
   },
   {
-    set: "Twilight",
     name: "Tunic of Twilight",
     rank1: [
       ["Topaz", 1],
@@ -1426,9 +1425,9 @@ export const armors: IDataArmor[] = [
       ["Topaz", 10],
       ["Star Fragment", 1],
     ],
+    set: "Twilight",
   },
   {
-    set: "Wild",
     name: "Cap of the Wild",
     rank1: [
       ["Acorn", 10],
@@ -1448,9 +1447,9 @@ export const armors: IDataArmor[] = [
       ["Star Fragment", 3],
       ["Shard of Farosh's Spike", 10],
     ],
+    set: "Wild",
   },
   {
-    set: "Wild",
     name: "Trousers of the Wild",
     rank1: [
       ["Acorn", 10],
@@ -1470,9 +1469,9 @@ export const armors: IDataArmor[] = [
       ["Star Fragment", 3],
       ["Shard of Dinraal's Spike", 10],
     ],
+    set: "Wild",
   },
   {
-    set: "Wild",
     name: "Tunic of the Wild",
     rank1: [
       ["Acorn", 10],
@@ -1492,9 +1491,9 @@ export const armors: IDataArmor[] = [
       ["Star Fragment", 3],
       ["Shard of Naydra's Spike", 10],
     ],
+    set: "Wild",
   },
   {
-    set: "Wind",
     name: "Cap of the Wind",
     rank1: [
       ["Opal", 5],
@@ -1512,9 +1511,9 @@ export const armors: IDataArmor[] = [
       ["Opal", 25],
       ["Star Fragment", 1],
     ],
+    set: "Wind",
   },
   {
-    set: "Wind",
     name: "Trousers of the Wind",
     rank1: [
       ["Opal", 5],
@@ -1532,9 +1531,9 @@ export const armors: IDataArmor[] = [
       ["Opal", 25],
       ["Star Fragment", 1],
     ],
+    set: "Wind",
   },
   {
-    set: "Wind",
     name: "Tunic of the Wind",
     rank1: [
       ["Opal", 5],
@@ -1552,9 +1551,9 @@ export const armors: IDataArmor[] = [
       ["Opal", 25],
       ["Star Fragment", 1],
     ],
+    set: "Wind",
   },
   {
-    set: "Yiga",
     name: "Yiga Armor",
     rank1: [["Octorok Eyeball", 2]],
     rank2: [
@@ -1570,9 +1569,9 @@ export const armors: IDataArmor[] = [
       ["Black Hinox Horn", 3],
       ["Mighty Banana", 10],
     ],
+    set: "Yiga",
   },
   {
-    set: "Yiga",
     name: "Yiga Mask",
     rank1: [["Octorok Eyeball", 2]],
     rank2: [
@@ -1588,9 +1587,9 @@ export const armors: IDataArmor[] = [
       ["Black Hinox Horn", 3],
       ["Mighty Banana", 10],
     ],
+    set: "Yiga",
   },
   {
-    set: "Yiga",
     name: "Yiga Tights",
     rank1: [["Octorok Eyeball", 2]],
     rank2: [
@@ -1606,9 +1605,9 @@ export const armors: IDataArmor[] = [
       ["Black Hinox Horn", 3],
       ["Mighty Banana", 10],
     ],
+    set: "Yiga",
   },
   {
-    set: "Zonaite",
     name: "Zonaite Helm",
     rank1: [["Soldier Construct Horn", 5]],
     rank2: [
@@ -1626,9 +1625,9 @@ export const armors: IDataArmor[] = [
       ["Captain Construct III Horn", 5],
       ["Large Zonaite", 10],
     ],
+    set: "Zonaite",
   },
   {
-    set: "Zonaite",
     name: "Zonaite Shin Guards",
     rank1: [["Soldier Construct Horn", 5]],
     rank2: [
@@ -1646,9 +1645,9 @@ export const armors: IDataArmor[] = [
       ["Captain Construct III Horn", 5],
       ["Large Zonaite", 10],
     ],
+    set: "Zonaite",
   },
   {
-    set: "Zonaite",
     name: "Zonaite Waistguard",
     rank1: [["Soldier Construct Horn", 5]],
     rank2: [
@@ -1666,9 +1665,9 @@ export const armors: IDataArmor[] = [
       ["Captain Construct III Horn", 5],
       ["Large Zonaite", 10],
     ],
+    set: "Zonaite",
   },
   {
-    set: "Zora",
     name: "Zora Armor",
     rank1: [["Lizalfos Horn", 3]],
     rank2: [
@@ -1685,9 +1684,9 @@ export const armors: IDataArmor[] = [
       ["Blue Lizalfos Tail", 5],
       ["Opal", 20],
     ],
+    set: "Zora",
   },
   {
-    set: "Zora",
     name: "Zora Greaves",
     rank1: [["Lizalfos Horn", 3]],
     rank2: [
@@ -1704,9 +1703,9 @@ export const armors: IDataArmor[] = [
       ["Blue Lizalfos Tail", 5],
       ["Opal", 20],
     ],
+    set: "Zora",
   },
   {
-    set: "Zora",
     name: "Zora Helm",
     rank1: [["Lizalfos Horn", 3]],
     rank2: [
@@ -1723,6 +1722,7 @@ export const armors: IDataArmor[] = [
       ["Blue Lizalfos Tail", 5],
       ["Opal", 20],
     ],
+    set: "Zora",
   },
   {
     name: "Ancient Hero's Aspect",

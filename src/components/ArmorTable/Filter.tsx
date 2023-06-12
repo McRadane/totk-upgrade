@@ -1,8 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
-import { type FC, useCallback, useState } from "react";
-import { useDebouncedCallback } from "use-debounce";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { type FC, useCallback, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useDebouncedCallback } from "use-debounce";
 
 import { type IRootState } from "../../configureStore";
 import { setHideArmors } from "../../reducers/navigation";
@@ -42,12 +42,12 @@ export const Filter: FC<IFilterProps> = ({ updateTextFilter }) => {
       <div className="container text-start filters-group">
         <div className="form-check form-switch">
           <input
-            className="form-check-input"
-            type="checkbox"
-            role="switch"
             id="flexSwitchHideArmors"
             checked={hideArmors}
+            className="form-check-input"
             onChange={onChangeHideArmors}
+            role="switch"
+            type="checkbox"
           />
           <label className="form-check-label" htmlFor="flexSwitchHideArmors">
             Filter armors
@@ -57,17 +57,17 @@ export const Filter: FC<IFilterProps> = ({ updateTextFilter }) => {
         <div className="input-group">
           <div className="form-outline">
             <input
-              type="search"
               id="searchFilter"
               className="form-control"
               onChange={onChangeTextFilter}
+              type="search"
               value={textFilter}
             />
             <label className="form-label" htmlFor="searchFilter">
               Search
             </label>
           </div>
-          <button type="button" className="btn btn-primary">
+          <button aria-label="Start search" className="btn btn-primary" type="button">
             <FontAwesomeIcon icon={faSearch} />
           </button>
         </div>

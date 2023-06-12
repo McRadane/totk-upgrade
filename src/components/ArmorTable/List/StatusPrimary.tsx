@@ -39,12 +39,12 @@ export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
           Owned ?
         </label>
         <input
-          className="form-check-input"
-          type="checkbox"
-          role="switch"
           id={`toggle-owned-${slug}`}
-          onChange={onChangeOwned}
           checked={status.owned}
+          className="form-check-input"
+          onChange={onChangeOwned}
+          role="switch"
+          type="checkbox"
         />
       </div>
       <div className="form-check form-switch">
@@ -52,12 +52,12 @@ export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
           Hidden ?
         </label>
         <input
-          className="form-check-input"
-          type="checkbox"
-          role="switch"
           id={`toggle-hidden-${slug}`}
-          onChange={onChangeHidden}
           checked={status.hidden}
+          className="form-check-input"
+          onChange={onChangeHidden}
+          role="switch"
+          type="checkbox"
         />
       </div>
     </>
