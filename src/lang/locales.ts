@@ -7,3 +7,4 @@ export const LOCALES_SHORT = {
   en: "en",
   fr: "fr",
 };
+

@@ -2,6 +2,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 
 import { Armor } from "./components/ArmorTable/Armor";
 import { CostsTable } from "./components/CostsTable/CostsTable";
+import { LanguageSwitcher } from "./components/LanguageSwitcher";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Tabs } from "./components/Tabs/Tabs";
 
@@ -9,6 +10,7 @@ import "./assets/app.scss";
 
 function App() {
   const intl = useIntl();
+
   return (
     <>
       <Tabs
@@ -16,12 +18,18 @@ function App() {
           {
             id: 1,
             page: Armor,
-            title: intl.formatMessage({ defaultMessage: "Armor", id: 'menuArmor' }),
+            title: intl.formatMessage({
+              defaultMessage: "Armor",
+              id: "menuArmor",
+            }),
           },
           {
             id: 2,
             page: CostsTable,
-            title: intl.formatMessage({ defaultMessage: "Costs", id: 'menuCosts' }),
+            title: intl.formatMessage({
+              defaultMessage: "Costs",
+              id: "menuCosts",
+            }),
           },
         ]}
       />
@@ -32,9 +40,10 @@ function App() {
           display: "flex",
           justifyContent: "space-between",
         }}
-        className="p-4"
+        className="p-4 row"
       >
-        <span>
+        <LanguageSwitcher className="col" />
+        <span className="col">
           <FormattedMessage
             id="footerVersion"
             values={{
@@ -45,7 +54,7 @@ function App() {
           />
         </span>
         <a
-          className="text-reset fw-bold"
+          className="col text-reset fw-bold"
           href="https://github.com/McRadane/totk-upgrade"
           rel="noopener noreferrer"
           target="_blank"

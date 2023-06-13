@@ -22,10 +22,14 @@ export const Armor = () => {
     (state: IRootState) => state.navigation.hideArmors
   );
 
-  const armorsFiltered = useMemo(
-    () => filterArmors({ armors: getArmors(intl), armorsState, hidden, text: textFilter }),
-    [armorsState, hidden, intl, textFilter]
-  );
+  const armorsFiltered = useMemo(() => {
+    return filterArmors({
+      armors: getArmors(intl),
+      armorsState,
+      hidden,
+      text: textFilter,
+    });
+  }, [armorsState, hidden, intl, textFilter]);
 
   if (small) {
     return (

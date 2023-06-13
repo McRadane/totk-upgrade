@@ -35,6 +35,10 @@ export const Status: FC<IStatusProps> = ({ armor }) => {
     [armor.name, dispatch]
   );
 
+  if (status.wanted === undefined) {
+    return <div className="status" />;
+  }
+
   return (
     <div className="status">
       <div className="status-owned">

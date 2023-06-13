@@ -3,7 +3,13 @@ import { FormattedMessage } from "react-intl";
 import { useDispatch } from "react-redux";
 
 import { type IDataArmor } from "../../../data";
-import { setHidden, setOwned, useArmorStatus } from "../../../reducers/armors";
+import {
+  setHidden,
+  setHiddenNonUpgradable,
+  setOwned,
+  setOwnedNonUpgradable,
+  useArmorStatus,
+} from "../../../reducers/armors";
 
 export interface IStatusProps {
   armor: IDataArmor;
@@ -17,16 +23,24 @@ export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
 
   const onChangeOwned = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch(setOwned([armor.name, event.target.checked]));
+      if (armor.rank1 !== undefined) {
+        dispatch(setOwned([armor.name, event.target.checked]));
+      } else {
+        dispatch(setOwnedNonUpgradable([armor.name, event.target.checked]));
+      }
     },
-    [armor.name, dispatch]
+    [armor.name, armor.rank1, dispatch]
   );
 
   const onChangeHidden = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch(setHidden([armor.name, event.target.checked]));
+      if (armor.rank1 !== undefined) {
+        dispatch(setHidden([armor.name, event.target.checked]));
+      } else {
+        dispatch(setHiddenNonUpgradable([armor.name, event.target.checked]));
+      }
     },
-    [armor.name, dispatch]
+    [armor.name, armor.rank1, dispatch]
   );
   return (
     <>

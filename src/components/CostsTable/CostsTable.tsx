@@ -1,11 +1,10 @@
 import { useCallback, useMemo } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage, FormattedNumber, useIntl } from "react-intl";
 import { useDispatch, useSelector } from "react-redux";
 
 import type { IRootState } from "../../configureStore";
 import { setHideNoCost } from "../../reducers/navigation";
 import { calculateListItems } from "../functions";
-
 
 export const CostsTable = () => {
   const armorsState = useSelector((state: IRootState) => state.armors.armors);
@@ -18,11 +17,16 @@ export const CostsTable = () => {
   const { costs, filterLocked } = useMemo(() => {
     const costsMemo = calculateListItems(armorsState, intl);
 
-    const resultsFiltered = costsMemo.filter((cost) => cost.selection !== 0);
+    const resultsFiltered = costsMemo.items.filter(
+      (cost) => cost.selection !== 0
+    );
 
     if (hideNoCost) {
       if (resultsFiltered.length > 0) {
-        return { costs: resultsFiltered, filterLocked: false };
+        return {
+          costs: { ...costsMemo, items: resultsFiltered },
+          filterLocked: false,
+        };
       }
     }
 
@@ -50,7 +54,10 @@ export const CostsTable = () => {
             type="checkbox"
           />
           <label className="form-check-label" htmlFor="flexSwitchHideNoCost">
-            <FormattedMessage id="filterMaterials" defaultMessage="Filter materials" />
+            <FormattedMessage
+              id="filterMaterials"
+              defaultMessage="Filter materials"
+            />
           </label>
         </div>
       </div>
@@ -58,17 +65,61 @@ export const CostsTable = () => {
       <table className="table table-sm">
         <thead>
           <tr>
-            <th scope="col"><FormattedMessage id="material" defaultMessage="Material" /></th>
-            <th scope="col"><FormattedMessage id="countSelection" defaultMessage="Count (Selection)" /></th>
-            <th scope="col"><FormattedMessage id="countAll" defaultMessage="Count (All Armors)" /></th>
+            <th scope="col">
+              <FormattedMessage id="material" defaultMessage="Material" />
+            </th>
+            <th scope="col">
+              <FormattedMessage
+                id="countSelection"
+                defaultMessage="Count (Selection)"
+              />
+            </th>
+            <th scope="col">
+              <FormattedMessage
+                id="countAll"
+                defaultMessage="Count (All Armors)"
+              />
+            </th>
           </tr>
         </thead>
         <tbody>
-          {costs.map(({ all, id, name, selection }) => (
+          <tr>
+            <th scope="row">
+              <FormattedMessage
+                id="rupeeCostUpgrade"
+                defaultMessage="Rupee (upgrades)"
+              />
+            </th>
+            <td>
+              <FormattedNumber value={costs.rupee.selection} />
+            </td>
+            <td>
+              <FormattedNumber value={costs.rupee.all} />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">
+              <FormattedMessage
+                id="rupeeCostBuy"
+                defaultMessage="Rupee (armor prices)"
+              />
+            </th>
+            <td>
+              <FormattedNumber value={costs.rupeeBuy.selection} />
+            </td>
+            <td>
+              <FormattedNumber value={costs.rupeeBuy.all} />
+            </td>
+          </tr>
+          {costs.items.map(({ all, id, name, selection }) => (
             <tr key={id}>
               <th scope="row">{name}</th>
-              <td>{selection}</td>
-              <td>{all}</td>
+              <td>
+                <FormattedNumber value={selection} />
+              </td>
+              <td>
+                <FormattedNumber value={all} />
+              </td>
             </tr>
           ))}
         </tbody>

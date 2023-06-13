@@ -15,6 +15,7 @@ export const filterArmors = ({
   hidden,
   text,
 }: IFiltersOptions) => {
+ 
   if (!text && !hidden) {
     return armors;
   }

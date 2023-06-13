@@ -1,11 +1,12 @@
 import {
-  type Dispatch,
   type FC,
   type ReactNode,
-  type SetStateAction,
   createContext,
-  useState,
+  useMemo,
 } from "react";
+import { useDispatch } from "react-redux";
+
+import { setLanguage, useLanguage } from "../reducers/navigation";
 
 import { LOCALES, LOCALES_SHORT } from "./locales";
 
@@ -26,7 +27,7 @@ const resolveLocale = (wanted: string) => {
 };
 interface ILanguageSwitcherProvider {
   locale: string;
-  setLocale: Dispatch<SetStateAction<string>>;
+  setLocale: (newLocale: string) => void;
 }
 
 export const LanguageSwitcherContext = createContext<ILanguageSwitcherProvider>(
@@ -41,9 +42,15 @@ export const LanguageSwitcherContext = createContext<ILanguageSwitcherProvider>(
 export const LanguageSwitcherProvider: FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [locale, setLocale] = useState(
-    resolveLocale(window.navigator.language)
-  );
+
+  const language = useLanguage();
+  const dispatch = useDispatch();
+
+  const locale = useMemo(() => language ? resolveLocale(language) :  resolveLocale(window.navigator.language), [language]);
+
+  const setLocale = (newLocale: string) => {
+    dispatch(setLanguage(resolveLocale(newLocale)));
+  }
 
   return (
     <LanguageSwitcherContext.Provider value={{ locale, setLocale }}>

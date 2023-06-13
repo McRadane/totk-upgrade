@@ -3,15 +3,20 @@ import type { IntlShape } from "react-intl";
 export type ArmorsIds =
   | "Amber Earrings"
   | "Ancient Hero's Aspect"
+  | "Archaic Legwear"
+  | "Archaic Tunic"
+  | "Archaic Warm Greaves"
   | "Barbarian Armor"
   | "Barbarian Helm"
   | "Barbarian Leg Wraps"
+  | "Bokoblin Mask"
   | "Cap of Time"
   | "Cap of Twilight"
   | "Cap of the Hero"
   | "Cap of the Sky"
   | "Cap of the Wild"
   | "Cap of the Wind"
+  | "Cece Hat"
   | "Champion's Leathers"
   | "Charged Headdress"
   | "Charged Shirt"
@@ -19,6 +24,9 @@ export type ArmorsIds =
   | "Climber's Bandana"
   | "Climbing Boots"
   | "Climbing Gear"
+  | "Dark Hood"
+  | "Dark Trousers"
+  | "Dark Tunic"
   | "Desert Voe Headband"
   | "Desert Voe Spaulder"
   | "Desert Voe Trousers"
@@ -26,6 +34,9 @@ export type ArmorsIds =
   | "Ember Headdress"
   | "Ember Shirt"
   | "Ember Trousers"
+  | "Evil Spirit Armor"
+  | "Evil Spirit Greaves"
+  | "Evil Spirit Mask"
   | "Fierce Deity Armor"
   | "Fierce Deity Boots"
   | "Fierce Deity Mask"
@@ -43,17 +54,32 @@ export type ArmorsIds =
   | "Glide Shirt"
   | "Glide Tights"
   | "Hood of the Depths"
+  | "Horriblin Mask"
   | "Hylian Hood"
   | "Hylian Trousers"
   | "Hylian Tunic"
+  | "Korok Mask"
+  | "Lizalfos Mask"
+  | "Lobster Shirt"
+  | "Lynel Mask"
+  | "Majora's Mask"
   | "Mask of Awakening"
+  | "Midna's Helmet"
   | "Miner's Mask"
   | "Miner's Top"
   | "Miner's Trousers"
+  | "Moblin Mask"
+  | "Mystic Mask"
+  | "Mystic Robe"
+  | "Mystic Trousers"
   | "Opal Earrings"
+  | "Phantom Armor"
+  | "Phantom Greaves"
+  | "Phantom Helm"
   | "Radiant Mask"
   | "Radiant Shirt"
   | "Radiant Tights"
+  | "Ravio Hood"
   | "Royal Guard Boots"
   | "Royal Guard Cap"
   | "Royal Guard Uniform"
@@ -74,6 +100,10 @@ export type ArmorsIds =
   | "Stealth Chest Guard"
   | "Stealth Mask"
   | "Stealth Tights"
+  | "Thunder Helm"
+  | "Tingle's Hood"
+  | "Tingle's Shirt"
+  | "Tingle's Tights"
   | "Topaz Earrings"
   | "Trousers of Awakening"
   | "Trousers of Time"
@@ -95,9 +125,11 @@ export type ArmorsIds =
   | "Vah Naboris Divine Helm"
   | "Vah Rudania Divine Helm"
   | "Vah Ruta Divine Helm"
+  | "Well-Worn Hair Band"
   | "Yiga Armor"
   | "Yiga Mask"
   | "Yiga Tights"
+  | "Zant's Helmet"
   | "Zonaite Helm"
   | "Zonaite Shin Guards"
   | "Zonaite Waistguard"
@@ -106,13 +138,16 @@ export type ArmorsIds =
   | "Zora Helm";
 
 export type SetsIds =
+  | "Archaic"
   | "Awakening"
   | "Barbarian"
   | "Charged"
   | "Climbing"
+  | "Dark"
   | "Depths"
   | "Desert Voe"
   | "Ember"
+  | "Evil Spirit"
   | "Fierce Deity"
   | "Flamebreaker"
   | "Froggy"
@@ -121,6 +156,8 @@ export type SetsIds =
   | "Hero"
   | "Hylian"
   | "Miner's"
+  | "Mystic"
+  | "Phantom"
   | "Radiant"
   | "Royal Guard"
   | "Rubber"
@@ -129,6 +166,7 @@ export type SetsIds =
   | "Soldier's"
   | "Stealth"
   | "Time"
+  | "Tingle"
   | "Twilight"
   | "Wild"
   | "Wind"
@@ -430,6 +468,41 @@ export const armorsStatic: ArmorsIds[] = [
   "Vah Rudania Divine Helm",
   "Vah Ruta Divine Helm",
   "Tunic of Memories",
+];
+
+export const armorsNonUpgradableStatic: ArmorsIds[] = [
+  "Archaic Legwear",
+  "Archaic Tunic",
+  "Dark Hood",
+  "Dark Trousers",
+  "Dark Tunic",
+  "Evil Spirit Armor",
+  "Evil Spirit Greaves",
+  "Evil Spirit Mask",
+  "Mystic Robe",
+  "Mystic Trousers",
+  "Mystic Mask",
+  "Phantom Armor",
+  "Phantom Greaves",
+  "Phantom Helm",
+  "Tingle's Hood",
+  "Tingle's Shirt",
+  "Tingle's Tights",
+  "Archaic Warm Greaves",
+  "Bokoblin Mask",
+  "Cece Hat",
+  "Horriblin Mask",
+  "Korok Mask",
+  "Lizalfos Mask",
+  "Lynel Mask",
+  "Majora's Mask",
+  "Midna's Helmet",
+  "Moblin Mask",
+  "Ravio Hood",
+  "Thunder Helm",
+  "Well-Worn Hair Band",
+  "Zant's Helmet",
+  "Lobster Shirt",
 ];
 
 export const getArmors = (intl: IntlShape): IDataArmor[] => [
@@ -2871,6 +2944,248 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
       ["Light Dragon's Horn", 1],
       ["Dinraal's Horn", 2],
     ],
+  },
+
+  {
+    id: "Archaic Legwear",
+    name: intl.formatMessage({
+      defaultMessage: "Archaic Legwear",
+      id: "armor-Archaic Legwear",
+    }),
+    set: "Archaic",
+  },
+  {
+    id: "Archaic Tunic",
+    name: intl.formatMessage({
+      defaultMessage: "Archaic Tunic",
+      id: "armor-Archaic Tunic",
+    }),
+    set: "Archaic",
+  },
+  {
+    id: "Dark Hood",
+    name: intl.formatMessage({
+      defaultMessage: "Dark Hood",
+      id: "armor-Dark Hood",
+    }),
+    set: "Dark",
+  },
+  {
+    id: "Dark Trousers",
+    name: intl.formatMessage({
+      defaultMessage: "Dark Trousers",
+      id: "armor-Dark Trousers",
+    }),
+    set: "Dark",
+  },
+  {
+    id: "Dark Tunic",
+    name: intl.formatMessage({
+      defaultMessage: "Dark Tunic",
+      id: "armor-Dark Tunic",
+    }),
+    set: "Dark",
+  },
+  {
+    id: "Evil Spirit Armor",
+    name: intl.formatMessage({
+      defaultMessage: "Evil Spirit Armor",
+      id: "armor-Evil Spirit Armor",
+    }),
+    set: "Evil Spirit",
+  },
+  {
+    id: "Evil Spirit Greaves",
+    name: intl.formatMessage({
+      defaultMessage: "Evil Spirit Greaves",
+      id: "armor-Evil Spirit Greaves",
+    }),
+    set: "Evil Spirit",
+  },
+  {
+    id: "Evil Spirit Mask",
+    name: intl.formatMessage({
+      defaultMessage: "Evil Spirit Mask",
+      id: "armor-Evil Spirit Mask",
+    }),
+    set: "Evil Spirit",
+  },
+  {
+    id: "Mystic Robe",
+    name: intl.formatMessage({
+      defaultMessage: "Mystic Robe",
+      id: "armor-Mystic Robe",
+    }),
+    set: "Mystic",
+  },
+  {
+    id: "Mystic Trousers",
+    name: intl.formatMessage({
+      defaultMessage: "Mystic Trousers",
+      id: "armor-Mystic Trousers",
+    }),
+    set: "Mystic",
+  },
+  {
+    id: "Mystic Mask",
+    name: intl.formatMessage({
+      defaultMessage: "Mystic Mask",
+      id: "armor-Mystic Mask",
+    }),
+    set: "Mystic",
+  },
+  {
+    id: "Phantom Armor",
+    name: intl.formatMessage({
+      defaultMessage: "Phantom Armor",
+      id: "armor-Phantom Armor",
+    }),
+    set: "Phantom",
+  },
+  {
+    id: "Phantom Greaves",
+    name: intl.formatMessage({
+      defaultMessage: "Phantom Greaves",
+      id: "armor-Phantom Greaves",
+    }),
+    set: "Phantom",
+  },
+  {
+    id: "Phantom Helm",
+    name: intl.formatMessage({
+      defaultMessage: "Phantom Helm",
+      id: "armor-Phantom Helm",
+    }),
+    set: "Phantom",
+  },
+  {
+    id: "Tingle's Hood",
+    name: intl.formatMessage({
+      defaultMessage: "Tingle's Hood",
+      id: "armor-Tingle's Hood",
+    }),
+    set: "Tingle",
+  },
+  {
+    id: "Tingle's Shirt",
+    name: intl.formatMessage({
+      defaultMessage: "Tingle's Shirt",
+      id: "armor-Tingle's Shirt",
+    }),
+    set: "Tingle",
+  },
+  {
+    id: "Tingle's Tights",
+    name: intl.formatMessage({
+      defaultMessage: "Tingle's Tights",
+      id: "armor-Tingle's Tights",
+    }),
+    set: "Tingle",
+  },
+  {
+    id: "Archaic Warm Greaves",
+    name: intl.formatMessage({
+      defaultMessage: "Archaic Warm Greaves",
+      id: "armor-Archaic Warm Greaves",
+    }),
+  },
+  {
+    id: "Bokoblin Mask",
+    name: intl.formatMessage({
+      defaultMessage: "Bokoblin Mask",
+      id: "armor-Bokoblin Mask",
+    }),
+  },
+  {
+    id: "Cece Hat",
+    name: intl.formatMessage({
+      defaultMessage: "Cece Hat",
+      id: "armor-Cece Hat",
+    }),
+  },
+  {
+    id: "Horriblin Mask",
+    name: intl.formatMessage({
+      defaultMessage: "Horriblin Mask",
+      id: "armor-Horriblin Mask",
+    }),
+  },
+  {
+    id: "Korok Mask",
+    name: intl.formatMessage({
+      defaultMessage: "Korok Mask",
+      id: "armor-Korok Mask",
+    }),
+  },
+  {
+    id: "Lizalfos Mask",
+    name: intl.formatMessage({
+      defaultMessage: "Lizalfos Mask",
+      id: "armor-Lizalfos Mask",
+    }),
+  },
+  {
+    id: "Lynel Mask",
+    name: intl.formatMessage({
+      defaultMessage: "Lynel Mask",
+      id: "armor-Lynel Mask",
+    }),
+  },
+  {
+    id: "Majora's Mask",
+    name: intl.formatMessage({
+      defaultMessage: "Majora's Mask",
+      id: "armor-Majora's Mask",
+    }),
+  },
+  {
+    id: "Midna's Helmet",
+    name: intl.formatMessage({
+      defaultMessage: "Midna's Helmet",
+      id: "armor-Midna's Helmet",
+    }),
+  },
+  {
+    id: "Moblin Mask",
+    name: intl.formatMessage({
+      defaultMessage: "Moblin Mask",
+      id: "armor-Moblin Mask",
+    }),
+  },
+  {
+    id: "Ravio Hood",
+    name: intl.formatMessage({
+      defaultMessage: "Ravio Hood",
+      id: "armor-Ravio Hood",
+    }),
+  },
+  {
+    id: "Thunder Helm",
+    name: intl.formatMessage({
+      defaultMessage: "Thunder Helm",
+      id: "armor-Thunder Helm",
+    }),
+  },
+  {
+    id: "Well-Worn Hair Band",
+    name: intl.formatMessage({
+      defaultMessage: "Well-Worn Hair Band",
+      id: "armor-Well-Worn Hair Band",
+    }),
+  },
+  {
+    id: "Zant's Helmet",
+    name: intl.formatMessage({
+      defaultMessage: "Zant's Helmet",
+      id: "armor-Zant's Helmet",
+    }),
+  },
+  {
+    id: "Lobster Shirt",
+    name: intl.formatMessage({
+      defaultMessage: "Lobster Shirt",
+      id: "armor-Lobster Shirt",
+    }),
   },
 ];
 

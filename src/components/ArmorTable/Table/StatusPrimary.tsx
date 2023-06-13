@@ -19,11 +19,11 @@ export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
 
   const onChangeOwned = useCallback(() => {
     dispatch(setOwned([armor.name, !status.owned]));
-  }, [armor.name, dispatch, status.owned]);
+  }, [armor.name, dispatch, status?.owned]);
 
   const onChangeHidden = useCallback(() => {
     dispatch(setHidden([armor.name, !status.hidden]));
-  }, [armor.name, dispatch, status.hidden]);
+  }, [armor.name, dispatch, status?.hidden]);
   //
   return (
     <>

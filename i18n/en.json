@@ -5,6 +5,15 @@
   "armor-Ancient Hero's Aspect": {
     "defaultMessage": "Ancient Hero's Aspect"
   },
+  "armor-Archaic Legwear": {
+    "defaultMessage": "Archaic Legwear"
+  },
+  "armor-Archaic Tunic": {
+    "defaultMessage": "Archaic Tunic"
+  },
+  "armor-Archaic Warm Greaves": {
+    "defaultMessage": "Archaic Warm Greaves"
+  },
   "armor-Barbarian Armor": {
     "defaultMessage": "Barbarian Armor"
   },
@@ -13,6 +22,9 @@
   },
   "armor-Barbarian Leg Wraps": {
     "defaultMessage": "Barbarian Leg Wraps"
+  },
+  "armor-Bokoblin Mask": {
+    "defaultMessage": "Bokoblin Mask"
   },
   "armor-Cap of Time": {
     "defaultMessage": "Cap of Time"
@@ -31,6 +43,9 @@
   },
   "armor-Cap of the Wind": {
     "defaultMessage": "Cap of the Wind"
+  },
+  "armor-Cece Hat": {
+    "defaultMessage": "Cece Hat"
   },
   "armor-Champion's Leathers": {
     "defaultMessage": "Champion's Leathers"
@@ -53,6 +68,15 @@
   "armor-Climbing Gear": {
     "defaultMessage": "Climbing Gear"
   },
+  "armor-Dark Hood": {
+    "defaultMessage": "Dark Hood"
+  },
+  "armor-Dark Trousers": {
+    "defaultMessage": "Dark Trousers"
+  },
+  "armor-Dark Tunic": {
+    "defaultMessage": "Dark Tunic"
+  },
   "armor-Desert Voe Headband": {
     "defaultMessage": "Desert Voe Headband"
   },
@@ -73,6 +97,15 @@
   },
   "armor-Ember Trousers": {
     "defaultMessage": "Ember Trousers"
+  },
+  "armor-Evil Spirit Armor": {
+    "defaultMessage": "Evil Spirit Armor"
+  },
+  "armor-Evil Spirit Greaves": {
+    "defaultMessage": "Evil Spirit Greaves"
+  },
+  "armor-Evil Spirit Mask": {
+    "defaultMessage": "Evil Spirit Mask"
   },
   "armor-Fierce Deity Armor": {
     "defaultMessage": "Fierce Deity Armor"
@@ -125,6 +158,9 @@
   "armor-Hood of the Depths": {
     "defaultMessage": "Hood of the Depths"
   },
+  "armor-Horriblin Mask": {
+    "defaultMessage": "Horriblin Mask"
+  },
   "armor-Hylian Hood": {
     "defaultMessage": "Hylian Hood"
   },
@@ -134,8 +170,26 @@
   "armor-Hylian Tunic": {
     "defaultMessage": "Hylian Tunic"
   },
+  "armor-Korok Mask": {
+    "defaultMessage": "Korok Mask"
+  },
+  "armor-Lizalfos Mask": {
+    "defaultMessage": "Lizalfos Mask"
+  },
+  "armor-Lobster Shirt": {
+    "defaultMessage": "Lobster Shirt"
+  },
+  "armor-Lynel Mask": {
+    "defaultMessage": "Lynel Mask"
+  },
+  "armor-Majora's Mask": {
+    "defaultMessage": "Majora's Mask"
+  },
   "armor-Mask of Awakening": {
     "defaultMessage": "Mask of Awakening"
+  },
+  "armor-Midna's Helmet": {
+    "defaultMessage": "Midna's Helmet"
   },
   "armor-Miner's Mask": {
     "defaultMessage": "Miner's Mask"
@@ -146,8 +200,29 @@
   "armor-Miner's Trousers": {
     "defaultMessage": "Miner's Trousers"
   },
+  "armor-Moblin Mask": {
+    "defaultMessage": "Moblin Mask"
+  },
+  "armor-Mystic Mask": {
+    "defaultMessage": "Mystic Mask"
+  },
+  "armor-Mystic Robe": {
+    "defaultMessage": "Mystic Robe"
+  },
+  "armor-Mystic Trousers": {
+    "defaultMessage": "Mystic Trousers"
+  },
   "armor-Opal Earrings": {
     "defaultMessage": "Opal Earrings"
+  },
+  "armor-Phantom Armor": {
+    "defaultMessage": "Phantom Armor"
+  },
+  "armor-Phantom Greaves": {
+    "defaultMessage": "Phantom Greaves"
+  },
+  "armor-Phantom Helm": {
+    "defaultMessage": "Phantom Helm"
   },
   "armor-Radiant Mask": {
     "defaultMessage": "Radiant Mask"
@@ -157,6 +232,9 @@
   },
   "armor-Radiant Tights": {
     "defaultMessage": "Radiant Tights"
+  },
+  "armor-Ravio Hood": {
+    "defaultMessage": "Ravio Hood"
   },
   "armor-Royal Guard Boots": {
     "defaultMessage": "Royal Guard Boots"
@@ -217,6 +295,18 @@
   },
   "armor-Stealth Tights": {
     "defaultMessage": "Stealth Tights"
+  },
+  "armor-Thunder Helm": {
+    "defaultMessage": "Thunder Helm"
+  },
+  "armor-Tingle's Hood": {
+    "defaultMessage": "Tingle's Hood"
+  },
+  "armor-Tingle's Shirt": {
+    "defaultMessage": "Tingle's Shirt"
+  },
+  "armor-Tingle's Tights": {
+    "defaultMessage": "Tingle's Tights"
   },
   "armor-Topaz Earrings": {
     "defaultMessage": "Topaz Earrings"
@@ -281,6 +371,9 @@
   "armor-Vah Ruta Divine Helm": {
     "defaultMessage": "Vah Ruta Divine Helm"
   },
+  "armor-Well-Worn Hair Band": {
+    "defaultMessage": "Well-Worn Hair Band"
+  },
   "armor-Yiga Armor": {
     "defaultMessage": "Yiga Armor"
   },
@@ -289,6 +382,9 @@
   },
   "armor-Yiga Tights": {
     "defaultMessage": "Yiga Tights"
+  },
+  "armor-Zant's Helmet": {
+    "defaultMessage": "Zant's Helmet"
   },
   "armor-Zonaite Helm": {
     "defaultMessage": "Zonaite Helm"
@@ -334,6 +430,17 @@
   },
   "hiddenQuestion": {
     "defaultMessage": "Hidden ?"
+  },
+  "languageEnglish": {
+    "defaultMessage": "English",
+    "description": "English language in language switcher"
+  },
+  "languageFrench": {
+    "defaultMessage": "French",
+    "description": "French language in language switcher"
+  },
+  "languageSwitcher": {
+    "defaultMessage": "Language Switcher"
   },
   "linkGitHub": {
     "defaultMessage": "Project's GitHub repository"
@@ -880,6 +987,12 @@
   },
   "ownedQuestion": {
     "defaultMessage": "Owned ?"
+  },
+  "rupeeCostBuy": {
+    "defaultMessage": "Rupee (armor prices)"
+  },
+  "rupeeCostUpgrade": {
+    "defaultMessage": "Rupee (upgrades)"
   },
   "rupeesAmountParentheses": {
     "defaultMessage": "({num} Rupees)"

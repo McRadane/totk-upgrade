@@ -1,9 +1,36 @@
 {
+  "armorName": {
+    "defaultMessage": "Nom"
+  },
+  "armorPiece": {
+    "defaultMessage": "Pièce d'Armure"
+  },
+  "armorSet": {
+    "defaultMessage": "Set"
+  },
+  "countAll": {
+    "defaultMessage": "Compte (Toutes les armures)"
+  },
+  "countSelection": {
+    "defaultMessage": "Compte (Slkection)"
+  },
+  "filterArmors": {
+    "defaultMessage": "Filtrer les armures"
+  },
+  "filterMaterials": {
+    "defaultMessage": "Filtrer les matériaux"
+  },
   "footerVersion": {
     "defaultMessage": "{name} v{version} par McRadane"
   },
+  "hiddenQuestion": {
+    "defaultMessage": "Caché ?"
+  },
   "linkGitHub": {
     "defaultMessage": "Dépôt GitHub du projet"
+  },
+  "material": {
+    "defaultMessage": "Matériaux"
   },
   "menuArmor": {
     "defaultMessage": "Armures"

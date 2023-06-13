@@ -15,6 +15,7 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
+import { armorsNonUpgradableStatic } from "./data";
 import rootReducer, { type MergedState } from "./reducers";
 
 const migrations: MigrationManifest = {
@@ -29,6 +30,17 @@ const migrations: MigrationManifest = {
     return {
       ...state,
       armors: { armors: newArmors },
+    };
+  },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  3: (state: any) => {
+    return {
+      ...state,
+      armors: { armors: state.armors.armors, nonUpgradedArmors: armorsNonUpgradableStatic.map((armor) => ({
+        hidden: false,
+        name: armor,
+        owned: false,
+      })) },
     };
   },
 };
@@ -47,7 +59,7 @@ const persistConfig: PersistConfig<MergedState> = {
   key: "root",
   migrate: createMigrate(migrations, { debug: true }),
   storage,
-  version: 2,
+  version: 3,
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -4,21 +4,25 @@ import type { IntlShape } from "react-intl";
 import { getArmors, getMaterials } from "../data";
 import { type IArmor } from "../reducers/armors";
 
-export interface ICalculatedItems {
+interface IItems {
   all: number;
+  selection: number;
+}
+export interface ICalculatedItems extends IItems {
   id: string;
   name: string;
-  selection: number;
 }
 
 export const calculateListItems = (
   armorsState: IArmor[],
   intl: IntlShape
-): ICalculatedItems[] => {
+): { items: ICalculatedItems[]; rupee: IItems; rupeeBuy: IItems } => {
   const items: Record<
     string,
     { all: number; name: string; selection: number }
   > = {};
+  const rupee: IItems = { all: 0, selection: 0 };
+  const rupeeBuy: IItems = { all: 0, selection: 0 };
 
   const armors = getArmors(intl);
   const materials = getMaterials(intl);
@@ -35,24 +39,28 @@ export const calculateListItems = (
       const status1 = getStatus(1);
       if (status1) {
         materialsSelection.push(...armorData.rank1);
+        rupee.selection += 10;
       }
 
       const status1All = getStatusAll(1);
 
       if (status1All) {
         materialsAll.push(...armorData.rank1);
+        rupee.all += 10;
       }
 
       if (armorData.rank2) {
         const status2 = getStatus(2);
         if (status2) {
           materialsSelection.push(...armorData.rank2);
+          rupee.selection += 50;
         }
 
         const status2All = getStatusAll(2);
 
         if (status2All) {
           materialsAll.push(...armorData.rank2);
+          rupee.all += 50;
         }
       }
 
@@ -60,12 +68,14 @@ export const calculateListItems = (
         const status3 = getStatus(3);
         if (status3) {
           materialsSelection.push(...armorData.rank3);
+          rupee.selection += 200;
         }
 
         const status3All = getStatusAll(3);
 
         if (status3All) {
           materialsAll.push(...armorData.rank3);
+          rupee.all += 200;
         }
       }
 
@@ -73,12 +83,14 @@ export const calculateListItems = (
         const status4 = getStatus(4);
         if (status4) {
           materialsSelection.push(...armorData.rank4);
+          rupee.selection += 500;
         }
 
         const status4All = getStatusAll(4);
 
         if (status4All) {
           materialsAll.push(...armorData.rank4);
+          rupee.all += 500;
         }
       }
 
@@ -111,7 +123,11 @@ export const calculateListItems = (
     selection: items[id].selection ?? 0,
   }));
 
-  return array.sort((a, b) => a.name.localeCompare(b.name));
+  return {
+    items: array.sort((a, b) => a.name.localeCompare(b.name)),
+    rupee,
+    rupeeBuy,
+  };
 };
 
 export const getActiveStatus = (armor: IArmor) => (rank: number) => {
