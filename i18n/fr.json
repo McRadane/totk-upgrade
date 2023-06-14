@@ -1,4 +1,409 @@
 {
+  "armor-Amber Earrings": {
+    "defaultMessage": "Boucles d'ambre"
+  },
+  "armor-Ancient Hero's Aspect": {
+    "defaultMessage": "Esprit du héros ancestral"
+  },
+  "armor-Archaic Legwear": {
+    "defaultMessage": "Vieilles spartiates"
+  },
+  "armor-Archaic Tunic": {
+    "defaultMessage": "Vieille toge"
+  },
+  "armor-Archaic Warm Greaves": {
+    "defaultMessage": "Vieilles chausses doublées"
+  },
+  "armor-Barbarian Armor": {
+    "defaultMessage": "Gilet barbare"
+  },
+  "armor-Barbarian Helm": {
+    "defaultMessage": "Casque barbare"
+  },
+  "armor-Barbarian Leg Wraps": {
+    "defaultMessage": "Culotte barbare"
+  },
+  "armor-Bokoblin Mask": {
+    "defaultMessage": "Masque de Bokoblin"
+  },
+  "armor-Cap of Time": {
+    "defaultMessage": "Coiffe du temps"
+  },
+  "armor-Cap of Twilight": {
+    "defaultMessage": "Coiffe du Crépuscule"
+  },
+  "armor-Cap of the Hero": {
+    "defaultMessage": "Coiffe du Prélude"
+  },
+  "armor-Cap of the Sky": {
+    "defaultMessage": "Coiffe du ciel"
+  },
+  "armor-Cap of the Wild": {
+    "defaultMessage": "Coiffe des landes"
+  },
+  "armor-Cap of the Wind": {
+    "defaultMessage": "Coiffe du vent"
+  },
+  "armor-Cece Hat": {
+    "defaultMessage": "Chapeau de Goutiée"
+  },
+  "armor-Champion's Leathers": {
+    "defaultMessage": "Nouvelle tunique de Prodige"
+  },
+  "armor-Charged Headdress": {
+    "defaultMessage": "Coiffe de la foudre"
+  },
+  "armor-Charged Shirt": {
+    "defaultMessage": "Parure de la foudre"
+  },
+  "armor-Charged Trousers": {
+    "defaultMessage": "Culotte de la foudre"
+  },
+  "armor-Climber's Bandana": {
+    "defaultMessage": "Bandana d'escalade"
+  },
+  "armor-Climbing Boots": {
+    "defaultMessage": "Souliers d'escalade"
+  },
+  "armor-Climbing Gear": {
+    "defaultMessage": "Gant d'escalade"
+  },
+  "armor-Dark Hood": {
+    "defaultMessage": "Capuche noire"
+  },
+  "armor-Dark Trousers": {
+    "defaultMessage": "Pantalon noir"
+  },
+  "armor-Dark Tunic": {
+    "defaultMessage": "Tunique noire"
+  },
+  "armor-Desert Voe Headband": {
+    "defaultMessage": "Parure des sablons"
+  },
+  "armor-Desert Voe Spaulder": {
+    "defaultMessage": "Épaulière des sablons"
+  },
+  "armor-Desert Voe Trousers": {
+    "defaultMessage": "Pantalon des sablons"
+  },
+  "armor-Diamond Circlet": {
+    "defaultMessage": "Diadème diamant"
+  },
+  "armor-Ember Headdress": {
+    "defaultMessage": "Coiffe du brasier"
+  },
+  "armor-Ember Shirt": {
+    "defaultMessage": "Manteau du brasier"
+  },
+  "armor-Ember Trousers": {
+    "defaultMessage": "Pantalon du brasier"
+  },
+  "armor-Evil Spirit Armor": {
+    "defaultMessage": "Armure spectrale"
+  },
+  "armor-Evil Spirit Greaves": {
+    "defaultMessage": "Grèves spectrales"
+  },
+  "armor-Evil Spirit Mask": {
+    "defaultMessage": "Masque spectral"
+  },
+  "armor-Fierce Deity Armor": {
+    "defaultMessage": "Armure du Dieu démon"
+  },
+  "armor-Fierce Deity Boots": {
+    "defaultMessage": "Bottes du Dieu démon"
+  },
+  "armor-Fierce Deity Mask": {
+    "defaultMessage": "Masque du Dieu démon"
+  },
+  "armor-Flamebreaker Armor": {
+    "defaultMessage": "Armure de pierre"
+  },
+  "armor-Flamebreaker Boots": {
+    "defaultMessage": "Bottes de pierre"
+  },
+  "armor-Flamebreaker Helm": {
+    "defaultMessage": "Casque de pierre"
+  },
+  "armor-Froggy Hood": {
+    "defaultMessage": "Capuche de batracien"
+  },
+  "armor-Froggy Leggings": {
+    "defaultMessage": "Jambières de batracien"
+  },
+  "armor-Froggy Sleeve": {
+    "defaultMessage": "Épaulière de batracien"
+  },
+  "armor-Frostbite Headdress": {
+    "defaultMessage": "Coiffe du blizzard"
+  },
+  "armor-Frostbite Shirt": {
+    "defaultMessage": "Robe du blizzard"
+  },
+  "armor-Frostbite Trousers": {
+    "defaultMessage": "Pantalon du blizzard"
+  },
+  "armor-Gaiters of the Depths": {
+    "defaultMessage": "Guêtres des ténèbres"
+  },
+  "armor-Glide Mask": {
+    "defaultMessage": "Masque de chute libre"
+  },
+  "armor-Glide Shirt": {
+    "defaultMessage": "Combinaison de chute libre"
+  },
+  "armor-Glide Tights": {
+    "defaultMessage": "Chausses de chute libre"
+  },
+  "armor-Hood of the Depths": {
+    "defaultMessage": "Capuche des ténèbres"
+  },
+  "armor-Horriblin Mask": {
+    "defaultMessage": "Masque de Trogloblin"
+  },
+  "armor-Hylian Hood": {
+    "defaultMessage": "Capuche hylienne"
+  },
+  "armor-Hylian Trousers": {
+    "defaultMessage": "Pantalon hylien"
+  },
+  "armor-Hylian Tunic": {
+    "defaultMessage": "Tunique hylienne"
+  },
+  "armor-Korok Mask": {
+    "defaultMessage": "Masque de Korogu"
+  },
+  "armor-Lizalfos Mask": {
+    "defaultMessage": "Masque de Lézalfos"
+  },
+  "armor-Lobster Shirt": {
+    "defaultMessage": "Tunique bleue de homard"
+  },
+  "armor-Lynel Mask": {
+    "defaultMessage": "Masque de Lynel"
+  },
+  "armor-Majora's Mask": {
+    "defaultMessage": "Masque de Majora"
+  },
+  "armor-Mask of Awakening": {
+    "defaultMessage": "Masque du rêve"
+  },
+  "armor-Midna's Helmet": {
+    "defaultMessage": "Couronne de Midona"
+  },
+  "armor-Miner's Mask": {
+    "defaultMessage": "Masque de mineur"
+  },
+  "armor-Miner's Top": {
+    "defaultMessage": "Plastron de mineur"
+  },
+  "armor-Miner's Trousers": {
+    "defaultMessage": "Pantalon de mineur"
+  },
+  "armor-Moblin Mask": {
+    "defaultMessage": "Masque de Moblin"
+  },
+  "armor-Mystic Mask": {
+    "defaultMessage": "Coiffe des esprits"
+  },
+  "armor-Mystic Robe": {
+    "defaultMessage": "Tunique des esprits"
+  },
+  "armor-Mystic Trousers": {
+    "defaultMessage": "Chausses des esprits"
+  },
+  "armor-Opal Earrings": {
+    "defaultMessage": "Boucles d'opale"
+  },
+  "armor-Phantom Armor": {
+    "defaultMessage": "Armure de Spectre"
+  },
+  "armor-Phantom Greaves": {
+    "defaultMessage": "Jambières de Spectre"
+  },
+  "armor-Phantom Helm": {
+    "defaultMessage": "Casque de Spectre"
+  },
+  "armor-Radiant Mask": {
+    "defaultMessage": "Masque nox"
+  },
+  "armor-Radiant Shirt": {
+    "defaultMessage": "Combinaison nox"
+  },
+  "armor-Radiant Tights": {
+    "defaultMessage": "Chausses nox"
+  },
+  "armor-Ravio Hood": {
+    "defaultMessage": "Capuche de Lavio"
+  },
+  "armor-Royal Guard Boots": {
+    "defaultMessage": "Bottes de garde royal"
+  },
+  "armor-Royal Guard Cap": {
+    "defaultMessage": "Béret de garde royal"
+  },
+  "armor-Royal Guard Uniform": {
+    "defaultMessage": "Uniforme de garde royal"
+  },
+  "armor-Rubber Armor": {
+    "defaultMessage": "Combinaison isolante"
+  },
+  "armor-Rubber Helm": {
+    "defaultMessage": "Casque isolant"
+  },
+  "armor-Rubber Tights": {
+    "defaultMessage": "Pantalon isolant"
+  },
+  "armor-Ruby Circlet": {
+    "defaultMessage": "Diadème rubis"
+  },
+  "armor-Sand Boots": {
+    "defaultMessage": "Bottes des sables"
+  },
+  "armor-Sapphire Circlet": {
+    "defaultMessage": "Diadème saphir"
+  },
+  "armor-Sheik's Mask": {
+    "defaultMessage": "Masque de Sheik"
+  },
+  "armor-Snow Boots": {
+    "defaultMessage": "Bottes de neige"
+  },
+  "armor-Snowquill Headdress": {
+    "defaultMessage": "Bijou à plumes"
+  },
+  "armor-Snowquill Trousers": {
+    "defaultMessage": "Pantalon duveteux piaf"
+  },
+  "armor-Snowquill Tunic": {
+    "defaultMessage": "Tunique duveteuse piaf"
+  },
+  "armor-Soldier's Armor": {
+    "defaultMessage": "Armure de soldat"
+  },
+  "armor-Soldier's Greaves": {
+    "defaultMessage": "Jambières de soldat"
+  },
+  "armor-Soldier's Helm": {
+    "defaultMessage": "Casque de soldat"
+  },
+  "armor-Stealth Chest Guard": {
+    "defaultMessage": "Combinaison furtive"
+  },
+  "armor-Stealth Mask": {
+    "defaultMessage": "Masque furtif"
+  },
+  "armor-Stealth Tights": {
+    "defaultMessage": "Chausses furtives"
+  },
+  "armor-Thunder Helm": {
+    "defaultMessage": "Masque anti-tonnerre"
+  },
+  "armor-Tingle's Hood": {
+    "defaultMessage": "Cagoule de Tingle"
+  },
+  "armor-Tingle's Shirt": {
+    "defaultMessage": "Combinaison de Tingle"
+  },
+  "armor-Tingle's Tights": {
+    "defaultMessage": "Chausses de Tingle"
+  },
+  "armor-Topaz Earrings": {
+    "defaultMessage": "Boucles de topaze"
+  },
+  "armor-Trousers of Awakening": {
+    "defaultMessage": "Chausses du rêve"
+  },
+  "armor-Trousers of Time": {
+    "defaultMessage": "Chausses du temps"
+  },
+  "armor-Trousers of Twilight": {
+    "defaultMessage": "Chausses du Crépuscule"
+  },
+  "armor-Trousers of the Hero": {
+    "defaultMessage": "Culotte du Prélude"
+  },
+  "armor-Trousers of the Sky": {
+    "defaultMessage": "Pantalon du ciel"
+  },
+  "armor-Trousers of the Wild": {
+    "defaultMessage": "Culotte des landes"
+  },
+  "armor-Trousers of the Wind": {
+    "defaultMessage": "Chausses du vent"
+  },
+  "armor-Tunic of Awakening": {
+    "defaultMessage": "Tunique du rêve"
+  },
+  "armor-Tunic of Memories": {
+    "defaultMessage": "Tunique nostalgique"
+  },
+  "armor-Tunic of Time": {
+    "defaultMessage": "Tunique du temps"
+  },
+  "armor-Tunic of Twilight": {
+    "defaultMessage": "Tunique du Crépuscule"
+  },
+  "armor-Tunic of the Depths": {
+    "defaultMessage": "Tunique des ténèbres"
+  },
+  "armor-Tunic of the Hero": {
+    "defaultMessage": "Tunique du Prélude"
+  },
+  "armor-Tunic of the Sky": {
+    "defaultMessage": "Tunique du ciel"
+  },
+  "armor-Tunic of the Wild": {
+    "defaultMessage": "Tunique des landes"
+  },
+  "armor-Tunic of the Wind": {
+    "defaultMessage": "Tunique du vent"
+  },
+  "armor-Vah Medoh Divine Helm": {
+    "defaultMessage": "Heaume divin de Medoh"
+  },
+  "armor-Vah Naboris Divine Helm": {
+    "defaultMessage": "Heaume divin de Naboris"
+  },
+  "armor-Vah Rudania Divine Helm": {
+    "defaultMessage": "Heaume divin de Rudania"
+  },
+  "armor-Vah Ruta Divine Helm": {
+    "defaultMessage": "Heaume divin de Ruta"
+  },
+  "armor-Well-Worn Hair Band": {
+    "defaultMessage": "Vieil anneau capillaire"
+  },
+  "armor-Yiga Armor": {
+    "defaultMessage": "Justaucorps yiga"
+  },
+  "armor-Yiga Mask": {
+    "defaultMessage": "Masque yiga"
+  },
+  "armor-Yiga Tights": {
+    "defaultMessage": "Collant yiga"
+  },
+  "armor-Zant's Helmet": {
+    "defaultMessage": "Casque de Xanto"
+  },
+  "armor-Zonaite Helm": {
+    "defaultMessage": "Casque de sonium"
+  },
+  "armor-Zonaite Shin Guards": {
+    "defaultMessage": "Flancart de sonium"
+  },
+  "armor-Zonaite Waistguard": {
+    "defaultMessage": "Genouillères de sonium"
+  },
+  "armor-Zora Armor": {
+    "defaultMessage": "Armure zora"
+  },
+  "armor-Zora Greaves": {
+    "defaultMessage": "Jambières zora"
+  },
+  "armor-Zora Helm": {
+    "defaultMessage": "Casque zora"
+  },
   "armorName": {
     "defaultMessage": "Nom"
   },
@@ -12,7 +417,7 @@
     "defaultMessage": "Compte (Toutes les armures)"
   },
   "countSelection": {
-    "defaultMessage": "Compte (Slkection)"
+    "defaultMessage": "Compte (Sélection)"
   },
   "filterArmors": {
     "defaultMessage": "Filtrer les armures"
@@ -23,8 +428,29 @@
   "footerVersion": {
     "defaultMessage": "{name} v{version} par McRadane"
   },
+  "headerNonUpgradableItems": {
+    "defaultMessage": "Objets non évolutifs"
+  },
+  "headerNonUpgradableSets": {
+    "defaultMessage": "Sets d'armure non évolutifs"
+  },
+  "headerUpgradableItems": {
+    "defaultMessage": "Objets évolutifs"
+  },
+  "headerUpgradableSets": {
+    "defaultMessage": "Sets d'armure évolutifs"
+  },
   "hiddenQuestion": {
     "defaultMessage": "Caché ?"
+  },
+  "languageEnglish": {
+    "defaultMessage": "Anglais"
+  },
+  "languageFrench": {
+    "defaultMessage": "Français"
+  },
+  "languageSwitcher": {
+    "defaultMessage": "Sélecteur de langue"
   },
   "linkGitHub": {
     "defaultMessage": "Dépôt GitHub du projet"
@@ -32,10 +458,634 @@
   "material": {
     "defaultMessage": "Matériaux"
   },
+  "material-Acorn": {
+    "defaultMessage": "Gland"
+  },
+  "material-Aerocuda Eyeball": {
+    "defaultMessage": "Œil de Kakuda"
+  },
+  "material-Aerocuda Wing": {
+    "defaultMessage": "Aile de Kakuda"
+  },
+  "material-Amber": {
+    "defaultMessage": "Ambre brut"
+  },
+  "material-Black Bokoblin Horn": {
+    "defaultMessage": "Corne de Bokoblin noir"
+  },
+  "material-Black Boss Bokoblin Horn": {
+    "defaultMessage": "Corne de Chef boko noir"
+  },
+  "material-Black Hinox Horn": {
+    "defaultMessage": "Corne d'Hinox noir"
+  },
+  "material-Black Horriblin Horn": {
+    "defaultMessage": "Corne de Trogloblin noir"
+  },
+  "material-Black Lizalfos Horn": {
+    "defaultMessage": "Corne de Lézalfos noir"
+  },
+  "material-Black Moblin Horn": {
+    "defaultMessage": "Corne de Moblin noir"
+  },
+  "material-Bladed Rhino Beetle": {
+    "defaultMessage": "Scarabée lame"
+  },
+  "material-Blue Bokoblin Horn": {
+    "defaultMessage": "Corne de Bokoblin bleu"
+  },
+  "material-Blue Boss Bokoblin Horn": {
+    "defaultMessage": "Corne de Chef boko bleu"
+  },
+  "material-Blue Horriblin Horn": {
+    "defaultMessage": "Corne de Trogloblin bleu"
+  },
+  "material-Blue Lizalfos Horn": {
+    "defaultMessage": "Corne de Lézalfos bleu"
+  },
+  "material-Blue Lizalfos Tail": {
+    "defaultMessage": "Queue de Lézalfos bleu"
+  },
+  "material-Blue Moblin Horn": {
+    "defaultMessage": "Corne de Moblin bleu"
+  },
+  "material-Blue Nightshade": {
+    "defaultMessage": "Fleur silencio"
+  },
+  "material-Blue-Maned Lynel Mace Horn": {
+    "defaultMessage": "Corne briseuse de Lynel bleu"
+  },
+  "material-Blue-Maned Lynel Saber Horn": {
+    "defaultMessage": "Corne affilée de Lynel bleu"
+  },
+  "material-Blue-White Frox Fang": {
+    "defaultMessage": "Dent de Gigatracien opalin"
+  },
+  "material-Bokoblin Fang": {
+    "defaultMessage": "Croc de Bokoblin"
+  },
+  "material-Bokoblin Guts": {
+    "defaultMessage": "Viscère de Bokoblin"
+  },
+  "material-Bokoblin Horn": {
+    "defaultMessage": "Corne de Bokoblin"
+  },
+  "material-Boss Bokoblin Guts": {
+    "defaultMessage": "Viscère de Chef boko"
+  },
+  "material-Boss Bokoblin Horn": {
+    "defaultMessage": "Corne de Chef boko"
+  },
+  "material-Bright Caps": {
+    "defaultMessage": "Champi lumos"
+  },
+  "material-Brightbloom Seeds": {
+    "defaultMessage": "Graine lumos"
+  },
+  "material-Chillfin Trout": {
+    "defaultMessage": "Truite glagla"
+  },
+  "material-Chuchu Jelly": {
+    "defaultMessage": "Gelée chuchu"
+  },
+  "material-Cold Darner": {
+    "defaultMessage": "Libellule glagla"
+  },
+  "material-Cool Safflina": {
+    "defaultMessage": "Herbes glaga"
+  },
+  "material-Courser Bee Honey": {
+    "defaultMessage": "Rayon de miel enduro"
+  },
+  "material-Dark Clump": {
+    "defaultMessage": "Amas de ténèbres"
+  },
+  "material-Dazzlefruit": {
+    "defaultMessage": "Fruit de clarté"
+  },
+  "material-Deep Firefly": {
+    "defaultMessage": "Luciole de l'ombre"
+  },
+  "material-Diamond": {
+    "defaultMessage": "Diamant brut"
+  },
+  "material-Dinraal's Claw": {
+    "defaultMessage": "Éclat de griffe d'Ordrac"
+  },
+  "material-Dinraal's Fang": {
+    "defaultMessage": "Éclat de croc d'Ordrac"
+  },
+  "material-Dinraal's Horn": {
+    "defaultMessage": "Éclat de corne d'Ordrac"
+  },
+  "material-Dinraal's Scale": {
+    "defaultMessage": "Écaille d'Ordrac"
+  },
+  "material-Electric Darner": {
+    "defaultMessage": "Libellule volt"
+  },
+  "material-Electric Keese Wing": {
+    "defaultMessage": "Aile électrique"
+  },
+  "material-Electric Lizalfos Horn": {
+    "defaultMessage": "Corne de Lézalfos électrique"
+  },
+  "material-Electric Lizalfos Tail": {
+    "defaultMessage": "Queue de Lézalfos électrique"
+  },
+  "material-Energetic Rhino Beetle": {
+    "defaultMessage": "Scarabée enduro"
+  },
+  "material-Farosh's Claw": {
+    "defaultMessage": "Éclat de griffe de Rordrac"
+  },
+  "material-Farosh's Fang": {
+    "defaultMessage": "Éclat de croc de Rordrac"
+  },
+  "material-Farosh's Horn": {
+    "defaultMessage": "Éclat de corne de Rordrac"
+  },
+  "material-Farosh's Scale": {
+    "defaultMessage": "Écaille de Rordrac"
+  },
+  "material-Fire Fruit": {
+    "defaultMessage": "Fruit de feu"
+  },
+  "material-Fire Keese Wing": {
+    "defaultMessage": "Aile de feu"
+  },
+  "material-Fire Like Stone": {
+    "defaultMessage": "Gastrolithe de Pyrolike"
+  },
+  "material-Fire-Breath Lizalfos Horn": {
+    "defaultMessage": "Corne de Lézalfos de feu"
+  },
+  "material-Fire-Breath Lizalfos Tail": {
+    "defaultMessage": "Queue de Lézalfos de feu"
+  },
+  "material-Fireproof Lizard": {
+    "defaultMessage": "Lézard ignifus"
+  },
+  "material-Flint": {
+    "defaultMessage": "Silex"
+  },
+  "material-Frox Fang": {
+    "defaultMessage": "Dent de Gigatracien"
+  },
+  "material-Frox Guts": {
+    "defaultMessage": "Viscère de Gigatracien"
+  },
+  "material-Giant Brightbloom Seed": {
+    "defaultMessage": "Graine lumos géante"
+  },
+  "material-Gibdo Bone": {
+    "defaultMessage": "Côtes de Gibdo"
+  },
+  "material-Gibdo Guts": {
+    "defaultMessage": "Viscère de Gibdo"
+  },
+  "material-Gibdo Wing": {
+    "defaultMessage": "Aile de Gibdo"
+  },
+  "material-Gleeok Flame Horn": {
+    "defaultMessage": "Corne de Griock des flammes"
+  },
+  "material-Gleeok Frost Horn": {
+    "defaultMessage": "Corne de Griock des glaces"
+  },
+  "material-Gleeok Guts": {
+    "defaultMessage": "Viscère de Griock"
+  },
+  "material-Gleeok Thunder Horn": {
+    "defaultMessage": "Corne de Griock électrique"
+  },
+  "material-Gleeok Wing": {
+    "defaultMessage": "Aile de Griock"
+  },
+  "material-Glowing Cave Fish": {
+    "defaultMessage": "Troglodus lumos"
+  },
+  "material-Hearty Bass": {
+    "defaultMessage": "Perche max"
+  },
+  "material-Hearty Lizard": {
+    "defaultMessage": "Lézard max"
+  },
+  "material-Hightail Lizard": {
+    "defaultMessage": "Lézard tempo"
+  },
+  "material-Hinox Guts": {
+    "defaultMessage": "Viscère d'Hinox"
+  },
+  "material-Hinox Toenail": {
+    "defaultMessage": "Ongle d'Hinox"
+  },
+  "material-Hinox Tooth": {
+    "defaultMessage": "Dent d'Hinox"
+  },
+  "material-Horriblin Guts": {
+    "defaultMessage": "Viscère de Trogloblin"
+  },
+  "material-Horriblin Horn": {
+    "defaultMessage": "Corne de Trogloblin"
+  },
+  "material-Hot-Footed Frog": {
+    "defaultMessage": "Grenouille tempo"
+  },
+  "material-Hyrule Bass": {
+    "defaultMessage": "Perche d'Hyrule"
+  },
+  "material-Ice Fruit": {
+    "defaultMessage": "Fruit de glace"
+  },
+  "material-Ice Keese Wing": {
+    "defaultMessage": "Aile de glace"
+  },
+  "material-Ice Like Stone": {
+    "defaultMessage": "Gastrolithe de Cryolike"
+  },
+  "material-Ice-Breath Lizalfos Horn": {
+    "defaultMessage": "Corne de Lézalfos de glace"
+  },
+  "material-Ice-Breath Lizalfos Tail": {
+    "defaultMessage": "Queue de Lézalfos de glace"
+  },
+  "material-Keese Eyeball": {
+    "defaultMessage": "Œil de Chauve-souris"
+  },
+  "material-Keese Wing": {
+    "defaultMessage": "Aile griffue"
+  },
+  "material-Large Zonai Charge": {
+    "defaultMessage": "Grand orbe d'énergie soneau"
+  },
+  "material-Large Zonaite": {
+    "defaultMessage": "Sonium supérieur"
+  },
+  "material-Light Dragon's Fang": {
+    "defaultMessage": "Éclat de croc du dragon blanc"
+  },
+  "material-Light Dragon's Horn": {
+    "defaultMessage": "Corne du dragon blanc"
+  },
+  "material-Light Dragon's Scale": {
+    "defaultMessage": "Écaille du dragon blanc"
+  },
+  "material-Light Dragon's Claw": {
+    "defaultMessage": "Griffe du dragon blanc"
+  },
+  "material-Lizalfos Horn": {
+    "defaultMessage": "Corne de Lézalfos"
+  },
+  "material-Lizalfos Tail": {
+    "defaultMessage": "Queue de Lézalfos"
+  },
+  "material-Lizalfos Talon": {
+    "defaultMessage": "Griffe de Lézalfos"
+  },
+  "material-Luminous Stone": {
+    "defaultMessage": "Luminous Stone"
+  },
+  "material-Lynel Guts": {
+    "defaultMessage": "Viscère de Lynel"
+  },
+  "material-Lynel Hoof": {
+    "defaultMessage": "Sabot de Lynel"
+  },
+  "material-Lynel Mace Horn": {
+    "defaultMessage": "Corne briseuse de Lynel"
+  },
+  "material-Lynel Saber Horn": {
+    "defaultMessage": "Corne affilée de Lynel"
+  },
+  "material-Mighty Banana": {
+    "defaultMessage": "Bananes lame"
+  },
+  "material-Mighty Thistle": {
+    "defaultMessage": "Fleur lame"
+  },
+  "material-Moblin Fang": {
+    "defaultMessage": "Croc de Moblin"
+  },
+  "material-Moblin Guts": {
+    "defaultMessage": "Viscère de Moblin"
+  },
+  "material-Moblin Horn": {
+    "defaultMessage": "Corne de Moblin"
+  },
+  "material-Molduga Fin": {
+    "defaultMessage": "Aileron de Moldarquor"
+  },
+  "material-Molduga Guts": {
+    "defaultMessage": "Viscère de Moldarquor"
+  },
+  "material-Molduga Jaw": {
+    "defaultMessage": "Mâchoire de Moldarquor"
+  },
+  "material-Naydra's Claw": {
+    "defaultMessage": "Éclat de griffe de Nedrac"
+  },
+  "material-Naydra's Fang": {
+    "defaultMessage": "Éclat de croc de Nedrac"
+  },
+  "material-Naydra's Horn": {
+    "defaultMessage": "Éclat de corne de Nedrac"
+  },
+  "material-Naydra's Scale": {
+    "defaultMessage": "Écaille de Nedrac"
+  },
+  "material-Obsidian Frox Fang": {
+    "defaultMessage": "Dent de Gigatracien anthracite"
+  },
+  "material-Octo Balloon": {
+    "defaultMessage": "Baudruche octo"
+  },
+  "material-Octorok Eyeball": {
+    "defaultMessage": "Œil octo"
+  },
+  "material-Octorok Tentacle": {
+    "defaultMessage": "Tentacule octo"
+  },
+  "material-Opal": {
+    "defaultMessage": "Opale brute"
+  },
+  "material-Puffshroom": {
+    "defaultMessage": "Champi fumigène"
+  },
+  "material-Razorclaw Crab": {
+    "defaultMessage": "Crabe lame"
+  },
+  "material-Razorshroom": {
+    "defaultMessage": "Champi lame"
+  },
+  "material-Red Chuchu Jelly": {
+    "defaultMessage": "Gelée chuchu rouge"
+  },
+  "material-Ruby": {
+    "defaultMessage": "Rubis brut"
+  },
+  "material-Rushroom": {
+    "defaultMessage": "Champi tempo"
+  },
+  "material-Sapphire": {
+    "defaultMessage": "Saphir brut"
+  },
+  "material-Shock Fruit": {
+    "defaultMessage": "Fruit de foudre"
+  },
+  "material-Shock Like Stone": {
+    "defaultMessage": "Gastrolithe d'Electrolike"
+  },
+  "material-Silent Princess": {
+    "defaultMessage": "Princesse de la sérénité"
+  },
+  "material-Silent Shroom": {
+    "defaultMessage": "Champi silencio"
+  },
+  "material-Silver Bokoblin Horn": {
+    "defaultMessage": "Corne de Bokoblin d'argent"
+  },
+  "material-Silver Boss Bokoblin Horn": {
+    "defaultMessage": "Corne de Chef Boko d'argent"
+  },
+  "material-Silver Lizalfos Horn": {
+    "defaultMessage": "Corne de Lézalfos d'argent"
+  },
+  "material-Silver Lynel Mace Horn": {
+    "defaultMessage": "Corne briseuse de Lynel d'argent"
+  },
+  "material-Silver Lynel Saber Horn": {
+    "defaultMessage": "Corne affilée de Lynel d'argent"
+  },
+  "material-Silver Moblin Horn": {
+    "defaultMessage": "Corne de Moblin d'argent"
+  },
+  "material-Sizzlefin Trout": {
+    "defaultMessage": "Truite piment"
+  },
+  "material-Smotherwing Butterfly": {
+    "defaultMessage": "Papillon ignifus"
+  },
+  "material-Sneaky River Snail": {
+    "defaultMessage": "Escargot silencio"
+  },
+  "material-Soldier Construct Horn": {
+    "defaultMessage": "Corne de Golem soldat"
+  },
+  "material-Star Fragment": {
+    "defaultMessage": "Fragment d'étoile"
+  },
+  "material-Stealthfin Trout": {
+    "defaultMessage": "Truite silencio"
+  },
+  "material-Sticky Frog": {
+    "defaultMessage": "Grenouille adhésio"
+  },
+  "material-Sticky Lizard": {
+    "defaultMessage": "Lézard adhésio"
+  },
+  "material-Summerwing Butterfly": {
+    "defaultMessage": "Papillon piment"
+  },
+  "material-Sundelion": {
+    "defaultMessage": "Fleur radieuse"
+  },
+  "material-Sunset Firefly": {
+    "defaultMessage": "Luciole de la sérénité"
+  },
+  "material-Sunshroom": {
+    "defaultMessage": "Champi piment"
+  },
+  "material-Swift Carrot": {
+    "defaultMessage": "Carotte tempo"
+  },
+  "material-Swift Violet": {
+    "defaultMessage": "Violettes tempo"
+  },
+  "material-Thunderwing Butterfly": {
+    "defaultMessage": "Papillon volt"
+  },
+  "material-Topaz": {
+    "defaultMessage": "Topaze brute"
+  },
+  "material-Voltfin Trout": {
+    "defaultMessage": "Truite volt"
+  },
+  "material-Voltfruit": {
+    "defaultMessage": "Fruit volt"
+  },
+  "material-Warm Darner": {
+    "defaultMessage": "Libellule piment"
+  },
+  "material-Warm Safflina": {
+    "defaultMessage": "Herbes piment"
+  },
+  "material-White Chuchu Jelly": {
+    "defaultMessage": "Gelée chuchu blanche"
+  },
+  "material-White-Maned Lynel Mace Horn": {
+    "defaultMessage": "Corne briseuse de Lynel blanc"
+  },
+  "material-White-Maned Lynel Saber Horn": {
+    "defaultMessage": "Corne affilée de Lynel blanc"
+  },
+  "material-Winterwing Butterfly": {
+    "defaultMessage": "Papillon glagla"
+  },
+  "material-Yellow Chuchu Jelly": {
+    "defaultMessage": "Gelée chuchu jaune"
+  },
+  "material-Zapshroom": {
+    "defaultMessage": "Champi volt"
+  },
+  "material-Zonaite": {
+    "defaultMessage": "Sonium"
+  },
   "menuArmor": {
     "defaultMessage": "Armures"
   },
   "menuCosts": {
     "defaultMessage": "Coûts"
+  },
+  "ownedQuestion": {
+    "defaultMessage": "Possédé ?"
+  },
+  "rupeeCostBuy": {
+    "defaultMessage": "Rubis (prix d'achat)"
+  },
+  "rupeeCostUpgrade": {
+    "defaultMessage": "Rubis (améliorations)"
+  },
+  "rupeesAmountParentheses": {
+    "defaultMessage": "({num} Rubis)"
+  },
+  "searchArmors": {
+    "defaultMessage": "Recherche"
+  },
+  "set-Archaic": {
+    "defaultMessage": "Prélude céleste"
+  },
+  "set-Awakening": {
+    "defaultMessage": "Rêve"
+  },
+  "set-Barbarian": {
+    "defaultMessage": "Barbare"
+  },
+  "set-Charged": {
+    "defaultMessage": "Foudre"
+  },
+  "set-Climbing": {
+    "defaultMessage": "Escalade"
+  },
+  "set-Dark": {
+    "defaultMessage": "Noir"
+  },
+  "set-Depths": {
+    "defaultMessage": "Ténèbres"
+  },
+  "set-Desert Voe": {
+    "defaultMessage": "Sablons"
+  },
+  "set-Ember": {
+    "defaultMessage": "Brasier"
+  },
+  "set-Evil Spirit": {
+    "defaultMessage": "Spectrale"
+  },
+  "set-Fierce Deity": {
+    "defaultMessage": "Dieu démon"
+  },
+  "set-Flamebreaker": {
+    "defaultMessage": "Pierre"
+  },
+  "set-Froggy": {
+    "defaultMessage": "Batracien"
+  },
+  "set-Frostbite": {
+    "defaultMessage": "Blizzard"
+  },
+  "set-Glide": {
+    "defaultMessage": "Chute libre"
+  },
+  "set-Hero": {
+    "defaultMessage": "Prélude"
+  },
+  "set-Hylian": {
+    "defaultMessage": "Hylien"
+  },
+  "set-Miner's": {
+    "defaultMessage": "Mineur"
+  },
+  "set-Mystic": {
+    "defaultMessage": "Esprits"
+  },
+  "set-Phantom": {
+    "defaultMessage": "Spectre"
+  },
+  "set-Radiant": {
+    "defaultMessage": "Nox"
+  },
+  "set-Royal Guard": {
+    "defaultMessage": "Garde royal"
+  },
+  "set-Rubber": {
+    "defaultMessage": "Isolante"
+  },
+  "set-Sky": {
+    "defaultMessage": "Ciel"
+  },
+  "set-Snowquill": {
+    "defaultMessage": "Piaf"
+  },
+  "set-Soldier's": {
+    "defaultMessage": "Soldat"
+  },
+  "set-Stealth": {
+    "defaultMessage": "Sheikah"
+  },
+  "set-Time": {
+    "defaultMessage": "Temps"
+  },
+  "set-Tingle": {
+    "defaultMessage": "Tingle"
+  },
+  "set-Twilight": {
+    "defaultMessage": "Crépuscule"
+  },
+  "set-Wild": {
+    "defaultMessage": "Landes"
+  },
+  "set-Wind": {
+    "defaultMessage": "Vent"
+  },
+  "set-Yiga": {
+    "defaultMessage": "Yiga"
+  },
+  "set-Zonaite": {
+    "defaultMessage": "Sonium"
+  },
+  "set-Zora": {
+    "defaultMessage": "Zora"
+  },
+  "starCost": {
+    "defaultMessage": "Coût pour {num} étoiles"
+  },
+  "startSearch": {
+    "defaultMessage": "Lancer la recherche"
+  },
+  "status": {
+    "defaultMessage": "Statut"
+  },
+  "statusOwned": {
+    "defaultMessage": "Possédé"
+  },
+  "statusWanted": {
+    "defaultMessage": "Voulu"
+  },
+  "toggleHiddenStatus": {
+    "defaultMessage": "Basculer le statut caché"
+  },
+  "toggleOwnedStatus": {
+    "defaultMessage": "Basculer le statut possédé"
   }
 }

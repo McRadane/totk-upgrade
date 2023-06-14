@@ -23,24 +23,17 @@ export const LanguageSwitcher: FC<ILanguageSwitcherProps> = ({ className }) => {
     <select
       aria-label={intl.formatMessage({
         defaultMessage: "Language Switcher",
-        id: "languageSwitcher",
+        id: "languageSwitcher"
       })}
       className={`${className ?? ""} form-select`}
       onChange={onSelectLanguage}
+      value={locale}
     >
-      <option selected={locale === LOCALES.ENGLISH} value={LOCALES.ENGLISH}>
-        <FormattedMessage
-          id="languageEnglish"
-          defaultMessage="English"
-          description={"English language in language switcher"}
-        />
+      <option value={LOCALES.ENGLISH}>
+        <FormattedMessage id="languageEnglish" defaultMessage="English" description={"English language in language switcher"} />
       </option>
-      <option selected={locale === LOCALES.FRENCH} value={LOCALES.FRENCH}>
-        <FormattedMessage
-          id="languageFrench"
-          defaultMessage="French"
-          description={"French language in language switcher"}
-        />
+      <option value={LOCALES.FRENCH}>
+        <FormattedMessage id="languageFrench" defaultMessage="French" description={"French language in language switcher"} />
       </option>
     </select>
   );

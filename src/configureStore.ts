@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { type Middleware, configureStore } from "@reduxjs/toolkit";
 import { createLogger } from "redux-logger";
 import {
@@ -11,7 +12,7 @@ import {
   REHYDRATE,
   createMigrate,
   persistReducer,
-  persistStore,
+  persistStore
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
@@ -19,36 +20,41 @@ import { armorsNonUpgradableStatic } from "./data";
 import rootReducer, { type MergedState } from "./reducers";
 
 const migrations: MigrationManifest = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   2: (state: any) => {
     const { armors } = (state as MergedState).armors;
     const newArmors = armors.map((armor) => ({
       ...armor,
       hidden: armor.hidden !== undefined ? armor.hidden : false,
-      owned: armor.owned !== undefined ? armor.owned : armor.ownedLevel > 0,
+      owned: armor.owned !== undefined ? armor.owned : armor.ownedLevel > 0
     }));
     return {
       ...state,
-      armors: { armors: newArmors },
+      armors: { armors: newArmors }
     };
   },
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   3: (state: any) => {
+    const newArmors = (state as MergedState).armors.armors.map((armor) => ({
+      ...armor,
+      id: (armor as any).name ?? armor.id
+    }));
     return {
       ...state,
-      armors: { armors: state.armors.armors, nonUpgradedArmors: armorsNonUpgradableStatic.map((armor) => ({
-        hidden: false,
-        name: armor,
-        owned: false,
-      })) },
+      armors: {
+        armors: newArmors,
+        nonUpgradedArmors: armorsNonUpgradableStatic.map((armor) => ({
+          hidden: false,
+          id: armor,
+          owned: false
+        }))
+      }
     };
-  },
+  }
 };
 
 const middlewares: Middleware[] = [];
 
 const logger = createLogger({
-  predicate: (_getState, action) => ![FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE].includes(action.type),
+  predicate: (_getState, action) => ![FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE].includes(action.type)
 });
 
 if (process.env.NODE_ENV === `development`) {
@@ -59,7 +65,7 @@ const persistConfig: PersistConfig<MergedState> = {
   key: "root",
   migrate: createMigrate(migrations, { debug: true }),
   storage,
-  version: 3,
+  version: 3
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -68,10 +74,10 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
+      }
     }).concat(...middlewares),
-  reducer: persistedReducer,
+  reducer: persistedReducer
 });
 const persistor = persistStore(store);
 

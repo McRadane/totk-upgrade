@@ -3,20 +3,14 @@ import { FormattedMessage } from "react-intl";
 import { useDispatch } from "react-redux";
 
 import { type IDataArmor } from "../../../data";
-import {
-  setHidden,
-  setHiddenNonUpgradable,
-  setOwned,
-  setOwnedNonUpgradable,
-  useArmorStatus,
-} from "../../../reducers/armors";
+import { setHidden, setHiddenNonUpgradable, setOwned, setOwnedNonUpgradable, useArmorStatus } from "../../../reducers/armors";
 
 export interface IStatusProps {
   armor: IDataArmor;
 }
 
 export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
-  const status = useArmorStatus(armor.name);
+  const status = useArmorStatus(armor.id);
   const dispatch = useDispatch();
 
   const slug = useMemo(() => armor.name.replace(/[^a-z]/g, ""), [armor.name]);

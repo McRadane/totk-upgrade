@@ -428,6 +428,18 @@
   "footerVersion": {
     "defaultMessage": "{name} v{version} by McRadane"
   },
+  "headerNonUpgradableItems": {
+    "defaultMessage": "Non-Upgradable Items"
+  },
+  "headerNonUpgradableSets": {
+    "defaultMessage": "Non-Upgradable Sets"
+  },
+  "headerUpgradableItems": {
+    "defaultMessage": "Upgradable Items"
+  },
+  "headerUpgradableSets": {
+    "defaultMessage": "Upgradable Sets"
+  },
   "hiddenQuestion": {
     "defaultMessage": "Hidden ?"
   },
@@ -583,6 +595,9 @@
   "material-Dinraal's Scale": {
     "defaultMessage": "Dinraal's Scale"
   },
+  "material-Dinraal's Spike": {
+    "defaultMessage": "Dinraal's Spike"
+  },
   "material-Electric Darner": {
     "defaultMessage": "Electric Darner"
   },
@@ -612,6 +627,9 @@
   },
   "material-Farosh's Scale": {
     "defaultMessage": "Farosh's Scale"
+  },
+  "material-Farosh's Spike": {
+    "defaultMessage": "Farosh's Spike"
   },
   "material-Fire Fruit": {
     "defaultMessage": "Fire Fruit"
@@ -742,9 +760,6 @@
   "material-Light Dragon's Scale": {
     "defaultMessage": "Light Dragon's Scale"
   },
-  "material-Light Dragon's Talon": {
-    "defaultMessage": "Light Dragon's Talon"
-  },
   "material-Lizalfos Horn": {
     "defaultMessage": "Lizalfos Horn"
   },
@@ -805,6 +820,9 @@
   "material-Naydra's Scale": {
     "defaultMessage": "Naydra's Scale"
   },
+  "material-Naydra's Spike": {
+    "defaultMessage": "Naydra's Spike"
+  },
   "material-Obsidian Frox Fang": {
     "defaultMessage": "Obsidian Frox Fang"
   },
@@ -840,24 +858,6 @@
   },
   "material-Sapphire": {
     "defaultMessage": "Sapphire"
-  },
-  "material-Shard of Dinraal's Fang": {
-    "defaultMessage": "Shard of Dinraal's Fang"
-  },
-  "material-Shard of Dinraal's Spike": {
-    "defaultMessage": "Shard of Dinraal's Spike"
-  },
-  "material-Shard of Farosh's Fang": {
-    "defaultMessage": "Shard of Farosh's Fang"
-  },
-  "material-Shard of Farosh's Spike": {
-    "defaultMessage": "Shard of Farosh's Spike"
-  },
-  "material-Shard of Naydra's Fang": {
-    "defaultMessage": "Shard of Naydra's Fang"
-  },
-  "material-Shard of Naydra's Spike": {
-    "defaultMessage": "Shard of Naydra's Spike"
   },
   "material-Shock Fruit": {
     "defaultMessage": "Shock Fruit"
@@ -1000,6 +1000,9 @@
   "searchArmors": {
     "defaultMessage": "Search"
   },
+  "set-Archaic": {
+    "defaultMessage": "Archaic"
+  },
   "set-Awakening": {
     "defaultMessage": "Awakening"
   },
@@ -1012,6 +1015,9 @@
   "set-Climbing": {
     "defaultMessage": "Climbing"
   },
+  "set-Dark": {
+    "defaultMessage": "Dark"
+  },
   "set-Depths": {
     "defaultMessage": "Depths"
   },
@@ -1020,6 +1026,9 @@
   },
   "set-Ember": {
     "defaultMessage": "Ember"
+  },
+  "set-Evil Spirit": {
+    "defaultMessage": "Evil Spirit"
   },
   "set-Fierce Deity": {
     "defaultMessage": "Fierce Deity"
@@ -1045,6 +1054,12 @@
   "set-Miner's": {
     "defaultMessage": "Miner's"
   },
+  "set-Mystic": {
+    "defaultMessage": "Mystic"
+  },
+  "set-Phantom": {
+    "defaultMessage": "Phantom"
+  },
   "set-Radiant": {
     "defaultMessage": "Radiant"
   },
@@ -1068,6 +1083,9 @@
   },
   "set-Time": {
     "defaultMessage": "Time"
+  },
+  "set-Tingle": {
+    "defaultMessage": "Tingle"
   },
   "set-Twilight": {
     "defaultMessage": "Twilight"

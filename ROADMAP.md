@@ -1,9 +1,7 @@
 # Features
 - Add loading on scroll to enhance performance
-- Add missing armor (un-upgradable)
-- Translations (in French)
 
-# Accessiblitiy
+# Accessibility
 - Fix some minor accessibility issues with buttons
 - Navigation by keyboard / bypass (https://dequeuniversity.com/rules/axe/4.6/bypass)
 

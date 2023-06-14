@@ -17,10 +17,7 @@ export const calculateListItems = (
   armorsState: IArmor[],
   intl: IntlShape
 ): { items: ICalculatedItems[]; rupee: IItems; rupeeBuy: IItems } => {
-  const items: Record<
-    string,
-    { all: number; name: string; selection: number }
-  > = {};
+  const items: Record<string, { all: number; name: string; selection: number }> = {};
   const rupee: IItems = { all: 0, selection: 0 };
   const rupeeBuy: IItems = { all: 0, selection: 0 };
 
@@ -28,9 +25,9 @@ export const calculateListItems = (
   const materials = getMaterials(intl);
 
   armors.forEach((armorData) => {
-    const armor = armorsState.find((a) => a.name === armorData.name) as IArmor;
+    const armor = armorsState.find((a) => a.id === armorData.id) as IArmor;
 
-    if (armorData && armorData.rank1) {
+    if (armor && armorData && armorData.rank1) {
       const materialsSelection = [];
       const materialsAll = [];
       const getStatus = getActiveStatus(armor);
@@ -95,23 +92,22 @@ export const calculateListItems = (
       }
 
       materialsSelection.forEach(([id, count]) => {
-        if (!items[id]) {
-          const name =
-            materials.find((material) => material.id === id)?.name ?? id;
-          items[id] = { all: 0, name, selection: 0 };
+        const name = materials.find((material) => material.id === id)?.name ?? id;
+
+        if (!items[name]) {
+          items[name] = { all: 0, name, selection: 0 };
         }
 
-        items[id].selection += count;
+        items[name].selection += count;
       });
 
       materialsAll.forEach(([id, count]) => {
-        if (!items[id]) {
-          const name =
-            materials.find((material) => material.id === id)?.name ?? id;
-          items[id] = { all: 0, name, selection: 0 };
+        const name = materials.find((material) => material.id === id)?.name ?? id;
+        if (!items[name]) {
+          items[name] = { all: 0, name, selection: 0 };
         }
 
-        items[id].all += count;
+        items[name].all += count;
       });
     }
   });
@@ -120,17 +116,22 @@ export const calculateListItems = (
     all: items[id].all ?? 0,
     id: id,
     name: id,
-    selection: items[id].selection ?? 0,
+    selection: items[id].selection ?? 0
   }));
 
   return {
     items: array.sort((a, b) => a.name.localeCompare(b.name)),
     rupee,
-    rupeeBuy,
+    rupeeBuy
   };
 };
 
 export const getActiveStatus = (armor: IArmor) => (rank: number) => {
+  if (!armor || armor.wanted === undefined || armor.ownedLevel === undefined) {
+    //console.log({ armor });
+    return false;
+  }
+
   if (armor.wanted < rank) {
     return false;
   }

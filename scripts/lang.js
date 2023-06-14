@@ -71,6 +71,7 @@ const generateSchema = async () => {
     `./.vscode/schema.json`,
     JSON.stringify({
       $schema: "http://json-schema.org/draft-04/schema#",
+      additionalProperties: false,
       type: "object",
       properties,
       required,

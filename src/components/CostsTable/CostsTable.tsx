@@ -8,24 +8,20 @@ import { calculateListItems } from "../functions";
 
 export const CostsTable = () => {
   const armorsState = useSelector((state: IRootState) => state.armors.armors);
-  const hideNoCost = useSelector(
-    (state: IRootState) => state.navigation.hideNoCost
-  );
+  const hideNoCost = useSelector((state: IRootState) => state.navigation.hideNoCost);
   const dispatch = useDispatch();
   const intl = useIntl();
 
   const { costs, filterLocked } = useMemo(() => {
     const costsMemo = calculateListItems(armorsState, intl);
 
-    const resultsFiltered = costsMemo.items.filter(
-      (cost) => cost.selection !== 0
-    );
+    const resultsFiltered = costsMemo.items.filter((cost) => cost.selection !== 0);
 
     if (hideNoCost) {
       if (resultsFiltered.length > 0) {
         return {
           costs: { ...costsMemo, items: resultsFiltered },
-          filterLocked: false,
+          filterLocked: false
         };
       }
     }
@@ -54,10 +50,7 @@ export const CostsTable = () => {
             type="checkbox"
           />
           <label className="form-check-label" htmlFor="flexSwitchHideNoCost">
-            <FormattedMessage
-              id="filterMaterials"
-              defaultMessage="Filter materials"
-            />
+            <FormattedMessage id="filterMaterials" defaultMessage="Filter materials" />
           </label>
         </div>
       </div>
@@ -69,26 +62,17 @@ export const CostsTable = () => {
               <FormattedMessage id="material" defaultMessage="Material" />
             </th>
             <th scope="col">
-              <FormattedMessage
-                id="countSelection"
-                defaultMessage="Count (Selection)"
-              />
+              <FormattedMessage id="countSelection" defaultMessage="Count (Selection)" />
             </th>
             <th scope="col">
-              <FormattedMessage
-                id="countAll"
-                defaultMessage="Count (All Armors)"
-              />
+              <FormattedMessage id="countAll" defaultMessage="Count (All Armors)" />
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row">
-              <FormattedMessage
-                id="rupeeCostUpgrade"
-                defaultMessage="Rupee (upgrades)"
-              />
+              <FormattedMessage id="rupeeCostUpgrade" defaultMessage="Rupee (upgrades)" />
             </th>
             <td>
               <FormattedNumber value={costs.rupee.selection} />
@@ -99,10 +83,7 @@ export const CostsTable = () => {
           </tr>
           <tr>
             <th scope="row">
-              <FormattedMessage
-                id="rupeeCostBuy"
-                defaultMessage="Rupee (armor prices)"
-              />
+              <FormattedMessage id="rupeeCostBuy" defaultMessage="Rupee (armor prices)" />
             </th>
             <td>
               <FormattedNumber value={costs.rupeeBuy.selection} />

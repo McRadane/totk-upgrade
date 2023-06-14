@@ -6,7 +6,7 @@ import { armorsNonUpgradableStatic, armorsStatic } from "../data";
 
 export interface IArmorWithoutUpgrade {
   hidden: boolean;
-  name: string;
+  id: string;
   owned: boolean;
 }
 
@@ -23,16 +23,16 @@ export interface ArmorState {
 const initialState: ArmorState = {
   armors: armorsStatic.map((armor) => ({
     hidden: false,
-    name: armor,
+    id: armor,
     owned: false,
     ownedLevel: 0,
-    wanted: 0,
+    wanted: 0
   })),
   nonUpgradedArmors: armorsNonUpgradableStatic.map((armor) => ({
     hidden: false,
-    name: armor,
-    owned: false,
-  })),
+    id: armor,
+    owned: false
+  }))
 };
 
 export const armorSlice = createSlice({
@@ -41,18 +41,15 @@ export const armorSlice = createSlice({
   reducers: {
     setHidden: (state, action: PayloadAction<[string, boolean]>) => {
       state.armors = state.armors.map((armor) => {
-        if (armor.name === action.payload[0]) {
+        if (armor.id === action.payload[0]) {
           armor.hidden = action.payload[1];
         }
         return armor;
       });
     },
-    setHiddenNonUpgradable: (
-      state,
-      action: PayloadAction<[string, boolean]>
-    ) => {
+    setHiddenNonUpgradable: (state, action: PayloadAction<[string, boolean]>) => {
       state.nonUpgradedArmors = state.nonUpgradedArmors.map((armor) => {
-        if (armor.name === action.payload[0]) {
+        if (armor.id === action.payload[0]) {
           armor.hidden = action.payload[1];
         }
         return armor;
@@ -60,7 +57,7 @@ export const armorSlice = createSlice({
     },
     setOwned: (state, action: PayloadAction<[string, boolean]>) => {
       state.armors = state.armors.map((armor) => {
-        if (armor.name === action.payload[0]) {
+        if (armor.id === action.payload[0]) {
           armor.owned = action.payload[1];
           if (!armor.owned) {
             armor.ownedLevel = 0;
@@ -69,12 +66,9 @@ export const armorSlice = createSlice({
         return armor;
       });
     },
-    setOwnedLevel: (
-      state,
-      action: PayloadAction<[string, 0 | 1 | 2 | 3 | 4]>
-    ) => {
+    setOwnedLevel: (state, action: PayloadAction<[string, 0 | 1 | 2 | 3 | 4]>) => {
       state.armors = state.armors.map((armor) => {
-        if (armor.name === action.payload[0]) {
+        if (armor.id === action.payload[0]) {
           armor.ownedLevel = action.payload[1];
           if (armor.ownedLevel > armor.wanted) {
             armor.wanted = armor.ownedLevel;
@@ -83,12 +77,9 @@ export const armorSlice = createSlice({
         return armor;
       });
     },
-    setOwnedNonUpgradable: (
-      state,
-      action: PayloadAction<[string, boolean]>
-    ) => {
+    setOwnedNonUpgradable: (state, action: PayloadAction<[string, boolean]>) => {
       state.nonUpgradedArmors = state.nonUpgradedArmors.map((armor) => {
-        if (armor.name === action.payload[0]) {
+        if (armor.id === action.payload[0]) {
           armor.owned = action.payload[1];
         }
         return armor;
@@ -96,7 +87,7 @@ export const armorSlice = createSlice({
     },
     setWanted: (state, action: PayloadAction<[string, 0 | 1 | 2 | 3 | 4]>) => {
       state.armors = state.armors.map((armor) => {
-        if (armor.name === action.payload[0]) {
+        if (armor.id === action.payload[0]) {
           armor.wanted = action.payload[1];
           if (armor.wanted < armor.ownedLevel) {
             armor.wanted = armor.ownedLevel;
@@ -104,27 +95,24 @@ export const armorSlice = createSlice({
         }
         return armor;
       });
-    },
-  },
+    }
+  }
 });
 
 // Action creators are generated for each case reducer function
-export const {
-  setHidden,
-  setHiddenNonUpgradable,
-  setOwned,
-  setOwnedLevel,
-  setOwnedNonUpgradable,
-  setWanted,
-} = armorSlice.actions;
+export const { setHidden, setHiddenNonUpgradable, setOwned, setOwnedLevel, setOwnedNonUpgradable, setWanted } = armorSlice.actions;
 
 export const useArmorStatus = (name: string) =>
   useSelector((state: IRootState) => {
-    const found = state.armors.armors.find((a) => a.name === name);
+    const found = state.armors.armors.find((a) => a.id === name);
     if (found) {
       return found;
     }
-    return state.armors.nonUpgradedArmors.find((a) => a.name === name);
+    return state.armors.nonUpgradedArmors.find((a) => a.id === name) /* ?? {
+        hidden: true,
+        name,
+        owned: false,
+      }*/;
   }) as IArmor;
 
 export default armorSlice.reducer;

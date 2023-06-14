@@ -3,6 +3,7 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    'plugin:prettier/recommended',
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:perfectionist/recommended-natural",
@@ -18,6 +19,7 @@ module.exports = {
   },
   plugins: ["react-refresh", "formatjs"],
   rules: {
+    'prettier/prettier': 'warn',
     "react-refresh/only-export-components": "warn",
     "@typescript-eslint/consistent-type-imports": [
       "warn",
