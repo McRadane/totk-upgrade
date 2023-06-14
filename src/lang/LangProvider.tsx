@@ -9,11 +9,7 @@ export const LangProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const { locale } = useContext(LanguageSwitcherContext);
 
   return (
-    <IntlProvider
-      defaultLocale={LOCALES.ENGLISH}
-      locale={locale}
-      messages={messages[locale]}
-    >
+    <IntlProvider defaultLocale={LOCALES.ENGLISH} locale={locale} messages={messages[locale]}>
       {children}
     </IntlProvider>
   );

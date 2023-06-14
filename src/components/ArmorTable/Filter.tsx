@@ -5,8 +5,8 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { useDispatch, useSelector } from "react-redux";
 import { useDebouncedCallback } from "use-debounce";
 
-import { type IRootState } from "../../configureStore";
-import { setHideArmors } from "../../reducers/navigation";
+import { type IRootState } from "../../redux/store";
+import { setHideArmors } from "../../redux/navigation";
 
 export interface IFilterProps {
   updateTextFilter: (text: string) => void;

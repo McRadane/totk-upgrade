@@ -1,10 +1,9 @@
 export const LOCALES = {
   ENGLISH: "en",
-  FRENCH: "fr",
+  FRENCH: "fr"
 };
 
 export const LOCALES_SHORT = {
   en: "en",
-  fr: "fr",
+  fr: "fr"
 };
-

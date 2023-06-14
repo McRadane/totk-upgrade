@@ -1,7 +1,7 @@
 import { type FC, useMemo } from "react";
 import { useSelector } from "react-redux";
 
-import { type IRootState } from "../../configureStore";
+import { type IRootState } from "../../redux/store";
 
 import { Tab } from "./Tab";
 

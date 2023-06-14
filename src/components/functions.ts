@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { IntlShape } from "react-intl";
 
 import { getArmors, getMaterials } from "../data";
-import { type IArmor } from "../reducers/armors";
+import { type IArmor } from "../redux/armors";
 
 interface IItems {
   all: number;
@@ -128,7 +128,6 @@ export const calculateListItems = (
 
 export const getActiveStatus = (armor: IArmor) => (rank: number) => {
   if (!armor || armor.wanted === undefined || armor.ownedLevel === undefined) {
-    //console.log({ armor });
     return false;
   }
 

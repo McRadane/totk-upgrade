@@ -4,5 +4,5 @@ import { LOCALES } from "./locales";
 
 export const messages: Record<string, Record<string, string>> = {
   [LOCALES.ENGLISH]: en,
-  [LOCALES.FRENCH]: fr,
+  [LOCALES.FRENCH]: fr
 };

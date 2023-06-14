@@ -3,7 +3,6 @@ import { type Middleware, configureStore } from "@reduxjs/toolkit";
 import { createLogger } from "redux-logger";
 import {
   FLUSH,
-  type MigrationManifest,
   PAUSE,
   PERSIST,
   PURGE,
@@ -16,40 +15,8 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import { armorsNonUpgradableStatic } from "./data";
+import { migrations } from "./migrations";
 import rootReducer, { type MergedState } from "./reducers";
-
-const migrations: MigrationManifest = {
-  2: (state: any) => {
-    const { armors } = (state as MergedState).armors;
-    const newArmors = armors.map((armor) => ({
-      ...armor,
-      hidden: armor.hidden !== undefined ? armor.hidden : false,
-      owned: armor.owned !== undefined ? armor.owned : armor.ownedLevel > 0
-    }));
-    return {
-      ...state,
-      armors: { armors: newArmors }
-    };
-  },
-  3: (state: any) => {
-    const newArmors = (state as MergedState).armors.armors.map((armor) => ({
-      ...armor,
-      id: (armor as any).name ?? armor.id
-    }));
-    return {
-      ...state,
-      armors: {
-        armors: newArmors,
-        nonUpgradedArmors: armorsNonUpgradableStatic.map((armor) => ({
-          hidden: false,
-          id: armor,
-          owned: false
-        }))
-      }
-    };
-  }
-};
 
 const middlewares: Middleware[] = [];
 

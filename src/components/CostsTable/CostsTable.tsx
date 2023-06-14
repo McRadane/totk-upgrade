@@ -2,8 +2,8 @@ import { useCallback, useMemo } from "react";
 import { FormattedMessage, FormattedNumber, useIntl } from "react-intl";
 import { useDispatch, useSelector } from "react-redux";
 
-import type { IRootState } from "../../configureStore";
-import { setHideNoCost } from "../../reducers/navigation";
+import type { IRootState } from "../../redux/store";
+import { setHideNoCost } from "../../redux/navigation";
 import { calculateListItems } from "../functions";
 
 export const CostsTable = () => {

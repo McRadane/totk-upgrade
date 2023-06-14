@@ -1,8 +1,8 @@
 import { type FC, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import type { IRootState } from "../../configureStore";
-import { setPage } from "../../reducers/navigation";
+import type { IRootState } from "../../redux/store";
+import { setPage } from "../../redux/navigation";
 
 export interface ITabProps {
   tab: { id: number; page: () => JSX.Element; title: string };

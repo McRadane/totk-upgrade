@@ -5,7 +5,7 @@ import { useIntl } from "react-intl";
 import { useDispatch } from "react-redux";
 
 import { type IDataArmor } from "../../../data";
-import { setHidden, setOwned, useArmorStatus } from "../../../reducers/armors";
+import { setHidden, setOwned, useArmorStatus } from "../../../redux/armors";
 
 export interface IStatusProps {
   armor: IDataArmor;

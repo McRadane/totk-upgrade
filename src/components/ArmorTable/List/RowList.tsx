@@ -2,7 +2,7 @@ import { type FC, useMemo } from "react";
 import { FormattedMessage } from "react-intl";
 
 import { type IDataArmor } from "../../../data";
-import { useArmorStatus } from "../../../reducers/armors";
+import { useArmorStatus } from "../../../redux/armors";
 import { getActiveStatus } from "../../functions";
 import { MaterialList } from "../MaterialList";
 import { Status } from "../Status";

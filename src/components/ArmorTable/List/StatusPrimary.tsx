@@ -3,7 +3,7 @@ import { FormattedMessage } from "react-intl";
 import { useDispatch } from "react-redux";
 
 import { type IDataArmor } from "../../../data";
-import { setHidden, setHiddenNonUpgradable, setOwned, setOwnedNonUpgradable, useArmorStatus } from "../../../reducers/armors";
+import { setHidden, setHiddenNonUpgradable, setOwned, setOwnedNonUpgradable, useArmorStatus } from "../../../redux/armors";
 
 export interface IStatusProps {
   armor: IDataArmor;

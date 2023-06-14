@@ -1,7 +1,7 @@
 import { type PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
 
-import type { IRootState } from "../configureStore";
+import type { IRootState } from "./store";
 
 export interface NavigationState {
   hideArmors: boolean;
@@ -13,7 +13,7 @@ export interface NavigationState {
 const initialState: NavigationState = {
   hideArmors: true,
   hideNoCost: true,
-  page: 1,
+  page: 1
 };
 
 export const navigationSlice = createSlice({
@@ -31,14 +31,12 @@ export const navigationSlice = createSlice({
     },
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;
-    },
-  },
+    }
+  }
 });
 
-export const { setHideArmors, setHideNoCost, setLanguage, setPage } =
-  navigationSlice.actions;
+export const { setHideArmors, setHideNoCost, setLanguage, setPage } = navigationSlice.actions;
 
-export const useLanguage = () =>
-  useSelector((state: IRootState) => state.navigation.language);
+export const useLanguage = () => useSelector((state: IRootState) => state.navigation.language);
 
 export default navigationSlice.reducer;

@@ -6,17 +6,20 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "lang:extract": "node scripts/lang --extract && node scripts/lang --generate-schema",
+    "lang:compile": "node scripts/lang.js --generate-sources",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "serve:prod": "yarn build && gulp && serve build",
-    "lang:extract": "node scripts/lang --extract && node scripts/lang --generate-schema",
-    "lang:compile": "node scripts/lang.js --generate-sources"
+    "test:watch": "vitest --coverage --ui",
+    "test": "vitest run --coverage"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "latest",
     "@reduxjs/toolkit": "^1.9.5",
+    "@vitest/coverage-v8": "^0.32.0",
     "babel-plugin-formatjs": "^10.5.3",
     "mdb-ui-kit": "^6.3.1",
     "react": "^18.2.0",
@@ -37,6 +40,7 @@
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "@vitejs/plugin-react": "^4.0.0",
+    "@vitest/ui": "^0.32.0",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
@@ -54,7 +58,8 @@
     "serve": "^14.2.0",
     "typescript": "^5.0.2",
     "vite": "^4.3.9",
-    "vite-plugin-pwa": "^0.16.0"
+    "vite-plugin-pwa": "^0.16.0",
+    "vitest": "^0.32.0"
   },
   "packageManager": "yarn@3.5.1"
 }

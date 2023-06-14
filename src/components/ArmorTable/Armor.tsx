@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { useIntl } from "react-intl";
 import { useSelector } from "react-redux";
 
-import { type IRootState } from "../../configureStore";
+import { type IRootState } from "../../redux/store";
 import { getArmors } from "../../data";
 import { useMediaQuery } from "../functions";
 

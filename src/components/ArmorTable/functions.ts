@@ -1,5 +1,5 @@
 import { type IDataArmor } from "../../data";
-import { type IArmor } from "../../reducers/armors";
+import { type IArmor } from "../../redux/armors";
 
 export interface IFiltersOptions {
   armors: IDataArmor[];
