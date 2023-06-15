@@ -1,8 +1,8 @@
-import { FormattedMessage, useIntl } from "react-intl";
+import { useIntl } from "react-intl";
 
 import { Armor } from "./components/ArmorTable/Armor";
 import { CostsTable } from "./components/CostsTable/CostsTable";
-import { LanguageSwitcher } from "./components/LanguageSwitcher";
+import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Tabs } from "./components/Tabs/Tabs";
 
@@ -34,35 +34,7 @@ function App() {
         ]}
       />
       <ScrollToTop />
-      <footer
-        style={{
-          backgroundColor: "rgba(0, 0, 0, 0.05)",
-          display: "flex",
-          justifyContent: "space-between"
-        }}
-        className="p-4 row"
-      >
-        <LanguageSwitcher className="col" />
-        <span className="col">
-          <FormattedMessage
-            id="footerVersion"
-            values={{
-              name: import.meta.env.VITE_SITE_NAME,
-              version: APP_VERSION
-            }}
-            defaultMessage="{name} v{version} by McRadane"
-          />
-        </span>
-        <a
-          className="col text-reset fw-bold"
-          data-testid="footer-github"
-          href="https://github.com/McRadane/totk-upgrade"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <FormattedMessage id="linkGitHub" defaultMessage="Project's GitHub repository" />
-        </a>
-      </footer>
+      <Footer />
     </>
   );
 }

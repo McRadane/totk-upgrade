@@ -1,4 +1,4 @@
-import { type FC, useCallback, useContext } from "react";
+import { type CSSProperties, type FC, useCallback, useContext } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 
 import { LanguageSwitcherContext } from "../lang/LanguageSwitcherProvider";
@@ -6,9 +6,10 @@ import { LOCALES } from "../lang/locales";
 
 interface ILanguageSwitcherProps {
   className?: string;
+  style?: CSSProperties;
 }
 
-export const LanguageSwitcher: FC<ILanguageSwitcherProps> = ({ className }) => {
+export const LanguageSwitcher: FC<ILanguageSwitcherProps> = ({ className, style }) => {
   const intl = useIntl();
   const { locale, setLocale } = useContext(LanguageSwitcherContext);
 
@@ -27,6 +28,7 @@ export const LanguageSwitcher: FC<ILanguageSwitcherProps> = ({ className }) => {
       })}
       className={`${className ?? ""} form-select`}
       onChange={onSelectLanguage}
+      style={style}
       value={locale}
     >
       <option value={LOCALES.ENGLISH}>

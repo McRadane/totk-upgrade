@@ -103,7 +103,8 @@ export default defineConfig(({ mode }) => {
         all: true,
         include: ["src/**"],
         src: "./src",
-        reportsDirectory: "./temp/coverage"
+        reportsDirectory: "./temp/coverage",
+        reporter: ['text', 'html', 'lcov']
       },
       environmentMatchGlobs: [
         ['**\/*.test.tsx', 'happy-dom'],

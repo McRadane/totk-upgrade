@@ -29,7 +29,7 @@ export const Tabs: FC<ITabsProps> = ({ tabs }) => {
           ))}
         </ul>
       </nav>
-      <main>
+      <main style={{ paddingTop: 20 }}>
         <Page />
       </main>
     </>
