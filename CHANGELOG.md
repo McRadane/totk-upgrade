@@ -6,7 +6,20 @@ This change log adheres to standards from [Keep a CHANGELOG](https://keepachange
 
 ## Unreleased
 
-## [1.2.0] - 2023-06-01
+## [1.2.1] - 2023-06-15
+
+## Added
+
+- Armor costs were missing, it has been added
+- Added coverage lcov report for SonarQube
+
+### Fixed
+
+- Fixed a translation issue in french
+- Fix some minor accessibility issues with buttons
+- Ensure elements are big enough in mobile, and there is no overlapping
+
+## [1.2.0] - 2023-06-15
 
 ### Added
 

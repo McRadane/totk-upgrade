@@ -881,6 +881,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 450,
     category: "upgradable-set",
     id: "Desert Voe Headband",
     name: intl.formatMessage({
@@ -908,6 +909,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 1300,
     category: "upgradable-set",
     id: "Desert Voe Spaulder",
     name: intl.formatMessage({
@@ -935,6 +937,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 650,
     category: "upgradable-set",
     id: "Desert Voe Trousers",
     name: intl.formatMessage({
@@ -1127,6 +1130,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 700,
     category: "upgradable-set",
     id: "Flamebreaker Armor",
     name: intl.formatMessage({
@@ -1154,6 +1158,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 1200,
     category: "upgradable-set",
     id: "Flamebreaker Boots",
     name: intl.formatMessage({
@@ -1181,6 +1186,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 1400,
     category: "upgradable-set",
     id: "Flamebreaker Helm",
     name: intl.formatMessage({
@@ -1529,6 +1535,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 70,
     category: "upgradable-set",
     id: "Hylian Hood",
     name: intl.formatMessage({
@@ -1556,6 +1563,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 120,
     category: "upgradable-set",
     id: "Hylian Trousers",
     name: intl.formatMessage({
@@ -1583,6 +1591,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 130,
     category: "upgradable-set",
     id: "Hylian Tunic",
     name: intl.formatMessage({
@@ -1691,6 +1700,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 800,
     category: "upgradable-set",
     id: "Radiant Mask",
     name: intl.formatMessage({
@@ -1721,6 +1731,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 800,
     category: "upgradable-set",
     id: "Radiant Shirt",
     name: intl.formatMessage({
@@ -1751,6 +1762,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 800,
     category: "upgradable-set",
     id: "Radiant Tights",
     name: intl.formatMessage({
@@ -2042,6 +2054,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 650,
     category: "upgradable-set",
     id: "Snowquill Headdress",
     name: intl.formatMessage({
@@ -2069,6 +2082,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 1000,
     category: "upgradable-set",
     id: "Snowquill Trousers",
     name: intl.formatMessage({
@@ -2096,6 +2110,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 500,
     category: "upgradable-set",
     id: "Snowquill Tunic",
     name: intl.formatMessage({
@@ -2213,6 +2228,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 700,
     category: "upgradable-set",
     id: "Stealth Chest Guard",
     name: intl.formatMessage({
@@ -2240,6 +2256,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 500,
     category: "upgradable-set",
     id: "Stealth Mask",
     name: intl.formatMessage({
@@ -2267,6 +2284,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     })
   },
   {
+    buyPrice: 600,
     category: "upgradable-set",
     id: "Stealth Tights",
     name: intl.formatMessage({
@@ -2907,6 +2925,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     ]
   },
   {
+    buyPrice: 400,
     category: "upgradable-non-set",
     id: "Amber Earrings",
     name: intl.formatMessage({
@@ -2958,6 +2977,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     ]
   },
   {
+    buyPrice: 2400,
     category: "upgradable-non-set",
     id: "Diamond Circlet",
     name: intl.formatMessage({
@@ -2982,6 +3002,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     ]
   },
   {
+    buyPrice: 700,
     category: "upgradable-non-set",
     id: "Opal Earrings",
     name: intl.formatMessage({
@@ -3006,6 +3027,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     ]
   },
   {
+    buyPrice: 1300,
     category: "upgradable-non-set",
     id: "Ruby Circlet",
     name: intl.formatMessage({
@@ -3030,6 +3052,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     ]
   },
   {
+    buyPrice: 1200,
     category: "upgradable-non-set",
     id: "Sand Boots",
     name: intl.formatMessage({
@@ -3053,6 +3076,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     ]
   },
   {
+    buyPrice: 1300,
     category: "upgradable-non-set",
     id: "Sapphire Circlet",
     name: intl.formatMessage({
@@ -3101,6 +3125,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     ]
   },
   {
+    buyPrice: 1300,
     category: "upgradable-non-set",
     id: "Snow Boots",
     name: intl.formatMessage({
@@ -3119,6 +3144,7 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
     ]
   },
   {
+    buyPrice: 1200,
     category: "upgradable-non-set",
     id: "Topaz Earrings",
     name: intl.formatMessage({
