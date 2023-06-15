@@ -25,9 +25,7 @@ const extractFunction = async () => {
   const files = [];
 
   walk("./src", (filename, file) => {
-    if (filename.endsWith(".tsx")) {
-      files.push(file);
-    } else if (filename.endsWith(".ts") && !filename.endsWith(".d.ts")) {
+    if (filename.endsWith(".tsx") || (filename.endsWith(".ts") && !filename.endsWith(".d.ts"))) {
       files.push(file);
     }
   });
@@ -108,11 +106,17 @@ const generateSources = async () => {
 };
 
 if (argv.includes("--extract")) {
-  extractFunction();
+  extractFunction().then(() => {
+    console.log("Done");
+  });
 } else if (argv.includes("--generate-schema")) {
-  generateSchema();
+  generateSchema().then(() => {
+    console.log("Done");
+  });
 } else if (argv.includes("--generate-sources")) {
-  generateSources();
+  generateSources().then(() => {
+    console.log("Done");
+  });
 } else {
   console.log("Unknown command. Use flag --extract, --generate-schema, or --generate-sources");
 }
