@@ -1,4 +1,4 @@
-import {  type FC, useMemo } from "react";
+import { type FC, useMemo } from "react";
 
 import { type IDataArmor } from "../../../data";
 import { useArmorStatus } from "../../../redux/armors";
@@ -13,15 +13,17 @@ export interface IRowProps {
 }
 
 export const RowTable: FC<IRowProps> = ({ armor }) => {
-  const status = useArmorStatus(armor.name);
+  const status = useArmorStatus(armor.id);
 
   const activeStatus = useMemo(() => {
     return getActiveStatus(status);
   }, [status]);
 
   return (
-    <tr>
-      <th scope="row">{armor.name}</th>
+    <tr data-testid={`armor-table-${armor.id}`}>
+      <th data-testid={`armor-table-${armor.id}-name`} scope="row">
+        {armor.name}
+      </th>
       <td>{armor.set}</td>
       <td>
         <div className="status-button">

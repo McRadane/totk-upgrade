@@ -5,17 +5,15 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { useDispatch, useSelector } from "react-redux";
 import { useDebouncedCallback } from "use-debounce";
 
-import { type IRootState } from "../../redux/store";
 import { setHideArmors } from "../../redux/navigation";
+import { type IRootState } from "../../redux/store";
 
 export interface IFilterProps {
   updateTextFilter: (text: string) => void;
 }
 
 export const Filter: FC<IFilterProps> = ({ updateTextFilter }) => {
-  const hideArmors = useSelector(
-    (state: IRootState) => state.navigation.hideArmors
-  );
+  const hideArmors = useSelector((state: IRootState) => state.navigation.hideArmors);
   const [textFilter, setTextFilter] = useState("");
   const dispatch = useDispatch();
   const intl = useIntl();
@@ -52,22 +50,13 @@ export const Filter: FC<IFilterProps> = ({ updateTextFilter }) => {
             type="checkbox"
           />
           <label className="form-check-label" htmlFor="flexSwitchHideArmors">
-            <FormattedMessage
-              id="filterArmors"
-              defaultMessage="Filter armors"
-            />
+            <FormattedMessage id="filterArmors" defaultMessage="Filter armors" />
           </label>
         </div>
 
         <div className="input-group">
           <div className="form-outline">
-            <input
-              id="searchFilter"
-              className="form-control"
-              onChange={onChangeTextFilter}
-              type="search"
-              value={textFilter}
-            />
+            <input id="searchFilter" className="form-control" onChange={onChangeTextFilter} type="search" value={textFilter} />
             <label className="form-label" htmlFor="searchFilter">
               <FormattedMessage id="searchArmors" defaultMessage="Search" />
             </label>
@@ -75,7 +64,7 @@ export const Filter: FC<IFilterProps> = ({ updateTextFilter }) => {
           <button
             aria-label={intl.formatMessage({
               defaultMessage: "Start Search",
-              id: "startSearch",
+              id: "startSearch"
             })}
             className="btn btn-primary"
             type="button"

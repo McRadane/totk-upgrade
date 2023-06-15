@@ -20,17 +20,17 @@ function App() {
             page: Armor,
             title: intl.formatMessage({
               defaultMessage: "Armor",
-              id: "menuArmor",
-            }),
+              id: "menuArmor"
+            })
           },
           {
             id: 2,
             page: CostsTable,
             title: intl.formatMessage({
               defaultMessage: "Costs",
-              id: "menuCosts",
-            }),
-          },
+              id: "menuCosts"
+            })
+          }
         ]}
       />
       <ScrollToTop />
@@ -38,7 +38,7 @@ function App() {
         style={{
           backgroundColor: "rgba(0, 0, 0, 0.05)",
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "space-between"
         }}
         className="p-4 row"
       >
@@ -48,21 +48,19 @@ function App() {
             id="footerVersion"
             values={{
               name: import.meta.env.VITE_SITE_NAME,
-              version: APP_VERSION,
+              version: APP_VERSION
             }}
             defaultMessage="{name} v{version} by McRadane"
           />
         </span>
         <a
           className="col text-reset fw-bold"
+          data-testid="footer-github"
           href="https://github.com/McRadane/totk-upgrade"
           rel="noopener noreferrer"
           target="_blank"
         >
-          <FormattedMessage
-            id="linkGitHub"
-            defaultMessage="Project's GitHub repository"
-          />
+          <FormattedMessage id="linkGitHub" defaultMessage="Project's GitHub repository" />
         </a>
       </footer>
     </>

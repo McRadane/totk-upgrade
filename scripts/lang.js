@@ -1,4 +1,4 @@
-import { extract, compile } from "@formatjs/cli-lib";
+import { compile, extract } from "@formatjs/cli-lib";
 import fs from "fs";
 import path from "path";
 
@@ -24,7 +24,7 @@ const argv = process.argv.slice(2);
 const extractFunction = async () => {
   const files = [];
 
-  walk("./src", (filename, file, dir) => {
+  walk("./src", (filename, file) => {
     if (filename.endsWith(".tsx")) {
       files.push(file);
     } else if (filename.endsWith(".ts") && !filename.endsWith(".d.ts")) {
@@ -32,28 +32,24 @@ const extractFunction = async () => {
     }
   });
 
-  // console.log({files})
-
   const resultAsString = await extract(files, {
-    idInterpolationPattern: "[sha512:contenthash:base64:6]",
+    idInterpolationPattern: "[sha512:contenthash:base64:6]"
   });
-
-  // console.log({files, resultAsString})
 
   fs.writeFileSync("./i18n/en.json", resultAsString);
 };
 
 const getProperty = () => ({
-  type: "object",
   properties: {
     defaultMessage: {
-      type: "string",
+      type: "string"
     },
     description: {
-      type: "string",
-    },
+      type: "string"
+    }
   },
   required: ["defaultMessage"],
+  type: "object"
 });
 
 const generateSchema = async () => {
@@ -72,9 +68,9 @@ const generateSchema = async () => {
     JSON.stringify({
       $schema: "http://json-schema.org/draft-04/schema#",
       additionalProperties: false,
-      type: "object",
       properties,
       required,
+      type: "object"
     })
   );
 };
@@ -118,7 +114,5 @@ if (argv.includes("--extract")) {
 } else if (argv.includes("--generate-sources")) {
   generateSources();
 } else {
-  console.log(
-    "Unknown command. Use flag --extract, --generate-schema, or --generate-sources"
-  );
+  console.log("Unknown command. Use flag --extract, --generate-schema, or --generate-sources");
 }

@@ -13,22 +13,22 @@ export const Status: FC<IStatusProps> = ({ armor }) => {
   const status = useArmorStatus(armor.id);
   const dispatch = useDispatch();
 
-  const slug = useMemo(() => armor.name.replace(/[^a-z]/g, ""), [armor.name]);
+  const slug = useMemo(() => armor.id.replace(/[^a-z]/g, ""), [armor.id]);
 
   const onChangeOwnedLevel = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       const numberValue = Number.parseInt(event.target.value);
-      dispatch(setOwnedLevel([armor.name, numberValue as 0]));
+      dispatch(setOwnedLevel([armor.id, numberValue as 0]));
     },
-    [armor.name, dispatch]
+    [armor.id, dispatch]
   );
 
   const onChangeWanted = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       const numberValue = Number.parseInt(event.target.value);
-      dispatch(setWanted([armor.name, numberValue as 0]));
+      dispatch(setWanted([armor.id, numberValue as 0]));
     },
-    [armor.name, dispatch]
+    [armor.id, dispatch]
   );
 
   if (status.wanted === undefined) {
@@ -44,6 +44,7 @@ export const Status: FC<IStatusProps> = ({ armor }) => {
         <input
           id={`slider-owned-${slug}`}
           className="form-range"
+          data-testid={`armor-${armor.id}-status-owned`}
           disabled={!status.owned}
           max="4"
           min="0"

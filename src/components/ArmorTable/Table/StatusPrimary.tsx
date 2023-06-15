@@ -12,29 +12,27 @@ export interface IStatusProps {
 }
 
 export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
-  const status = useArmorStatus(armor.name);
+  const status = useArmorStatus(armor.id);
   const dispatch = useDispatch();
 
   const intl = useIntl();
 
   const onChangeOwned = useCallback(() => {
-    dispatch(setOwned([armor.name, !status.owned]));
-  }, [armor.name, dispatch, status?.owned]);
+    dispatch(setOwned([armor.id, !status.owned]));
+  }, [armor.id, dispatch, status.owned]);
 
   const onChangeHidden = useCallback(() => {
-    dispatch(setHidden([armor.name, !status.hidden]));
-  }, [armor.name, dispatch, status?.hidden]);
+    dispatch(setHidden([armor.id, !status.hidden]));
+  }, [armor.id, dispatch, status.hidden]);
   //
   return (
     <>
       <button
         aria-label={intl.formatMessage({
           defaultMessage: "Toggle owned status",
-          id: "toggleOwnedStatus",
+          id: "toggleOwnedStatus"
         })}
-        className={`btn btn-outline-primary btn-sm btn-floating ${
-          status.owned ? "active" : ""
-        }`}
+        className={`btn btn-outline-primary btn-sm btn-floating ${status.owned ? "active" : ""}`}
         onClick={onChangeOwned}
         type="button"
       >
@@ -43,11 +41,9 @@ export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
       <button
         aria-label={intl.formatMessage({
           defaultMessage: "Toggle hidden status",
-          id: "toggleHiddenStatus",
+          id: "toggleHiddenStatus"
         })}
-        className={`btn btn-outline-primary btn-sm btn-floating ${
-          status.hidden ? "active" : ""
-        }`}
+        className={`btn btn-outline-primary btn-sm btn-floating ${status.hidden ? "active" : ""}`}
         onClick={onChangeHidden}
         type="button"
       >

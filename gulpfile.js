@@ -1,11 +1,9 @@
 import gulp from "gulp";
 
-const { src, dest, parallel } = gulp;
+const { dest, parallel, src } = gulp;
 
 export const copyAssets = () => {
-  return src(["dist/*.*", "dist/**", "!dist/index.html"]).pipe(
-    dest("build/totk-upgrade")
-  );
+  return src(["dist/*.*", "dist/**", "!dist/index.html"]).pipe(dest("build/totk-upgrade"));
 };
 
 export const copyIndex = () => {

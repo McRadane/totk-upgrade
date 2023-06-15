@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { type Middleware, configureStore } from "@reduxjs/toolkit";
 import { createLogger } from "redux-logger";
 import {
