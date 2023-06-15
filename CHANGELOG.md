@@ -6,6 +6,8 @@ This change log adheres to standards from [Keep a CHANGELOG](https://keepachange
 
 ## Unreleased
 
+## [1.2.0] - 2023-06-01
+
 ### Added
 
 - Language switching with French support (almost 100% translated)
