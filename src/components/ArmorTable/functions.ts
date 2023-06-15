@@ -16,12 +16,17 @@ export const filterArmors = ({ armors, armorsState, hidden, text }: IFiltersOpti
   let filtered = [...armors];
 
   if (text) {
-    filtered = filtered.filter((armor) => armor.name.toLowerCase().includes(text));
+    filtered = filtered.filter((armor) => {
+      if (armor.set) {
+        return armor.name.toLowerCase().includes(text) || armor.set.toLowerCase().includes(text) || armor.id.toLowerCase().includes(text);
+      }
+      return armor.name.toLowerCase().includes(text) || armor.id.toLowerCase().includes(text);
+    });
   }
 
   if (hidden) {
     filtered = filtered.filter((armor) => {
-      const status = armorsState.find((stat) => stat.id === armor.name);
+      const status = armorsState.find((stat) => stat.id === armor.id);
 
       if (status) {
         return !status.hidden;
