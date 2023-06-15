@@ -1,5 +1,8 @@
 import { type IDataArmor } from "../../data";
 
 export interface IArmorsProps {
-  armors: IDataArmor[];
+  nonSet: IDataArmor[];
+  nonUpgradable: IDataArmor[];
+  nonUpgradableNonSet: IDataArmor[];
+  set: IDataArmor[];
 }

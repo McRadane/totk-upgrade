@@ -1,12 +1,12 @@
 import { type FC, useMemo } from "react";
 import { useSelector } from "react-redux";
 
-import { type IRootState } from "../../configureStore";
+import { type IRootState } from "../../redux/store";
 
 import { Tab } from "./Tab";
 
 export interface ITabsProps {
-  tabs: { id: number; title: string; page: () => JSX.Element }[];
+  tabs: { id: number; page: () => JSX.Element; title: string }[];
 }
 
 export const Tabs: FC<ITabsProps> = ({ tabs }) => {
@@ -22,12 +22,16 @@ export const Tabs: FC<ITabsProps> = ({ tabs }) => {
 
   return (
     <>
-      <ul className="nav nav-tabs">
-        {tabs.map((tab) => (
-          <Tab key={tab.id} tab={tab} />
-        ))}
-      </ul>
-      <Page />
+      <nav>
+        <ul className="nav nav-tabs">
+          {tabs.map((tab) => (
+            <Tab key={tab.id} tab={tab} />
+          ))}
+        </ul>
+      </nav>
+      <main>
+        <Page />
+      </main>
     </>
   );
 };

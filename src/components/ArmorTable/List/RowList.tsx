@@ -1,10 +1,11 @@
 import { type FC, useMemo } from "react";
+import { FormattedMessage } from "react-intl";
 
 import { type IDataArmor } from "../../../data";
-import { useArmorStatus } from "../../../reducers/armors";
-import { Status } from "../Status";
-import { MaterialList } from "../MaterialList";
+import { useArmorStatus } from "../../../redux/armors";
 import { getActiveStatus } from "../../functions";
+import { MaterialList } from "../MaterialList";
+import { Status } from "../Status";
 
 import { StatusPrimary } from "./StatusPrimary";
 
@@ -13,30 +14,34 @@ export interface IRowProps {
 }
 
 export const RowList: FC<IRowProps> = ({ armor }) => {
-  const status = useArmorStatus(armor.name);
+  const status = useArmorStatus(armor.id);
 
   const activeStatus = useMemo(() => {
     return getActiveStatus(status);
   }, [status]);
 
   return (
-    <div className="card">
+    <section className="card">
       <div className="table-responsive card-body">
         <table className="table table-sm">
           <tbody>
             <tr>
-              <th scope="row">Name</th>
-              <th scope="row">{armor.name}</th>
+              <th scope="col">
+                <FormattedMessage id="armorName" defaultMessage="Name" />
+              </th>
+              <th scope="col">{armor.name}</th>
             </tr>
 
             <tr>
-              <td>Set</td>
+              <td>
+                <FormattedMessage id="armorSet" defaultMessage="Set" />
+              </td>
               <td>{armor.set}</td>
             </tr>
 
             <tr>
               <td>
-                Status
+                <FormattedMessage id="status" defaultMessage="Status" />
                 <StatusPrimary armor={armor} />
               </td>
               <td>
@@ -46,62 +51,50 @@ export const RowList: FC<IRowProps> = ({ armor }) => {
 
             <tr>
               <td>
-                1 Star Cost
+                <FormattedMessage id="starCost" defaultMessage="{num} Star Cost" values={{ num: 1 }} />
                 <br />
-                (10 Rupees)
+                <FormattedMessage id="rupeesAmountParentheses" defaultMessage="({num} Rupees)" values={{ num: 10 }} />
               </td>
               <td>
-                <MaterialList
-                  active={activeStatus(1)}
-                  materials={armor.rank1}
-                />
+                <MaterialList active={activeStatus(1)} materials={armor.rank1} />
               </td>
             </tr>
 
             <tr>
               <td>
-                2 Star Cost
+                <FormattedMessage id="starCost" defaultMessage="{num} Star Cost" values={{ num: 2 }} />
                 <br />
-                (50 Rupees)
+                <FormattedMessage id="rupeesAmountParentheses" defaultMessage="({num} Rupees)" values={{ num: 50 }} />
               </td>
               <td>
-                <MaterialList
-                  active={activeStatus(2)}
-                  materials={armor.rank2}
-                />
+                <MaterialList active={activeStatus(2)} materials={armor.rank2} />
               </td>
             </tr>
 
             <tr>
               <td>
-                3 Star Cost
+                <FormattedMessage id="starCost" defaultMessage="{num} Star Cost" values={{ num: 3 }} />
                 <br />
-                (200 Rupees)
+                <FormattedMessage id="rupeesAmountParentheses" defaultMessage="({num} Rupees)" values={{ num: 200 }} />
               </td>
               <td>
-                <MaterialList
-                  active={activeStatus(3)}
-                  materials={armor.rank3}
-                />
+                <MaterialList active={activeStatus(3)} materials={armor.rank3} />
               </td>
             </tr>
 
             <tr>
               <td>
-                4 Star Cost
+                <FormattedMessage id="starCost" defaultMessage="{num} Star Cost" values={{ num: 4 }} />
                 <br />
-                (500 Rupees)
+                <FormattedMessage id="rupeesAmountParentheses" defaultMessage="({num} Rupees)" values={{ num: 500 }} />
               </td>
               <td>
-                <MaterialList
-                  active={activeStatus(4)}
-                  materials={armor.rank4}
-                />
+                <MaterialList active={activeStatus(4)} materials={armor.rank4} />
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-    </div>
+    </section>
   );
 };

@@ -1,64 +1,59 @@
 import { type FC, useCallback, useMemo } from "react";
+import { FormattedMessage } from "react-intl";
 import { useDispatch } from "react-redux";
 
 import { type IDataArmor } from "../../../data";
-import {
-  setHidden,
-  setOwned,
-  useArmorStatus,
-} from "../../../reducers/armors";
+import { setHidden, setOwned, useArmorStatus } from "../../../redux/armors";
 
 export interface IStatusProps {
   armor: IDataArmor;
 }
 
 export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
-  const status = useArmorStatus(armor.name);
+  const status = useArmorStatus(armor.id);
   const dispatch = useDispatch();
 
   const slug = useMemo(() => armor.name.replace(/[^a-z]/g, ""), [armor.name]);
 
   const onChangeOwned = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch(setOwned([armor.name, event.target.checked]));
+      dispatch(setOwned([armor.id, event.target.checked]));
     },
-    [armor.name, dispatch]
+    [armor.id, dispatch]
   );
 
   const onChangeHidden = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch(setHidden([armor.name, event.target.checked]));
+      dispatch(setHidden([armor.id, event.target.checked]));
     },
-    [armor.name, dispatch]
+    [armor.id, dispatch]
   );
-//<button type="button" className="btn btn-primary btn-sm btn-rounded "><i className="fas fa-camera-retro"></i></button>
   return (
     <>
       <div className="form-check form-switch">
-      
         <label className="form-check-label" htmlFor={`toggle-owned-${slug}`}>
-          Owned ?
+          <FormattedMessage id="ownedQuestion" defaultMessage="Owned ?" />
         </label>
         <input
-          className="form-check-input"
-          type="checkbox"
-          role="switch"
           id={`toggle-owned-${slug}`}
-          onChange={onChangeOwned}
           checked={status.owned}
+          className="form-check-input"
+          onChange={onChangeOwned}
+          role="switch"
+          type="checkbox"
         />
       </div>
       <div className="form-check form-switch">
         <label className="form-check-label" htmlFor={`toggle-hidden-${slug}`}>
-          Hidden ?
+          <FormattedMessage id="hiddenQuestion" defaultMessage="Hidden ?" />
         </label>
         <input
-          className="form-check-input"
-          type="checkbox"
-          role="switch"
           id={`toggle-hidden-${slug}`}
-          onChange={onChangeHidden}
           checked={status.hidden}
+          className="form-check-input"
+          onChange={onChangeHidden}
+          role="switch"
+          type="checkbox"
         />
       </div>
     </>

@@ -1,31 +1,33 @@
-import { useDispatch, useSelector } from "react-redux";
 import { useCallback, useMemo } from "react";
+import { FormattedMessage, FormattedNumber, useIntl } from "react-intl";
+import { useDispatch, useSelector } from "react-redux";
 
+import { setHideNoCost } from "../../redux/navigation";
+import type { IRootState } from "../../redux/store";
 import { calculateListItems } from "../functions";
-import type { IRootState } from "../../configureStore";
-import { setHideNoCost } from "../../reducers/navigation";
 
 export const CostsTable = () => {
   const armorsState = useSelector((state: IRootState) => state.armors.armors);
-  const hideNoCost = useSelector(
-    (state: IRootState) => state.navigation.hideNoCost
-  );
+  const hideNoCost = useSelector((state: IRootState) => state.navigation.hideNoCost);
   const dispatch = useDispatch();
+  const intl = useIntl();
 
   const { costs, filterLocked } = useMemo(() => {
-    const costsMemo = calculateListItems(armorsState);
+    const costsMemo = calculateListItems(armorsState, intl);
 
-    const resultsFiltered = costsMemo.filter((cost) => cost[1] !== 0);
+    const resultsFiltered = costsMemo.items.filter((cost) => cost.selection !== 0);
 
     if (hideNoCost) {
-      
       if (resultsFiltered.length > 0) {
-        return { costs: resultsFiltered, filterLocked: false };
+        return {
+          costs: { ...costsMemo, items: resultsFiltered },
+          filterLocked: false
+        };
       }
     }
 
     return { costs: costsMemo, filterLocked: resultsFiltered.length === 0 };
-  }, [armorsState, hideNoCost]);
+  }, [armorsState, hideNoCost, intl]);
 
   const onChangeHideNoCost = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,16 +41,16 @@ export const CostsTable = () => {
       <div className="container text-start">
         <div className="form-check form-switch">
           <input
-            className="form-check-input"
-            type="checkbox"
-            role="switch"
             id="flexSwitchHideNoCost"
             checked={hideNoCost}
-            onChange={onChangeHideNoCost}
+            className="form-check-input"
             disabled={filterLocked && !hideNoCost}
+            onChange={onChangeHideNoCost}
+            role="switch"
+            type="checkbox"
           />
           <label className="form-check-label" htmlFor="flexSwitchHideNoCost">
-            Filter materials
+            <FormattedMessage id="filterMaterials" defaultMessage="Filter materials" />
           </label>
         </div>
       </div>
@@ -56,17 +58,49 @@ export const CostsTable = () => {
       <table className="table table-sm">
         <thead>
           <tr>
-            <th scope="col">Material</th>
-            <th scope="col">Count (Selection)</th>
-            <th scope="col">Count (All Armors)</th>
+            <th scope="col">
+              <FormattedMessage id="material" defaultMessage="Material" />
+            </th>
+            <th scope="col">
+              <FormattedMessage id="countSelection" defaultMessage="Count (Selection)" />
+            </th>
+            <th scope="col">
+              <FormattedMessage id="countAll" defaultMessage="Count (All Armors)" />
+            </th>
           </tr>
         </thead>
         <tbody>
-          {costs.map(([name, countSelection, countAll]) => (
-            <tr>
+          <tr>
+            <th scope="row">
+              <FormattedMessage id="rupeeCostUpgrade" defaultMessage="Rupee (upgrades)" />
+            </th>
+            <td>
+              <FormattedNumber value={costs.rupee.selection} />
+            </td>
+            <td>
+              <FormattedNumber value={costs.rupee.all} />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">
+              <FormattedMessage id="rupeeCostBuy" defaultMessage="Rupee (armor prices)" />
+            </th>
+            <td>
+              <FormattedNumber value={costs.rupeeBuy.selection} />
+            </td>
+            <td>
+              <FormattedNumber value={costs.rupeeBuy.all} />
+            </td>
+          </tr>
+          {costs.items.map(({ all, id, name, selection }) => (
+            <tr key={id}>
               <th scope="row">{name}</th>
-              <td>{countSelection}</td>
-              <td>{countAll}</td>
+              <td>
+                <FormattedNumber value={selection} />
+              </td>
+              <td>
+                <FormattedNumber value={all} />
+              </td>
             </tr>
           ))}
         </tbody>

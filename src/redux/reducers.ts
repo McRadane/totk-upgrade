@@ -4,8 +4,8 @@ import armors, { type ArmorState } from "./armors";
 import navigation, { type NavigationState } from "./navigation";
 
 export type MergedState = {
-    armors: ArmorState;
-    navigation: NavigationState;
+  armors: ArmorState;
+  navigation: NavigationState;
 };
 
 export default combineReducers({ armors, navigation });

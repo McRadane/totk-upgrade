@@ -1,48 +1,53 @@
+import { faCheck, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { type FC, useCallback } from "react";
+import { useIntl } from "react-intl";
 import { useDispatch } from "react-redux";
 
 import { type IDataArmor } from "../../../data";
-import {
-  setHidden,
-  setOwned,
-  useArmorStatus,
-} from "../../../reducers/armors";
+import { setHidden, setOwned, useArmorStatus } from "../../../redux/armors";
 
 export interface IStatusProps {
   armor: IDataArmor;
 }
 
 export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
-  const status = useArmorStatus(armor.name);
+  const status = useArmorStatus(armor.id);
   const dispatch = useDispatch();
 
+  const intl = useIntl();
+
   const onChangeOwned = useCallback(() => {
-    dispatch(setOwned([armor.name, !status.owned]));
-  }, [armor.name, dispatch, status.owned]);
+    dispatch(setOwned([armor.id, !status.owned]));
+  }, [armor.id, dispatch, status.owned]);
 
   const onChangeHidden = useCallback(() => {
-    dispatch(setHidden([armor.name, !status.hidden]));
-  }, [armor.name, dispatch, status.hidden]);
+    dispatch(setHidden([armor.id, !status.hidden]));
+  }, [armor.id, dispatch, status.hidden]);
   //
   return (
     <>
       <button
-        type="button"
-        className={`btn btn-outline-primary btn-sm btn-floating ${
-          status.owned ? "active" : ""
-        }`}
+        aria-label={intl.formatMessage({
+          defaultMessage: "Toggle owned status",
+          id: "toggleOwnedStatus"
+        })}
+        className={`btn btn-outline-primary btn-sm btn-floating ${status.owned ? "active" : ""}`}
         onClick={onChangeOwned}
+        type="button"
       >
-        <i className="fas fa-check"></i>
+        <FontAwesomeIcon icon={faCheck} />
       </button>
       <button
-        type="button"
-        className={`btn btn-outline-primary btn-sm btn-floating ${
-          status.hidden ? "active" : ""
-        }`}
+        aria-label={intl.formatMessage({
+          defaultMessage: "Toggle hidden status",
+          id: "toggleHiddenStatus"
+        })}
+        className={`btn btn-outline-primary btn-sm btn-floating ${status.hidden ? "active" : ""}`}
         onClick={onChangeHidden}
+        type="button"
       >
-        <i className="fas fa-eye-slash"></i>
+        <FontAwesomeIcon icon={faEyeSlash} />
       </button>
     </>
   );
