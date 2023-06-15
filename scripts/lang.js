@@ -106,17 +106,29 @@ const generateSources = async () => {
 };
 
 if (argv.includes("--extract")) {
-  extractFunction().then(() => {
-    console.log("Done");
-  });
+  extractFunction()
+    .then(() => {
+      console.log("Done");
+    })
+    .catch((e) => {
+      console.error(e);
+    });
 } else if (argv.includes("--generate-schema")) {
-  generateSchema().then(() => {
-    console.log("Done");
-  });
+  generateSchema()
+    .then(() => {
+      console.log("Done");
+    })
+    .catch((e) => {
+      console.error(e);
+    });
 } else if (argv.includes("--generate-sources")) {
-  generateSources().then(() => {
-    console.log("Done");
-  });
+  generateSources()
+    .then(() => {
+      console.log("Done");
+    })
+    .catch((e) => {
+      console.error(e);
+    });
 } else {
   console.log("Unknown command. Use flag --extract, --generate-schema, or --generate-sources");
 }
