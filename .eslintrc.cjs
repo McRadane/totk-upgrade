@@ -2,7 +2,6 @@ module.exports = {
   env: { browser: true, es2020: true },
   extends: [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
@@ -11,22 +10,55 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:react/jsx-runtime"
   ],
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: "./tsconfig.json"
-  },
+
+  overrides: [
+    {
+      env: { node: true },
+      files: ["*.cjs"],
+      rules: {
+        "import/no-commonjs": "off",
+        "import/unambiguous": "off"
+      }
+    },
+    {
+      env: { node: true },
+      files: ["scripts/*.js"],
+      rules: {
+        "import/no-nodejs-modules": "off",
+        "no-console": "off"
+      }
+    },
+    {
+      excludedFiles: ["vite.config.ts"],
+      extends: ["plugin:@typescript-eslint/recommended"],
+      files: ["*.ts", "*.tsx"],
+      overrides: [
+        {
+          files: ["*.test.ts", "*.test.tsx"],
+          rules: {
+            "@typescript-eslint/no-explicit-any": "off"
+          }
+        }
+      ],
+      parser: "@typescript-eslint/parser",
+      parserOptions: {
+        ecmaVersion: "latest",
+        project: "./tsconfig.json",
+        sourceType: "module"
+      },
+      rules: {
+        "@typescript-eslint/consistent-type-exports": "warn",
+        "@typescript-eslint/consistent-type-imports": ["warn", { fixStyle: "inline-type-imports" }]
+      }
+    }
+  ],
   plugins: ["react-refresh", "formatjs"],
   rules: {
-    "prettier/prettier": "warn",
-    "react-refresh/only-export-components": "warn",
-    "@typescript-eslint/consistent-type-imports": ["warn", { fixStyle: "inline-type-imports" }],
-    "@typescript-eslint/consistent-type-exports": "warn",
-    "import/first": "warn",
-    "import/newline-after-import": "warn",
     "formatjs/enforce-default-message": ["error", "literal"],
     "formatjs/enforce-id": "warn",
+
+    "import/first": "warn",
+    "import/newline-after-import": "warn",
     "import/no-absolute-path": "warn",
     "import/no-amd": "warn",
     "import/no-anonymous-default-export": "warn",
@@ -45,6 +77,8 @@ module.exports = {
         warnOnUnassignedImports: true
       }
     ],
+    "import/unambiguous": "warn",
+    "no-console": "warn",
     "perfectionist/sort-imports": [
       "warn",
       {
@@ -62,20 +96,12 @@ module.exports = {
         shorthand: "last"
       }
     ],
-    "import/unambiguous": "warn",
-    "no-console": "warn",
+    "prettier/prettier": "warn",
     "react/jsx-no-bind": "warn",
     "react/jsx-no-literals": "warn",
-    "react/no-array-index-key": "warn"
+    "react/no-array-index-key": "warn",
+    "react-refresh/only-export-components": "warn"
   },
-  overrides: [
-    {
-      files: ["*.test.ts", "*.test.tsx"],
-      rules: {
-        "@typescript-eslint/no-explicit-any": "off"
-      }
-    }
-  ],
   settings: {
     react: {
       version: "18.0"
