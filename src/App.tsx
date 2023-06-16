@@ -1,10 +1,10 @@
+import { Container } from "@mui/material";
 import { useIntl } from "react-intl";
 
 import { Armor } from "./components/ArmorTable/Armor";
 import { CostsTable } from "./components/CostsTable/CostsTable";
 import { Footer } from "./components/Footer";
-import { ScrollToTop } from "./components/ScrollToTop";
-import { Tabs } from "./components/Tabs/Tabs";
+import { TabsContainer } from "./components/Tabs/TabsContainer";
 
 import "./assets/app.scss";
 
@@ -12,8 +12,8 @@ function App() {
   const intl = useIntl();
 
   return (
-    <>
-      <Tabs
+    <Container sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <TabsContainer
         tabs={[
           {
             id: 1,
@@ -33,9 +33,8 @@ function App() {
           }
         ]}
       />
-      <ScrollToTop />
       <Footer />
-    </>
+    </Container>
   );
 }
 

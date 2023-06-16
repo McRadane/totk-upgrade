@@ -1108,13 +1108,16 @@
   "starCost": {
     "defaultMessage": "{num} Star Cost"
   },
-  "startSearch": {
-    "defaultMessage": "Start Search"
-  },
   "status": {
     "defaultMessage": "Status"
   },
+  "statusHidden": {
+    "defaultMessage": "Hidden"
+  },
   "statusOwned": {
+    "defaultMessage": "Owned ?"
+  },
+  "statusOwnedLevel": {
     "defaultMessage": "Owned"
   },
   "statusWanted": {

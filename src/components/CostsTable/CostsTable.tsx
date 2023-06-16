@@ -1,32 +1,86 @@
+import { FormControlLabel, Switch } from "@mui/material";
 import { useCallback, useMemo } from "react";
-import { FormattedMessage, FormattedNumber, useIntl } from "react-intl";
+import type React from "react";
+import { FormattedMessage, type IntlShape, useIntl } from "react-intl";
 import { useDispatch, useSelector } from "react-redux";
 
 import { setHideNoCost } from "../../redux/navigation";
 import type { IRootState } from "../../redux/store";
-import { calculateListItems } from "../functions";
+import { DataContainer } from "../DataContainer";
+import { type IData, TableScroller } from "../TableScroller/TableScroller";
+import { type ICalculatedItems, calculateListItems } from "../functions";
+
+interface ColumnData {
+  dataKey: keyof ICalculatedItems;
+  label: string;
+  numeric?: boolean;
+  width: number;
+}
+
+const getColumns = (intl: IntlShape): ColumnData[] => [
+  {
+    dataKey: "name",
+    label: intl.formatMessage({ defaultMessage: "Material", id: "material" }),
+    width: 200
+  },
+  {
+    dataKey: "selection",
+    label: intl.formatMessage({ defaultMessage: "Count (Selection)", id: "countSelection" }),
+    numeric: true,
+    width: 120
+  },
+  {
+    dataKey: "all",
+    label: intl.formatMessage({ defaultMessage: "Count (All Armors)", id: "countAll" }),
+    numeric: true,
+    width: 120
+  }
+];
 
 export const CostsTable = () => {
   const armorsState = useSelector((state: IRootState) => state.armors.armors);
   const hideNoCost = useSelector((state: IRootState) => state.navigation.hideNoCost);
   const dispatch = useDispatch();
   const intl = useIntl();
+  const columns = useMemo(() => getColumns(intl), [intl]);
 
-  const { costs, filterLocked } = useMemo(() => {
+  const { filterLocked, items } = useMemo(() => {
     const costsMemo = calculateListItems(armorsState, intl);
+
+    const rupeeItems = [
+      {
+        all: costsMemo.rupee.all,
+        id: "rupee",
+        name: intl.formatMessage({
+          defaultMessage: "Rupee (upgrades)",
+          id: "rupeeCostUpgrade"
+        }),
+        selection: costsMemo.rupee.selection
+      },
+      {
+        all: costsMemo.rupeeBuy.all,
+        id: "rupeeBuy",
+        name: intl.formatMessage({
+          defaultMessage: "Rupee (armor prices)",
+          id: "rupeeCostBuy"
+        }),
+        selection: costsMemo.rupeeBuy.selection
+      }
+    ];
 
     const resultsFiltered = costsMemo.items.filter((cost) => cost.selection !== 0);
 
     if (hideNoCost) {
       if (resultsFiltered.length > 0) {
         return {
-          costs: { ...costsMemo, items: resultsFiltered },
-          filterLocked: false
+          filterLocked: false,
+
+          items: [...rupeeItems, ...resultsFiltered]
         };
       }
     }
 
-    return { costs: costsMemo, filterLocked: resultsFiltered.length === 0 };
+    return { filterLocked: resultsFiltered.length === 0, items: [...rupeeItems, ...costsMemo.items] };
   }, [armorsState, hideNoCost, intl]);
 
   const onChangeHideNoCost = useCallback(
@@ -38,73 +92,13 @@ export const CostsTable = () => {
 
   return (
     <>
-      <div className="container text-start">
-        <div className="form-check form-switch">
-          <input
-            id="flexSwitchHideNoCost"
-            checked={hideNoCost}
-            className="form-check-input"
-            disabled={filterLocked && !hideNoCost}
-            onChange={onChangeHideNoCost}
-            role="switch"
-            type="checkbox"
-          />
-          <label className="form-check-label" htmlFor="flexSwitchHideNoCost">
-            <FormattedMessage id="filterMaterials" defaultMessage="Filter materials" />
-          </label>
-        </div>
-      </div>
-
-      <table className="table table-sm">
-        <thead>
-          <tr>
-            <th scope="col">
-              <FormattedMessage id="material" defaultMessage="Material" />
-            </th>
-            <th scope="col">
-              <FormattedMessage id="countSelection" defaultMessage="Count (Selection)" />
-            </th>
-            <th scope="col">
-              <FormattedMessage id="countAll" defaultMessage="Count (All Armors)" />
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">
-              <FormattedMessage id="rupeeCostUpgrade" defaultMessage="Rupee (upgrades)" />
-            </th>
-            <td>
-              <FormattedNumber value={costs.rupee.selection} />
-            </td>
-            <td>
-              <FormattedNumber value={costs.rupee.all} />
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <FormattedMessage id="rupeeCostBuy" defaultMessage="Rupee (armor prices)" />
-            </th>
-            <td>
-              <FormattedNumber value={costs.rupeeBuy.selection} />
-            </td>
-            <td>
-              <FormattedNumber value={costs.rupeeBuy.all} />
-            </td>
-          </tr>
-          {costs.items.map(({ all, id, name, selection }) => (
-            <tr key={id}>
-              <th scope="row">{name}</th>
-              <td>
-                <FormattedNumber value={selection} />
-              </td>
-              <td>
-                <FormattedNumber value={all} />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <FormControlLabel
+        control={<Switch checked={hideNoCost} disabled={filterLocked && !hideNoCost} onChange={onChangeHideNoCost} />}
+        label={<FormattedMessage id="filterMaterials" defaultMessage="Filter materials" />}
+      />
+      <DataContainer offset={88}>
+        <TableScroller columns={columns} items={items as unknown as IData[]} />
+      </DataContainer>
     </>
   );
 };

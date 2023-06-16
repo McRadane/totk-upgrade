@@ -1,7 +1,7 @@
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SearchIcon from "@mui/icons-material/Search";
+import { FormControlLabel, InputAdornment, Stack, Switch, TextField } from "@mui/material";
 import { type FC, useCallback, useState } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import { useDispatch, useSelector } from "react-redux";
 import { useDebouncedCallback } from "use-debounce";
 
@@ -16,7 +16,6 @@ export const Filter: FC<IFilterProps> = ({ updateTextFilter }) => {
   const hideArmors = useSelector((state: IRootState) => state.navigation.hideArmors);
   const [textFilter, setTextFilter] = useState("");
   const dispatch = useDispatch();
-  const intl = useIntl();
 
   const onChangeHideArmors = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,40 +38,27 @@ export const Filter: FC<IFilterProps> = ({ updateTextFilter }) => {
 
   return (
     <>
-      <div className="container text-start filters-group">
-        <div className="form-check form-switch">
-          <input
-            id="flexSwitchHideArmors"
-            checked={hideArmors}
-            className="form-check-input"
-            onChange={onChangeHideArmors}
-            role="switch"
-            type="checkbox"
-          />
-          <label className="form-check-label" htmlFor="flexSwitchHideArmors">
-            <FormattedMessage id="filterArmors" defaultMessage="Filter armors" />
-          </label>
-        </div>
+      <Stack direction="row" justifyContent="space-between">
+        <FormControlLabel
+          control={<Switch checked={hideArmors} onChange={onChangeHideArmors} />}
+          label={<FormattedMessage id="filterArmors" defaultMessage="Filter armors" />}
+        />
 
-        <div className="input-group">
-          <div className="form-outline">
-            <input id="searchFilter" className="form-control" onChange={onChangeTextFilter} type="search" value={textFilter} />
-            <label className="form-label" htmlFor="searchFilter">
-              <FormattedMessage id="searchArmors" defaultMessage="Search" />
-            </label>
-          </div>
-          <button
-            aria-label={intl.formatMessage({
-              defaultMessage: "Start Search",
-              id: "startSearch"
-            })}
-            className="btn btn-primary"
-            type="button"
-          >
-            <FontAwesomeIcon icon={faSearch} />
-          </button>
-        </div>
-      </div>
+        <TextField
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            )
+          }}
+          label={<FormattedMessage id="searchArmors" defaultMessage="Search" />}
+          onChange={onChangeTextFilter}
+          type="search"
+          value={textFilter}
+          variant="standard"
+        />
+      </Stack>
     </>
   );
 };

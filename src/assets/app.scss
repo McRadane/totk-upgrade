@@ -1,9 +1,9 @@
 @import "mdb-ui-kit/src/scss/mdb.free.scss";
 
 #root {
-  max-width: 1280px;
+  //max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  //padding: 2rem;
   text-align: center;
   min-height: 100vh;
 
@@ -31,9 +31,13 @@
 .status > div {
   display: grid;
   // flex-direction: row;
-  grid-template-columns: 60px auto 10px;
+  grid-template-areas: "label value" "slider slider";
 
   gap: 5px;
+}
+
+.slider {
+  grid-area: slider;
 }
 
 .status-button {
