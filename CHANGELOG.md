@@ -6,6 +6,17 @@ This change log adheres to standards from [Keep a CHANGELOG](https://keepachange
 
 ## Unreleased
 
+## [1.3.0] - 2023-06-19
+
+### Added
+
+- Added details of which armor need which material on the Costs tabs
+- Added missing translations
+
+### Fixed
+
+- Fixed the armor buy calculation cost
+
 ## [1.2.1] - 2023-06-15
 
 ## Added

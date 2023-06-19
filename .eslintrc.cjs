@@ -98,7 +98,7 @@ module.exports = {
     ],
     "prettier/prettier": "warn",
     "react/jsx-no-bind": "warn",
-    "react/jsx-no-literals": "warn",
+    "react/jsx-no-literals": ["warn", { allowedStrings: ["(", ")", "/", ":"], ignoreProps: false }],
     "react/no-array-index-key": "warn",
     "react-refresh/only-export-components": "warn"
   },
