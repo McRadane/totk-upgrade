@@ -6,6 +6,8 @@ This change log adheres to standards from [Keep a CHANGELOG](https://keepachange
 
 ## Unreleased
 
+## [1.3.0] - 2023-06-19
+
 ### Added
 
 - Added details of which armor need which material on the Costs tabs
