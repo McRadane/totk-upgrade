@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 
 import { type IDataArmor } from "../../../data";
 import { setHidden, setOwned, useArmorStatus } from "../../../redux/armors";
+import { getSlug } from "../../functions";
 
 export interface IStatusProps {
   armor: IDataArmor;
@@ -13,7 +14,7 @@ export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
   const status = useArmorStatus(armor.id);
   const dispatch = useDispatch();
 
-  const slug = useMemo(() => armor.name.replace(/[^a-z]/g, ""), [armor.name]);
+  const slug = useMemo(() => getSlug(armor.name), [armor.name]);
 
   const onChangeOwned = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {

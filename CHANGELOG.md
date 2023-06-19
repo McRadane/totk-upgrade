@@ -6,6 +6,14 @@ This change log adheres to standards from [Keep a CHANGELOG](https://keepachange
 
 ## Unreleased
 
+### Added
+
+- Added details of which armor need which material on the Costs tabs
+
+### Fixed
+
+- Fixed the armor buy calculation cost
+
 ## [1.2.1] - 2023-06-15
 
 ## Added

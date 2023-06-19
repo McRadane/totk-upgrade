@@ -1,10 +1,12 @@
 import { useCallback, useMemo } from "react";
-import { FormattedMessage, FormattedNumber, useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { useDispatch, useSelector } from "react-redux";
 
 import { setHideNoCost } from "../../redux/navigation";
 import type { IRootState } from "../../redux/store";
 import { calculateListItems } from "../functions";
+
+import { CostsCell } from "./CostsCell";
 
 export const CostsTable = () => {
   const armorsState = useSelector((state: IRootState) => state.armors.armors);
@@ -15,7 +17,7 @@ export const CostsTable = () => {
   const { costs, filterLocked } = useMemo(() => {
     const costsMemo = calculateListItems(armorsState, intl);
 
-    const resultsFiltered = costsMemo.items.filter((cost) => cost.selection !== 0);
+    const resultsFiltered = costsMemo.items.filter((cost) => cost.selection.sum !== 0);
 
     if (hideNoCost) {
       if (resultsFiltered.length > 0) {
@@ -75,10 +77,10 @@ export const CostsTable = () => {
               <FormattedMessage id="rupeeCostUpgrade" defaultMessage="Rupee (upgrades)" />
             </th>
             <td>
-              <FormattedNumber value={costs.rupee.selection} />
+              <CostsCell id={`selection-rupee`} element={costs.rupee.selection} />
             </td>
             <td>
-              <FormattedNumber value={costs.rupee.all} />
+              <CostsCell id={`all-rupee`} element={costs.rupee.all} />
             </td>
           </tr>
           <tr>
@@ -86,20 +88,20 @@ export const CostsTable = () => {
               <FormattedMessage id="rupeeCostBuy" defaultMessage="Rupee (armor prices)" />
             </th>
             <td>
-              <FormattedNumber value={costs.rupeeBuy.selection} />
+              <CostsCell id={`selection-rupee-buy`} element={costs.rupeeBuy.selection} />
             </td>
             <td>
-              <FormattedNumber value={costs.rupeeBuy.all} />
+              <CostsCell id={`all-rupee-buy`} element={costs.rupeeBuy.all} />
             </td>
           </tr>
-          {costs.items.map(({ all, id, name, selection }) => (
+          {costs.items.map(({ all, id, name, selection, slug }) => (
             <tr key={id}>
               <th scope="row">{name}</th>
               <td>
-                <FormattedNumber value={selection} />
+                <CostsCell id={`selection-${slug}`} element={selection} />
               </td>
               <td>
-                <FormattedNumber value={all} />
+                <CostsCell id={`all-${slug}`} element={all} />
               </td>
             </tr>
           ))}
