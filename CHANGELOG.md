@@ -9,6 +9,7 @@ This change log adheres to standards from [Keep a CHANGELOG](https://keepachange
 ### Added
 
 - Added details of which armor need which material on the Costs tabs
+- Added missing translations
 
 ### Fixed
 

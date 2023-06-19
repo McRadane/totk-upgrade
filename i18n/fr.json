@@ -26,12 +26,6 @@
   "armor-Bokoblin Mask": {
     "defaultMessage": "Masque de Bokoblin"
   },
-  "armor-Cap of Time": {
-    "defaultMessage": "Coiffe du temps"
-  },
-  "armor-Cap of Twilight": {
-    "defaultMessage": "Coiffe du Crépuscule"
-  },
   "armor-Cap of the Hero": {
     "defaultMessage": "Coiffe du Prélude"
   },
@@ -43,6 +37,12 @@
   },
   "armor-Cap of the Wind": {
     "defaultMessage": "Coiffe du vent"
+  },
+  "armor-Cap of Time": {
+    "defaultMessage": "Coiffe du temps"
+  },
+  "armor-Cap of Twilight": {
+    "defaultMessage": "Coiffe du Crépuscule"
   },
   "armor-Cece Hat": {
     "defaultMessage": "Chapeau de Goutiée"
@@ -314,12 +314,6 @@
   "armor-Trousers of Awakening": {
     "defaultMessage": "Chausses du rêve"
   },
-  "armor-Trousers of Time": {
-    "defaultMessage": "Chausses du temps"
-  },
-  "armor-Trousers of Twilight": {
-    "defaultMessage": "Chausses du Crépuscule"
-  },
   "armor-Trousers of the Hero": {
     "defaultMessage": "Culotte du Prélude"
   },
@@ -332,17 +326,17 @@
   "armor-Trousers of the Wind": {
     "defaultMessage": "Chausses du vent"
   },
+  "armor-Trousers of Time": {
+    "defaultMessage": "Chausses du temps"
+  },
+  "armor-Trousers of Twilight": {
+    "defaultMessage": "Chausses du Crépuscule"
+  },
   "armor-Tunic of Awakening": {
     "defaultMessage": "Tunique du rêve"
   },
   "armor-Tunic of Memories": {
     "defaultMessage": "Tunique nostalgique"
-  },
-  "armor-Tunic of Time": {
-    "defaultMessage": "Tunique du temps"
-  },
-  "armor-Tunic of Twilight": {
-    "defaultMessage": "Tunique du Crépuscule"
   },
   "armor-Tunic of the Depths": {
     "defaultMessage": "Tunique des ténèbres"
@@ -358,6 +352,12 @@
   },
   "armor-Tunic of the Wind": {
     "defaultMessage": "Tunique du vent"
+  },
+  "armor-Tunic of Time": {
+    "defaultMessage": "Tunique du temps"
+  },
+  "armor-Tunic of Twilight": {
+    "defaultMessage": "Tunique du Crépuscule"
   },
   "armor-Vah Medoh Divine Helm": {
     "defaultMessage": "Heaume divin de Medoh"
@@ -542,8 +542,20 @@
   "material-Brightbloom Seeds": {
     "defaultMessage": "Graine lumos"
   },
+  "material-Captain Construct I Horn": {
+    "defaultMessage": "Corne de Golem lieutenant"
+  },
+  "material-Captain Construct II Horn": {
+    "defaultMessage": "Corne de Golem capitaine"
+  },
+  "material-Captain Construct III Horn": {
+    "defaultMessage": "Corne de Golem commandant"
+  },
   "material-Chillfin Trout": {
     "defaultMessage": "Truite glagla"
+  },
+  "material-Chillshroom": {
+    "defaultMessage": "Champi glagla"
   },
   "material-Chuchu Jelly": {
     "defaultMessage": "Gelée chuchu"
@@ -570,16 +582,19 @@
     "defaultMessage": "Diamant brut"
   },
   "material-Dinraal's Claw": {
-    "defaultMessage": "Éclat de griffe d'Ordrac"
+    "defaultMessage": "Griffe d'Ordrac"
   },
   "material-Dinraal's Fang": {
     "defaultMessage": "Éclat de croc d'Ordrac"
   },
   "material-Dinraal's Horn": {
-    "defaultMessage": "Éclat de corne d'Ordrac"
+    "defaultMessage": "Corne d'Ordrac"
   },
   "material-Dinraal's Scale": {
     "defaultMessage": "Écaille d'Ordrac"
+  },
+  "material-Dinraal's Spike": {
+    "defaultMessage": "Dracoroche d'Ordrac"
   },
   "material-Electric Darner": {
     "defaultMessage": "Libellule volt"
@@ -593,20 +608,26 @@
   "material-Electric Lizalfos Tail": {
     "defaultMessage": "Queue de Lézalfos électrique"
   },
+  "material-Electric Safflina": {
+    "defaultMessage": "Herbes volt"
+  },
   "material-Energetic Rhino Beetle": {
     "defaultMessage": "Scarabée enduro"
   },
   "material-Farosh's Claw": {
-    "defaultMessage": "Éclat de griffe de Rordrac"
+    "defaultMessage": "Griffe de Rordrac"
   },
   "material-Farosh's Fang": {
     "defaultMessage": "Éclat de croc de Rordrac"
   },
   "material-Farosh's Horn": {
-    "defaultMessage": "Éclat de corne de Rordrac"
+    "defaultMessage": "Corne de Rordrac"
   },
   "material-Farosh's Scale": {
     "defaultMessage": "Écaille de Rordrac"
+  },
+  "material-Farosh's Spike": {
+    "defaultMessage": "Dracoroche de Rordrac"
   },
   "material-Fire Fruit": {
     "defaultMessage": "Fruit de feu"
@@ -631,6 +652,9 @@
   },
   "material-Frox Fang": {
     "defaultMessage": "Dent de Gigatracien"
+  },
+  "material-Frox Fingernail": {
+    "defaultMessage": "Ongle de Gigatracien"
   },
   "material-Frox Guts": {
     "defaultMessage": "Viscère de Gigatracien"
@@ -722,6 +746,9 @@
   "material-Large Zonaite": {
     "defaultMessage": "Sonium supérieur"
   },
+  "material-Light Dragon's Claw": {
+    "defaultMessage": "Griffe du dragon blanc"
+  },
   "material-Light Dragon's Fang": {
     "defaultMessage": "Éclat de croc du dragon blanc"
   },
@@ -730,9 +757,6 @@
   },
   "material-Light Dragon's Scale": {
     "defaultMessage": "Écaille du dragon blanc"
-  },
-  "material-Light Dragon's Claw": {
-    "defaultMessage": "Griffe du dragon blanc"
   },
   "material-Lizalfos Horn": {
     "defaultMessage": "Corne de Lézalfos"
@@ -783,16 +807,19 @@
     "defaultMessage": "Mâchoire de Moldarquor"
   },
   "material-Naydra's Claw": {
-    "defaultMessage": "Éclat de griffe de Nedrac"
+    "defaultMessage": "Griffe de Nedrac"
   },
   "material-Naydra's Fang": {
     "defaultMessage": "Éclat de croc de Nedrac"
   },
   "material-Naydra's Horn": {
-    "defaultMessage": "Éclat de corne de Nedrac"
+    "defaultMessage": "Corne de Nedrac"
   },
   "material-Naydra's Scale": {
     "defaultMessage": "Écaille de Nedrac"
+  },
+  "material-Naydra's Spike": {
+    "defaultMessage": "Dracoroche de Nedrac"
   },
   "material-Obsidian Frox Fang": {
     "defaultMessage": "Dent de Gigatracien anthracite"
@@ -871,6 +898,15 @@
   },
   "material-Soldier Construct Horn": {
     "defaultMessage": "Corne de Golem soldat"
+  },
+  "material-Soldier Construct II Horn": {
+    "defaultMessage": "Corne de Golem caporal"
+  },
+  "material-Soldier Construct III Horn": {
+    "defaultMessage": "Corne de Golem sergent"
+  },
+  "material-Soldier Construct IV Horn": {
+    "defaultMessage": "Corne de Golem major"
   },
   "material-Star Fragment": {
     "defaultMessage": "Fragment d'étoile"
