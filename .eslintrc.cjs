@@ -52,7 +52,7 @@ module.exports = {
       }
     }
   ],
-  plugins: ["react-refresh", "formatjs"],
+  plugins: ["react-refresh", "formatjs", "only-warn"],
   rules: {
     "formatjs/enforce-default-message": ["error", "literal"],
     "formatjs/enforce-id": "warn",

@@ -49,49 +49,53 @@ export const RowList: FC<IRowProps> = ({ armor }) => {
               </td>
             </tr>
 
-            <tr>
-              <td>
-                <FormattedMessage id="starCost" defaultMessage="{num} Star Cost" values={{ num: 1 }} />
-                <br />
-                <FormattedMessage id="rupeesAmountParentheses" defaultMessage="({num} Rupees)" values={{ num: 10 }} />
-              </td>
-              <td>
-                <MaterialList active={activeStatus(1)} materials={armor.rank1} />
-              </td>
-            </tr>
+            {armor.rank1 !== undefined && (
+              <>
+                <tr>
+                  <td>
+                    <FormattedMessage id="starCost" defaultMessage="{num} Star" values={{ num: 1 }} />
+                    <br />
+                    <FormattedMessage id="rupeesAmountParentheses" defaultMessage="({num} Rupees)" values={{ num: 10 }} />
+                  </td>
+                  <td>
+                    <MaterialList active={activeStatus(1)} materials={armor.rank1} />
+                  </td>
+                </tr>
 
-            <tr>
-              <td>
-                <FormattedMessage id="starCost" defaultMessage="{num} Star Cost" values={{ num: 2 }} />
-                <br />
-                <FormattedMessage id="rupeesAmountParentheses" defaultMessage="({num} Rupees)" values={{ num: 50 }} />
-              </td>
-              <td>
-                <MaterialList active={activeStatus(2)} materials={armor.rank2} />
-              </td>
-            </tr>
+                <tr>
+                  <td>
+                    <FormattedMessage id="starCost" defaultMessage="{num} Star" values={{ num: 2 }} />
+                    <br />
+                    <FormattedMessage id="rupeesAmountParentheses" defaultMessage="({num} Rupees)" values={{ num: 50 }} />
+                  </td>
+                  <td>
+                    <MaterialList active={activeStatus(2)} materials={armor.rank2} />
+                  </td>
+                </tr>
 
-            <tr>
-              <td>
-                <FormattedMessage id="starCost" defaultMessage="{num} Star Cost" values={{ num: 3 }} />
-                <br />
-                <FormattedMessage id="rupeesAmountParentheses" defaultMessage="({num} Rupees)" values={{ num: 200 }} />
-              </td>
-              <td>
-                <MaterialList active={activeStatus(3)} materials={armor.rank3} />
-              </td>
-            </tr>
+                <tr>
+                  <td>
+                    <FormattedMessage id="starCost" defaultMessage="{num} Star" values={{ num: 3 }} />
+                    <br />
+                    <FormattedMessage id="rupeesAmountParentheses" defaultMessage="({num} Rupees)" values={{ num: 200 }} />
+                  </td>
+                  <td>
+                    <MaterialList active={activeStatus(3)} materials={armor.rank3} />
+                  </td>
+                </tr>
 
-            <tr>
-              <td>
-                <FormattedMessage id="starCost" defaultMessage="{num} Star Cost" values={{ num: 4 }} />
-                <br />
-                <FormattedMessage id="rupeesAmountParentheses" defaultMessage="({num} Rupees)" values={{ num: 500 }} />
-              </td>
-              <td>
-                <MaterialList active={activeStatus(4)} materials={armor.rank4} />
-              </td>
-            </tr>
+                <tr>
+                  <td>
+                    <FormattedMessage id="starCost" defaultMessage="{num} Star" values={{ num: 4 }} />
+                    <br />
+                    <FormattedMessage id="rupeesAmountParentheses" defaultMessage="({num} Rupees)" values={{ num: 500 }} />
+                  </td>
+                  <td>
+                    <MaterialList active={activeStatus(4)} materials={armor.rank4} />
+                  </td>
+                </tr>
+              </>
+            )}
           </tbody>
         </table>
       </div>

@@ -1,14 +1,15 @@
 import { type IDataArmor } from "../../data";
-import { type IArmor } from "../../redux/armors";
+import { type IArmor, type IArmorWithoutUpgrade } from "../../redux/armors";
 
 export interface IFiltersOptions {
   armors: IDataArmor[];
   armorsState: IArmor[];
+  armorsStateNonUpgradable: IArmorWithoutUpgrade[];
   hidden?: boolean;
   text?: string;
 }
 
-export const filterArmors = ({ armors, armorsState, hidden, text }: IFiltersOptions) => {
+export const filterArmors = ({ armors, armorsState, armorsStateNonUpgradable, hidden, text }: IFiltersOptions) => {
   if (!text && !hidden) {
     return armors;
   }
@@ -32,6 +33,12 @@ export const filterArmors = ({ armors, armorsState, hidden, text }: IFiltersOpti
         return !status.hidden;
       }
 
+      const statusNonUpgradable = armorsStateNonUpgradable.find((stat) => stat.id === armor.id);
+
+      if (statusNonUpgradable) {
+        return !statusNonUpgradable.hidden;
+      }
+
       return true;
     });
   }
@@ -39,7 +46,7 @@ export const filterArmors = ({ armors, armorsState, hidden, text }: IFiltersOpti
   return filtered;
 };
 
-export const sortArmor = (a: IDataArmor, b: IDataArmor) => {
+export const sortArmorAlphabetical = (a: IDataArmor, b: IDataArmor) => {
   if (a.set !== undefined && b.set !== undefined) {
     const setCompare = a.set.localeCompare(b.set);
 
@@ -49,4 +56,8 @@ export const sortArmor = (a: IDataArmor, b: IDataArmor) => {
   }
 
   return a.name.localeCompare(b.name);
+};
+
+export const sortArmorGame = (a: IDataArmor, b: IDataArmor) => {
+  return a.order - b.order;
 };

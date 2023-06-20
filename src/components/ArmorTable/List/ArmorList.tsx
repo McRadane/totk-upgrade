@@ -5,7 +5,10 @@ import { type IArmorsProps } from "../types";
 
 import { RowList } from "./RowList";
 
-export const ArmorList: FC<IArmorsProps> = ({ nonSet, nonUpgradable, nonUpgradableNonSet, set }) => {
+export const ArmorList: FC<IArmorsProps> = ({ grouped, nonSet, nonUpgradable, nonUpgradableNonSet, set }) => {
+  if (!grouped) {
+    return <div className="cards-list">{set.length > 0 && set.map((armor) => <RowList armor={armor} key={armor.id} />)}</div>;
+  }
   return (
     <div className="cards-list">
       {set.length > 0 && (

@@ -1,4 +1,4 @@
-import { faCheck, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faEye, faEyeSlash, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { type FC, useCallback } from "react";
 import { useIntl } from "react-intl";
@@ -34,9 +34,10 @@ export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
         })}
         className={`btn btn-outline-primary btn-sm btn-floating ${status.owned ? "active" : ""}`}
         onClick={onChangeOwned}
+        onKeyDown={onChangeOwned}
         type="button"
       >
-        <FontAwesomeIcon icon={faCheck} />
+        <FontAwesomeIcon icon={status.owned ? faCheck : faXmark} />
       </button>
       <button
         aria-label={intl.formatMessage({
@@ -45,9 +46,10 @@ export const StatusPrimary: FC<IStatusProps> = ({ armor }) => {
         })}
         className={`btn btn-outline-primary btn-sm btn-floating ${status.hidden ? "active" : ""}`}
         onClick={onChangeHidden}
+        onKeyDown={onChangeHidden}
         type="button"
       >
-        <FontAwesomeIcon icon={faEyeSlash} />
+        <FontAwesomeIcon icon={status.hidden ? faEyeSlash : faEye} />
       </button>
     </>
   );

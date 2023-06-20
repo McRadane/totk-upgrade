@@ -28,7 +28,7 @@ export const ScrollToTop = () => {
 
   return (
     <div className="top-to-btm">
-      {showTopBtn && <FontAwesomeIcon className="icon-position icon-style fa-2x" icon={faArrowUp} onClick={goToTop} />}
+      {showTopBtn && <FontAwesomeIcon className="icon-position icon-style fa-2x" icon={faArrowUp} onClick={goToTop} onKeyDown={goToTop} />}
     </div>
   );
 };

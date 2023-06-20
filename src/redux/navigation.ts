@@ -4,10 +4,13 @@ import { useSelector } from "react-redux";
 import type { IRootState } from "./store";
 
 export interface NavigationState {
+  armorsOrder?: "alphabetical" | "alphabetical-groups" | "game";
   hideArmors: boolean;
   hideNoCost: boolean;
   language?: string;
+  materialsOrder?: "alphabetical" | "game";
   page: number;
+  selectionFilter?: "no" | "owned" | "visible" | "visible-owned";
 }
 
 const initialState: NavigationState = {
@@ -20,6 +23,9 @@ export const navigationSlice = createSlice({
   initialState,
   name: "navigation",
   reducers: {
+    setArmorsOrder: (state, action: PayloadAction<"alphabetical" | "alphabetical-groups" | "game">) => {
+      state.armorsOrder = action.payload;
+    },
     setHideArmors: (state, action: PayloadAction<boolean>) => {
       state.hideArmors = action.payload;
     },
@@ -29,13 +35,20 @@ export const navigationSlice = createSlice({
     setLanguage: (state, action: PayloadAction<string | undefined>) => {
       state.language = action.payload;
     },
+    setMaterialsOrder: (state, action: PayloadAction<"alphabetical" | "game">) => {
+      state.materialsOrder = action.payload;
+    },
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;
+    },
+    setSelectionFilter: (state, action: PayloadAction<"no" | "owned" | "visible" | "visible-owned">) => {
+      state.selectionFilter = action.payload;
     }
   }
 });
 
-export const { setHideArmors, setHideNoCost, setLanguage, setPage } = navigationSlice.actions;
+export const { setArmorsOrder, setHideArmors, setHideNoCost, setLanguage, setMaterialsOrder, setPage, setSelectionFilter } =
+  navigationSlice.actions;
 
 export const useLanguage = () => useSelector((state: IRootState) => state.navigation.language);
 

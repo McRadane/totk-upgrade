@@ -407,6 +407,9 @@
   "armorName": {
     "defaultMessage": "Nom"
   },
+  "armorOrder": {
+    "defaultMessage": "Ordre des armures"
+  },
   "armorPiece": {
     "defaultMessage": "Pièce d'Armure"
   },
@@ -424,6 +427,21 @@
   },
   "filterMaterials": {
     "defaultMessage": "Filtrer les matériaux"
+  },
+  "filterSelection": {
+    "defaultMessage": "Filtrer la sélection"
+  },
+  "filterSelectionNo": {
+    "defaultMessage": "Pas de filtre"
+  },
+  "filterSelectionOwned": {
+    "defaultMessage": "Possedés"
+  },
+  "filterSelectionVisible": {
+    "defaultMessage": "Visibles"
+  },
+  "filterSelectionVisibleOwned": {
+    "defaultMessage": "Visibles et possedés"
   },
   "footerVersion": {
     "defaultMessage": "{name} v{version} par McRadane"
@@ -768,7 +786,7 @@
     "defaultMessage": "Griffe de Lézalfos"
   },
   "material-Luminous Stone": {
-    "defaultMessage": "Luminous Stone"
+    "defaultMessage": "Gemme Nox"
   },
   "material-Lynel Guts": {
     "defaultMessage": "Viscère de Lynel"
@@ -977,11 +995,23 @@
   "material-Zonaite": {
     "defaultMessage": "Sonium"
   },
+  "materialsOrder": {
+    "defaultMessage": "Ordre des matériaux"
+  },
   "menuArmor": {
     "defaultMessage": "Armures"
   },
   "menuCosts": {
     "defaultMessage": "Coûts"
+  },
+  "orderAlphabetical": {
+    "defaultMessage": "Ordre alphabétique"
+  },
+  "orderAlphabeticalGrouped": {
+    "defaultMessage": "Ordre alphabétique groupé"
+  },
+  "orderGame": {
+    "defaultMessage": "Ordre du jeu"
   },
   "ownedQuestion": {
     "defaultMessage": "Possédé ?"
@@ -1104,7 +1134,7 @@
     "defaultMessage": "Zora"
   },
   "starCost": {
-    "defaultMessage": "Coût pour {num} étoiles"
+    "defaultMessage": "{num} étoiles"
   },
   "startSearch": {
     "defaultMessage": "Lancer la recherche"

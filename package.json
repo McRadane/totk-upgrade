@@ -1,7 +1,7 @@
 {
   "name": "totk-armor-upgrade",
   "private": true,
-  "version": "1.3.0",
+  "version": "1.4.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -24,6 +24,7 @@
     "react-dom": "^18.2.0",
     "react-intl": "^6.4.4",
     "react-redux": "^8.1.0",
+    "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "sass": "^1.63.4",
@@ -50,6 +51,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-formatjs": "^4.10.3",
     "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-only-warn": "^1.1.0",
     "eslint-plugin-perfectionist": "^1.4.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
@@ -61,7 +63,7 @@
     "prettier": "^2.8.8",
     "prettier-eslint": "^15.0.1",
     "serve": "^14.2.0",
-    "typescript": "^5.1.3",
+    "typescript": "~5.0.2",
     "vite": "^4.3.9",
     "vite-plugin-pwa": "^0.16.4",
     "vitest": "^0.32.2"

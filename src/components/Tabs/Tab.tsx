@@ -23,6 +23,7 @@ export const Tab: FC<ITabProps> = ({ tab }) => {
         className={`nav-link ${tab.id === activePage ? "active" : ""}`}
         href="#"
         onClick={setActivePage}
+        onKeyDown={setActivePage}
       >
         {tab.title}
       </a>
