@@ -26,7 +26,7 @@ export const deduplicateItems = (items: IItemCounts[]): IItemsCounts => {
 
   for (const [item, value] of items) {
     if (deduplicatedItems[item] !== undefined) {
-      (deduplicatedItems[item] as number) += value;
+      deduplicatedItems[item] += value;
     } else {
       deduplicatedItems[item] = value;
     }
@@ -34,11 +34,11 @@ export const deduplicateItems = (items: IItemCounts[]): IItemsCounts => {
 
   const deduplicatedItemsArray: [string, number][] = [];
   for (const item in deduplicatedItems) {
-    deduplicatedItemsArray.push([item, deduplicatedItems[item] as number]);
-    totalSum += deduplicatedItems[item] as number;
+    deduplicatedItemsArray.push([item, deduplicatedItems[item]]);
+    totalSum += deduplicatedItems[item];
   }
 
-  return { items: deduplicatedItemsArray.sort((a, b) => a[0].localeCompare(b[0])), sum: totalSum };
+  return { items: [...deduplicatedItemsArray.sort((a, b) => a[0].localeCompare(b[0]))], sum: totalSum };
 };
 
 export interface ICalculateListItemsOptions {

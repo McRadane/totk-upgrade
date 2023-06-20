@@ -17,7 +17,6 @@ export const Armor = () => {
   const [text, setTextFilter] = useState("");
   const intl = useIntl();
 
-  // const armorsState = useSelector((state: IRootState) => state.armors.armors);
   const { armors: armorsState, nonUpgradedArmors: armorsStateNonUpgradable } = useSelector((state: IRootState) => state.armors);
   const { armorsOrder, hideArmors: hidden } = useSelector((state: IRootState) => state.navigation);
 
