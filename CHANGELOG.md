@@ -6,6 +6,23 @@ This change log adheres to standards from [Keep a CHANGELOG](https://keepachange
 
 ## Unreleased
 
+## [1.4.0] - 2023-06-19
+
+### Added
+
+- Sort armors by name (like current) or by game order (mixing upgradable and non-upgradable)
+- Sort materials by name or by game order
+- Search into ingredients
+- Filter costs only for owned armors, visible armors, visible AND owned armors, or all armors (like current)
+
+### Changed
+
+- Better display of hidden and owned icons
+
+### Fixed
+
+- Fixed non-upgradable armors not hidden
+
 ## [1.3.0] - 2023-06-19
 
 ### Added

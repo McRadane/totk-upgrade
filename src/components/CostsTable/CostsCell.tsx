@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 
-import type { IItemsCounts } from "../functions";
+import type { IItemsCounts } from "./functions";
 
 import "mdb-ui-kit";
 

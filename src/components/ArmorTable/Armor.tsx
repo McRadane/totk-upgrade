@@ -9,38 +9,57 @@ import { useMediaQuery } from "../functions";
 import { Filter } from "./Filter";
 import { ArmorList } from "./List/ArmorList";
 import { ArmorTable } from "./Table/ArmorTable";
-import { filterArmors, sortArmor } from "./functions";
+import { filterArmors, sortArmorAlphabetical, sortArmorGame } from "./functions";
 
 export const Armor = () => {
   const small = useMediaQuery("(max-width: 900px)");
 
-  const [textFilter, setTextFilter] = useState("");
+  const [text, setTextFilter] = useState("");
   const intl = useIntl();
 
-  const armorsState = useSelector((state: IRootState) => state.armors.armors);
-  const hidden = useSelector((state: IRootState) => state.navigation.hideArmors);
+  const { armors: armorsState, nonUpgradedArmors: armorsStateNonUpgradable } = useSelector((state: IRootState) => state.armors);
+  const { armorsOrder, hideArmors: hidden } = useSelector((state: IRootState) => state.navigation);
 
   const armorsFiltered = useMemo(() => {
     const filtered = filterArmors({
       armors: getArmors(intl),
       armorsState,
+      armorsStateNonUpgradable,
       hidden,
-      text: textFilter
-    }).sort(sortArmor);
+      text
+    }).sort((...items) => {
+      if (!armorsOrder || armorsOrder === "alphabetical" || armorsOrder === "alphabetical-groups") {
+        return sortArmorAlphabetical(...items);
+      }
+
+      return sortArmorGame(...items);
+    });
+
+    if (!armorsOrder || armorsOrder === "alphabetical-groups") {
+      return {
+        grouped: true,
+        nonSet: filtered.filter((armor) => armor.category === "upgradable-non-set"),
+        nonUpgradable: filtered.filter((armor) => armor.category === "non-upgradable-set"),
+        nonUpgradableNonSet: filtered.filter((armor) => armor.category === "non-upgradable-non-set"),
+        set: filtered.filter((armor) => armor.category === "upgradable-set")
+      };
+    }
 
     return {
-      nonSet: filtered.filter((armor) => armor.category === "upgradable-non-set"),
-      nonUpgradable: filtered.filter((armor) => armor.category === "non-upgradable-set"),
-      nonUpgradableNonSet: filtered.filter((armor) => armor.category === "non-upgradable-non-set"),
-      set: filtered.filter((armor) => armor.category === "upgradable-set")
+      grouped: false,
+      nonSet: [],
+      nonUpgradable: [],
+      nonUpgradableNonSet: [],
+      set: filtered
     };
-  }, [armorsState, hidden, intl, textFilter]);
+  }, [armorsOrder, armorsState, armorsStateNonUpgradable, hidden, intl, text]);
 
   if (small) {
     return (
       <>
         <Filter updateTextFilter={setTextFilter} />
         <ArmorList
+          grouped={armorsFiltered.grouped}
           nonSet={armorsFiltered.nonSet}
           nonUpgradable={armorsFiltered.nonUpgradable}
           nonUpgradableNonSet={armorsFiltered.nonUpgradableNonSet}
@@ -53,6 +72,7 @@ export const Armor = () => {
     <>
       <Filter updateTextFilter={setTextFilter} />
       <ArmorTable
+        grouped={armorsFiltered.grouped}
         nonSet={armorsFiltered.nonSet}
         nonUpgradable={armorsFiltered.nonUpgradable}
         nonUpgradableNonSet={armorsFiltered.nonUpgradableNonSet}

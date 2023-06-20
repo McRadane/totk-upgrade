@@ -1,21 +1,22 @@
-import { useCallback, useMemo } from "react";
+import { useMemo, useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
-import { setHideNoCost } from "../../redux/navigation";
 import type { IRootState } from "../../redux/store";
-import { calculateListItems } from "../functions";
 
 import { CostsCell } from "./CostsCell";
+import { Filter } from "./Filter";
+import { calculateListItems } from "./functions";
 
 export const CostsTable = () => {
   const armorsState = useSelector((state: IRootState) => state.armors.armors);
-  const hideNoCost = useSelector((state: IRootState) => state.navigation.hideNoCost);
-  const dispatch = useDispatch();
+  const { hideNoCost, materialsOrder, selectionFilter } = useSelector((state: IRootState) => state.navigation);
+  const [textFilter, setTextFilter] = useState("");
+
   const intl = useIntl();
 
   const { costs, filterLocked } = useMemo(() => {
-    const costsMemo = calculateListItems(armorsState, intl);
+    const costsMemo = calculateListItems({ armorsState, intl, order: materialsOrder, selectionFilter, text: textFilter });
 
     const resultsFiltered = costsMemo.items.filter((cost) => cost.selection.sum !== 0);
 
@@ -29,32 +30,12 @@ export const CostsTable = () => {
     }
 
     return { costs: costsMemo, filterLocked: resultsFiltered.length === 0 };
-  }, [armorsState, hideNoCost, intl]);
-
-  const onChangeHideNoCost = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch(setHideNoCost(event.target.checked));
-    },
-    [dispatch]
-  );
+  }, [armorsState, hideNoCost, intl, materialsOrder, selectionFilter, textFilter]);
 
   return (
     <>
       <div className="container text-start">
-        <div className="form-check form-switch">
-          <input
-            id="flexSwitchHideNoCost"
-            checked={hideNoCost}
-            className="form-check-input"
-            disabled={filterLocked && !hideNoCost}
-            onChange={onChangeHideNoCost}
-            role="switch"
-            type="checkbox"
-          />
-          <label className="form-check-label" htmlFor="flexSwitchHideNoCost">
-            <FormattedMessage id="filterMaterials" defaultMessage="Filter materials" />
-          </label>
-        </div>
+        <Filter filterLocked={filterLocked} updateTextFilter={setTextFilter} />
       </div>
 
       <table className="table table-sm">

@@ -407,6 +407,9 @@
   "armorName": {
     "defaultMessage": "Name"
   },
+  "armorOrder": {
+    "defaultMessage": "Armor order"
+  },
   "armorPiece": {
     "defaultMessage": "Armor Piece"
   },
@@ -424,6 +427,21 @@
   },
   "filterMaterials": {
     "defaultMessage": "Filter materials"
+  },
+  "filterSelection": {
+    "defaultMessage": "Filter selection"
+  },
+  "filterSelectionNo": {
+    "defaultMessage": "No filter"
+  },
+  "filterSelectionOwned": {
+    "defaultMessage": "Owned"
+  },
+  "filterSelectionVisible": {
+    "defaultMessage": "Visible"
+  },
+  "filterSelectionVisibleOwned": {
+    "defaultMessage": "Visible and owned"
   },
   "footerVersion": {
     "defaultMessage": "{name} v{version} by McRadane"
@@ -979,11 +997,23 @@
   "material-Zonaite": {
     "defaultMessage": "Zonaite"
   },
+  "materialsOrder": {
+    "defaultMessage": "Material order"
+  },
   "menuArmor": {
     "defaultMessage": "Armor"
   },
   "menuCosts": {
     "defaultMessage": "Costs"
+  },
+  "orderAlphabetical": {
+    "defaultMessage": "Alphabetical"
+  },
+  "orderAlphabeticalGrouped": {
+    "defaultMessage": "Alphabetical with groups"
+  },
+  "orderGame": {
+    "defaultMessage": "Game"
   },
   "ownedQuestion": {
     "defaultMessage": "Owned ?"
@@ -1106,7 +1136,7 @@
     "defaultMessage": "Zora"
   },
   "starCost": {
-    "defaultMessage": "{num} Star Cost"
+    "defaultMessage": "{num} Star"
   },
   "startSearch": {
     "defaultMessage": "Start Search"

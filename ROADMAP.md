@@ -1,5 +1,7 @@
 # Features
+- UI revamp with Material UI
 - Add loading on scroll to enhance performance
+- Import/export data
 
 # Accessibility
 - Navigation by keyboard / bypass (https://dequeuniversity.com/rules/axe/4.6/bypass)

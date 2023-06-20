@@ -1,20 +1,18 @@
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { type FC, useCallback, useState } from "react";
+import { type FC, useCallback } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useDispatch, useSelector } from "react-redux";
-import { useDebouncedCallback } from "use-debounce";
 
-import { setHideArmors } from "../../redux/navigation";
-import { type IRootState } from "../../redux/store";
+import { setArmorsOrder, setHideArmors } from "../../redux/navigation";
+import type { IRootState } from "../../redux/store";
+import { TextFilter } from "../TextFilter";
 
 export interface IFilterProps {
   updateTextFilter: (text: string) => void;
 }
 
 export const Filter: FC<IFilterProps> = ({ updateTextFilter }) => {
-  const hideArmors = useSelector((state: IRootState) => state.navigation.hideArmors);
-  const [textFilter, setTextFilter] = useState("");
+  const { armorsOrder, hideArmors } = useSelector((state: IRootState) => state.navigation);
+
   const dispatch = useDispatch();
   const intl = useIntl();
 
@@ -25,22 +23,17 @@ export const Filter: FC<IFilterProps> = ({ updateTextFilter }) => {
     [dispatch]
   );
 
-  const onChangeTextFilterDebounced = useDebouncedCallback((value: string) => {
-    updateTextFilter(value);
-  }, 500);
-
-  const onChangeTextFilter = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      setTextFilter(event.target.value);
-      onChangeTextFilterDebounced(event.target.value.toLowerCase());
+  const onSelectOrder = useCallback(
+    (e: React.ChangeEvent<HTMLSelectElement>) => {
+      dispatch(setArmorsOrder(e.target.value as "alphabetical"));
     },
-    [onChangeTextFilterDebounced]
+    [dispatch]
   );
 
   return (
     <>
-      <div className="container text-start filters-group">
-        <div className="form-check form-switch">
+      <div className="row text-start">
+        <div className="col-6 col-sm-4 form-check form-switch">
           <input
             id="flexSwitchHideArmors"
             checked={hideArmors}
@@ -54,23 +47,30 @@ export const Filter: FC<IFilterProps> = ({ updateTextFilter }) => {
           </label>
         </div>
 
-        <div className="input-group">
-          <div className="form-outline">
-            <input id="searchFilter" className="form-control" onChange={onChangeTextFilter} type="search" value={textFilter} />
-            <label className="form-label" htmlFor="searchFilter">
-              <FormattedMessage id="searchArmors" defaultMessage="Search" />
-            </label>
-          </div>
-          <button
+        <div className="col-6 col-sm-4 form-check form-switch">
+          <select
             aria-label={intl.formatMessage({
-              defaultMessage: "Start Search",
-              id: "startSearch"
+              defaultMessage: "Armor order",
+              id: "armorOrder"
             })}
-            className="btn btn-primary"
-            type="button"
+            className="form-select"
+            onChange={onSelectOrder}
+            value={armorsOrder ?? "alphabetical-groups"}
           >
-            <FontAwesomeIcon icon={faSearch} />
-          </button>
+            <option value="alphabetical-groups">
+              <FormattedMessage id="orderAlphabeticalGrouped" defaultMessage="Alphabetical with groups" />
+            </option>
+            <option value="alphabetical">
+              <FormattedMessage id="orderAlphabetical" defaultMessage="Alphabetical" />
+            </option>
+            <option value="visible">
+              <FormattedMessage id="orderGame" defaultMessage="Game" />
+            </option>
+          </select>
+        </div>
+
+        <div className="col-12 col-sm-4">
+          <TextFilter updateTextFilter={updateTextFilter} />
         </div>
       </div>
     </>
