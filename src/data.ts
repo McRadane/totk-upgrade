@@ -3264,7 +3264,10 @@ export const getArmors = (intl: IntlShape): IDataArmor[] => [
       ["Topaz", 4],
       ["Flint", 5]
     ],
-    rank3: [["Rushroom", 20]],
+    rank3: [
+      ["Topaz", 6],
+      ["Star Fragment", 1]
+    ],
     rank4: [
       ["Topaz", 10],
       ["Star Fragment", 2]
